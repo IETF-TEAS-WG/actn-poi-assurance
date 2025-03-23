@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-20T00:55:30.780188+00:00",
+  "timestamp": "2025-03-23T01:00:14.915273+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -584,7 +584,7 @@
       "id": "I_kwDOJAsmzM6rjGNT",
       "title": "Presentation at IETF 122",
       "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/18",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -595,16 +595,24 @@
       ],
       "body": "**[ACTN POI bi-weekly call (February 25, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-02-25)**\n\nRequest a presentation slot and present the draft at IETF 122",
       "createdAt": "2025-02-25T11:37:48Z",
-      "updatedAt": "2025-02-25T11:42:44Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-03-22T19:04:33Z",
+      "closedAt": "2025-03-22T19:04:32Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "Done: https://datatracker.ietf.org/doc/slides-122-teas-applicability-of-actn-for-poi-service-assurance/",
+          "createdAt": "2025-03-22T19:04:32Z",
+          "updatedAt": "2025-03-22T19:04:32Z"
+        }
+      ]
     },
     {
       "number": 19,
       "id": "I_kwDOJAsmzM6rjIGh",
       "title": "Bi-weekly calls after IETF 122",
       "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/19",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -615,9 +623,17 @@
       ],
       "body": "**[ACTN POI bi-weekly call (February 25, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-02-25)**\n\nSetup the new bi-weekly calls and share the invitation to the TEAS WG mailing list\n\n> Restart the weekly calls after IETF 122 from:\n> - March 25 at 3:30pm IST (11am CET, 6pm CST, 6am NA EDT)\n> - April 8 at 2:30pm IST (11am CEST, 5pm CST, 5am NA EDT)\n",
       "createdAt": "2025-02-25T11:40:19Z",
-      "updatedAt": "2025-02-25T11:42:57Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-03-22T19:03:04Z",
+      "closedAt": "2025-03-22T19:03:03Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "Done: https://mailarchive.ietf.org/arch/msg/teas/1AFZkfvksgCRYNx5we1tcX4pCTI/",
+          "createdAt": "2025-03-22T19:03:03Z",
+          "updatedAt": "2025-03-22T19:03:03Z"
+        }
+      ]
     }
   ],
   "pulls": [
