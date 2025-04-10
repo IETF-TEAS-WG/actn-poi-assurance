@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-01T01:04:12.529132+00:00",
+  "timestamp": "2025-04-10T00:57:40.099346+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -215,7 +215,7 @@
       "labels": [],
       "body": "here I think for fault/event detection in optical and IP/MPLS domain we need to have a wider scope. O/P-PNC start to implement alarm filtering capabilities joint with Root Cause Analysis and there the use of RFC8632 for exposing only the results of the RCA at P-PNC and O-PNC North Bound interfaces is not clear. In fact RFC8632 may not be the right data models for that purpose and this should be investigated. There is no real value to flood the MDSC with all Optical and IP/MPLS domains' alarms through the use of RFC8632\r\n\r\n_Originally posted by @jbouqui153 in https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/pull/2#discussion_r1132448007_\r\n            ",
       "createdAt": "2023-03-10T21:20:33Z",
-      "updatedAt": "2024-12-17T15:07:39Z",
+      "updatedAt": "2025-04-08T16:16:14Z",
       "closedAt": null,
       "comments": [
         {
@@ -231,6 +231,13 @@
           "body": "As commented in our call today (17-12-2024) the draft that might be considered to expose RCA result and list of services affected is this one [draft-ietf-nmop-network-incident-yang-02](https://datatracker.ietf.org/doc/html/draft-ietf-nmop-network-incident-yang-02)",
           "createdAt": "2024-12-17T13:06:14Z",
           "updatedAt": "2024-12-17T15:07:39Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nAgreed to close this issue since this scenario is described in the current version of the draft (as a result of #12)\n\nThe current text can be reviewed and, if needed, comments can be raise or the issue be re-opened\n",
+          "createdAt": "2025-04-08T16:16:13Z",
+          "updatedAt": "2025-04-08T16:16:13Z"
         }
       ]
     },
@@ -297,15 +304,15 @@
       "id": "I_kwDOJAsmzM5lcWdj",
       "title": "Optical Network Fault Management",
       "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/8",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Describe fault detection performed by the O-PNC and how this information is reported to the MDSC: see for example the failure scenario in https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/files/10885907/2023.03.draft-poidt-teas-poi-assurance.pptx (slide 3)",
       "createdAt": "2023-05-09T12:35:14Z",
-      "updatedAt": "2025-01-22T18:01:46Z",
-      "closedAt": null,
+      "updatedAt": "2025-04-08T12:57:32Z",
+      "closedAt": "2025-04-08T12:57:30Z",
       "comments": [
         {
           "author": "italobusi",
@@ -320,6 +327,13 @@
           "body": "**[ACTN POI Assurance bi-weekly call (January 14, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-01-14)**\n\nSpecify that, even if the information on the event happening in the optical domain and sent to MDSC is minimized, a reference to the root cause may be useful. The operator may access the MDSC to retrieve this information and eventually access to the O-PNC to get the detailed alarm descriptions.\n\nNoted that this point may be grouped with issue #12.\n\nThe operators in the group may confirm that the approach described in issue #12 and here is acceptable for a clarification of the draft\u2019s scope.\n",
           "createdAt": "2025-01-22T18:01:45Z",
           "updatedAt": "2025-01-22T18:01:45Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nAgreed to close this issue since this scenario is described in the current version of the draft (as a result of #12)\n",
+          "createdAt": "2025-04-08T12:57:31Z",
+          "updatedAt": "2025-04-08T12:57:31Z"
         }
       ]
     },
@@ -337,7 +351,7 @@
       "labels": [],
       "body": "Need to discuss the relationship between this draft and draft-gstk-ccamp-actn-optical-transport-mgmt",
       "createdAt": "2023-09-12T10:01:55Z",
-      "updatedAt": "2025-01-22T17:59:32Z",
+      "updatedAt": "2025-04-08T16:25:16Z",
       "closedAt": null,
       "comments": [
         {
@@ -360,6 +374,13 @@
           "body": "**[ACTN POI Assurance bi-weekly call (January 14, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-01-14)**\n\nChange the name of the reference draft from draft-gstk-ccamp-actn-optical-transport-mgmt to draft-ietf-ccamp-actn-optical-transport-mgmt.\n\nNoted that FCAPS may be mentioned in the POI Assurance draft, but the relationship between the two seems quite general.\n\nProposal to ask Daniel for an opinion on whether to insert a reference.\n",
           "createdAt": "2025-01-22T17:59:31Z",
           "updatedAt": "2025-01-22T17:59:31Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nThe two documents are complementary rather than conflicting. It would be worthwhile adding some text describing how they are complementary.\n\n- [ ] @danielkinguk : propose some text proposal\n",
+          "createdAt": "2025-04-08T16:25:15Z",
+          "updatedAt": "2025-04-08T16:25:15Z"
         }
       ]
     },
@@ -498,7 +519,7 @@
       "labels": [],
       "body": "Define the list of candidate RFCs/I-Ds which can be relevant for this work, considering both IP and Optical networks",
       "createdAt": "2024-09-24T20:41:33Z",
-      "updatedAt": "2025-01-28T16:26:42Z",
+      "updatedAt": "2025-04-08T16:21:03Z",
       "closedAt": null,
       "comments": [
         {
@@ -542,6 +563,13 @@
           "body": "The plan for updating [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) , as mentioned in https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619168191, is available in the [IETF 121 CCAMP WG Presentation](https://datatracker.ietf.org/doc/slides-121-ccamp-06-a-yang-data-model-of-performance-management-streaming/)",
           "createdAt": "2025-01-28T16:26:41Z",
           "updatedAt": "2025-01-28T16:26:41Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nAgreed to split this task into three tasks for fault, performance and resiliency, with the following order:\n- fault: #20 \n- performance: #21 \n- resiliency: #22 ",
+          "createdAt": "2025-04-08T16:17:08Z",
+          "updatedAt": "2025-04-08T16:21:03Z"
         }
       ]
     },
@@ -634,6 +662,83 @@
           "updatedAt": "2025-03-22T19:03:03Z"
         }
       ]
+    },
+    {
+      "number": 20,
+      "id": "I_kwDOJAsmzM6xo86n",
+      "title": "Candidate RFCs/I-Ds for Fault Management",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/20",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "italobusi",
+        "ggalimba56",
+        "jbouqui153"
+      ],
+      "labels": [],
+      "body": "Define the list of candidate RFCs/I-Ds which can be relevant for fault management, considering both IP and Optical networks",
+      "createdAt": "2025-04-08T16:18:36Z",
+      "updatedAt": "2025-04-08T16:23:23Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nChaode has presented the slide on incident management from IETF 116\n\nIn the context of ACTN POI, the incident management client can be the O-PNC reporting the incidents within the optical network to the MDSC (acting as the incident management client). The MDSC can also correlate the incident information received from the O-PNC and the alarms in the IP networks to report (acting as a incident management client) to the OSS (acting as the incident management client) the incidents within the POI network\n\nJeff: today the approach is to send all the alarms to the OSS. RFC8632 is a good option if you are migrating existing OSS interfaces to RESTCONF. At least in our case, we are not interested to flood the HCO with all the alarms that happens in each domain and therefore only the incident management YANG is sufficient. However, the PNC can still report all the alarms to the OSS using RFC8632.\n\nJeff: another point is that after discovered the root, not only the incident is reported but also the list of services impacted by the incident are reported.\n\nThe I-D is currently is an NMOP WG document and it seems quite stable.\n\nGabriele: I am not sure whether what you expose as incident is different than the root cause alarm.\n\n- [ ] @jbouqui153 @ggalimba56 @italobusi : review the incident draft, evaluate its applicability to ACTN POI Assurance and whether RFC8632 should still be supported at the MPI\n",
+          "createdAt": "2025-04-08T16:23:08Z",
+          "updatedAt": "2025-04-08T16:23:08Z"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "I_kwDOJAsmzM6xo9fT",
+      "title": "Candidate RFCs/I-Ds for Performance Management",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/21",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "Paolo-Volpato"
+      ],
+      "labels": [],
+      "body": "Define the list of candidate RFCs/I-Ds which can be relevant for performance management, considering both IP and Optical networks\n\n",
+      "createdAt": "2025-04-08T16:19:39Z",
+      "updatedAt": "2025-04-08T16:38:45Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nJeff: for PM we can also consider the SAIN model\n\n- [ ] @Paolo-Volpato : review the list of PM related I-Ds and provide feedbacks if anything is missing\n",
+          "createdAt": "2025-04-08T16:24:08Z",
+          "updatedAt": "2025-04-08T16:24:08Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "This is the track of discussions regarding the PM models in issue #14:\n\n> For the IP part we identified for the moment at least the following one that should be relevant for network/service assurance in IP/MPLS networks: RFC9417 Service Assurance for Intent-Based Networking Architecture (SAIN). Informational, framework for SAIN RFC9418 A YANG Data Model for Service Assurance ( for implemention of SAIN approach) RFC9375 A YANG Data Model for Network and VPN Service Performance Monitoring\n\nSee: https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2386388919\n\n> **[ACTN POI Assurance bi-weekly call (November 19, 2024)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2024-11-19)**\n> \n> There are many drafts about Performance Monitoring (PM) and their relationship is not fully clear\n> \n> Some PM drafts discussed during the call:\n> \n> 1. https://datatracker.ietf.org/doc/draft-yu-ccamp-optical-resource-pm-yang/\n> 2. https://datatracker.ietf.org/doc/draft-yu-ccamp-resource-pm-yang/\n> 3. https://datatracker.ietf.org/doc/draft-yoon-ccamp-pm-streaming\n> \n> Draft 1) is targeted to optical network resources while draft 2) is a generalization of draft 1) and replaces it\n> \n> Draft 3) is aimed at providing a YANG model to manage subscription to telemetry streaming. During the side meeting in Dublin, it has been agreed to split the document into:\n> \n> * * a generic document (target OPSAWG) to support subscription and using XPath as a generic pointer any PM data* technology specific models providing technology specific PM data* [ ] \n>     [ ]  [@prmanna](https://github.com/prmanna)  get a list of the PM drafts/RFCs which can be in the scope of the analysis in ACTN POI assurance I-D\n\nSee: https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2485387990\n\n> **[ACTN POI Assurance bi-weekly call (January 28, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-01-28)**\n> \n> There an individual proposal in [draft-yu-ccamp-resource-pm-yang](https://datatracker.ietf.org/doc/html/draft-yu-ccamp-resource-pm-yang) which originally was intended to be used only for optical networks but later expanded to be more generic and applicable also to IP networks (and presented also in OPSAWG). Operators' feedbacks would be useful to understand how to position and move forward this draft in either CCAMP WG or OPSAWG.\n> \n> There is another another individual proposal in [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) which, based on the breakout discussion in IETF 121, is planned to be updated to become a generic model (applicable to both optical and IP networks) to complement the traditional polling of CD/HD with new streaming reporting mechanisms.\n> \n> It has been clarified that the scope of this document is to identify gaps and requirements for service assurance in ACTN POI networks. If any gap is identified, work can be started in TEAS WG or other WGs to develop new YANG models addressing the identified gaps.\n\nhttps://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619168191\n\n> The plan for updating [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) , as mentioned in [#14 (comment)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619168191), is available in the [IETF 121 CCAMP WG Presentation](https://datatracker.ietf.org/doc/slides-121-ccamp-06-a-yang-data-model-of-performance-management-streaming/)\n\nhttps://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619486960",
+          "createdAt": "2025-04-08T16:37:49Z",
+          "updatedAt": "2025-04-08T16:38:45Z"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "id": "I_kwDOJAsmzM6xo-Dk",
+      "title": "Candidate RFCs/I-Ds for multi-layer resiliency",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/22",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Define the list of candidate RFCs/I-Ds which can be relevant for multi-layer resiliency scenarios, considering both IP and Optical networks",
+      "createdAt": "2025-04-08T16:20:34Z",
+      "updatedAt": "2025-04-08T16:20:34Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
