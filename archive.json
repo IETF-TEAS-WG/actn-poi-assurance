@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-10T00:57:40.099346+00:00",
+  "timestamp": "2025-05-01T01:05:10.161303+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -737,6 +737,24 @@
       "body": "Define the list of candidate RFCs/I-Ds which can be relevant for multi-layer resiliency scenarios, considering both IP and Optical networks",
       "createdAt": "2025-04-08T16:20:34Z",
       "updatedAt": "2025-04-08T16:20:34Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 23,
+      "id": "I_kwDOJAsmzM60tv2U",
+      "title": "Update mail address of Fabio",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/23",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "Update the mail address of Fabio after WG adoption (-01 WG document)\n",
+      "createdAt": "2025-04-30T16:53:45Z",
+      "updatedAt": "2025-04-30T16:54:03Z",
       "closedAt": null,
       "comments": []
     }
