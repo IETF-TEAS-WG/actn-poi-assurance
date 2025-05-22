@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-01T01:05:10.161303+00:00",
+  "timestamp": "2025-05-22T01:00:59.221426+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -52,6 +52,11 @@
       "name": "admin",
       "description": "",
       "color": "1D76DB"
+    },
+    {
+      "name": "wait",
+      "description": "",
+      "color": "FBCA04"
     }
   ],
   "issues": [
@@ -588,7 +593,7 @@
       "labels": [],
       "body": "PM (in terms of current data (CD) and history data (HD)) is not widely used in IP routers world but instead cumulative statistics are reported by IP routers\n\nQuestion is whether the implementation of PM CD/HD on IP interfaces is required by operators",
       "createdAt": "2025-01-28T14:32:57Z",
-      "updatedAt": "2025-02-25T11:13:38Z",
+      "updatedAt": "2025-05-21T08:54:36Z",
       "closedAt": null,
       "comments": [
         {
@@ -705,7 +710,7 @@
       "labels": [],
       "body": "Define the list of candidate RFCs/I-Ds which can be relevant for performance management, considering both IP and Optical networks\n\n",
       "createdAt": "2025-04-08T16:19:39Z",
-      "updatedAt": "2025-04-08T16:38:45Z",
+      "updatedAt": "2025-05-21T08:54:06Z",
       "closedAt": null,
       "comments": [
         {
@@ -721,6 +726,13 @@
           "body": "This is the track of discussions regarding the PM models in issue #14:\n\n> For the IP part we identified for the moment at least the following one that should be relevant for network/service assurance in IP/MPLS networks: RFC9417 Service Assurance for Intent-Based Networking Architecture (SAIN). Informational, framework for SAIN RFC9418 A YANG Data Model for Service Assurance ( for implemention of SAIN approach) RFC9375 A YANG Data Model for Network and VPN Service Performance Monitoring\n\nSee: https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2386388919\n\n> **[ACTN POI Assurance bi-weekly call (November 19, 2024)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2024-11-19)**\n> \n> There are many drafts about Performance Monitoring (PM) and their relationship is not fully clear\n> \n> Some PM drafts discussed during the call:\n> \n> 1. https://datatracker.ietf.org/doc/draft-yu-ccamp-optical-resource-pm-yang/\n> 2. https://datatracker.ietf.org/doc/draft-yu-ccamp-resource-pm-yang/\n> 3. https://datatracker.ietf.org/doc/draft-yoon-ccamp-pm-streaming\n> \n> Draft 1) is targeted to optical network resources while draft 2) is a generalization of draft 1) and replaces it\n> \n> Draft 3) is aimed at providing a YANG model to manage subscription to telemetry streaming. During the side meeting in Dublin, it has been agreed to split the document into:\n> \n> * * a generic document (target OPSAWG) to support subscription and using XPath as a generic pointer any PM data* technology specific models providing technology specific PM data* [ ] \n>     [ ]  [@prmanna](https://github.com/prmanna)  get a list of the PM drafts/RFCs which can be in the scope of the analysis in ACTN POI assurance I-D\n\nSee: https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2485387990\n\n> **[ACTN POI Assurance bi-weekly call (January 28, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-01-28)**\n> \n> There an individual proposal in [draft-yu-ccamp-resource-pm-yang](https://datatracker.ietf.org/doc/html/draft-yu-ccamp-resource-pm-yang) which originally was intended to be used only for optical networks but later expanded to be more generic and applicable also to IP networks (and presented also in OPSAWG). Operators' feedbacks would be useful to understand how to position and move forward this draft in either CCAMP WG or OPSAWG.\n> \n> There is another another individual proposal in [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) which, based on the breakout discussion in IETF 121, is planned to be updated to become a generic model (applicable to both optical and IP networks) to complement the traditional polling of CD/HD with new streaming reporting mechanisms.\n> \n> It has been clarified that the scope of this document is to identify gaps and requirements for service assurance in ACTN POI networks. If any gap is identified, work can be started in TEAS WG or other WGs to develop new YANG models addressing the identified gaps.\n\nhttps://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619168191\n\n> The plan for updating [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) , as mentioned in [#14 (comment)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619168191), is available in the [IETF 121 CCAMP WG Presentation](https://datatracker.ietf.org/doc/slides-121-ccamp-06-a-yang-data-model-of-performance-management-streaming/)\n\nhttps://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/14#issuecomment-2619486960",
           "createdAt": "2025-04-08T16:37:49Z",
           "updatedAt": "2025-04-08T16:38:45Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (May 20, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-05-20)**\n\nChaode presented [Resource PM slides](https://github.com/user-attachments/files/20345071/draft-yu-ccamp-optical-resource-pm-yang-01.pdf) describing the Resource PM YANG data model is proposed in [draft-yu-ccamp-resource-pm-yang](https://datatracker.ietf.org/doc/html/draft-yu-ccamp-resource-pm-yang)\n\nThe current data model is generic and it is applicable to any performance indicator. The definition of performance indicators should be in the scope of other drafts\n\nIn the scope of the optical pluggable management, some PM indicators have been defined and could be used together with the generic framework\n\nIn the current draft the performance indicator is defined as an attribute with a string format so it is quite straightforward to add performance indicators\n\nThis I-D was presented to OPSAWG since the framework is generic and applicable to both Optical and IP networks. However, no decision has been taken yet by OPSAWG on this I-D\n\nJulien: most of the time, IP and optical network operations are separated and using different tools\n\nA question was raised about the relationship with [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming)\n\nThe following differences have been reported:\n1. [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) is intended to be a device model while [draft-yu-ccamp-resource-pm-yang](https://datatracker.ietf.org/doc/html/draft-yu-ccamp-resource-pm-yang) is intended to be a network model\n2. [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming) is supporting streaming PM data while [draft-yu-ccamp-resource-pm-yang](https://datatracker.ietf.org/doc/html/draft-yu-ccamp-resource-pm-yang) is supporting PM data collection (polling)\n\nThe following comments have been made:\n1. the PM data to be collected should be the same no matter whether it is reported by streaming or polling mechanisms\n2. streaming requires subscription but the generic mechanisms should be applicable also to PM data streaming\n\nConclusion: some work is needed within IETF to reconcile this I-D with [draft-yoon-ccamp-pm-streaming](https://datatracker.ietf.org/doc/html/draft-yoon-ccamp-pm-streaming)\n\nAnother framework which can be applicable to the POI assurance use cases is the SAIN framework in [RFC 9417](https://datatracker.ietf.org/doc/rfc9417/)\n\nIt would be worthwhile understanding how these different frameworks fit together\n\nAnother open issue is about where the specific performance indicators which are needed for POI assurance are or can be defined. For example, the pluggable YANG models are defining some performance indicators for the pluggable interfaces.",
+          "createdAt": "2025-05-21T08:54:05Z",
+          "updatedAt": "2025-05-21T08:54:05Z"
         }
       ]
     },
@@ -751,12 +763,22 @@
       "assignees": [
         "italobusi"
       ],
-      "labels": [],
+      "labels": [
+        "wait"
+      ],
       "body": "Update the mail address of Fabio after WG adoption (-01 WG document)\n",
       "createdAt": "2025-04-30T16:53:45Z",
-      "updatedAt": "2025-04-30T16:54:03Z",
+      "updatedAt": "2025-05-20T12:00:26Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "Wait for WG adoption and update the mail address in the -01 WG documenti",
+          "createdAt": "2025-05-20T12:00:25Z",
+          "updatedAt": "2025-05-20T12:00:25Z"
+        }
+      ]
     }
   ],
   "pulls": [
