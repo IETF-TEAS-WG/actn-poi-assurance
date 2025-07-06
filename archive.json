@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-22T01:00:59.221426+00:00",
+  "timestamp": "2025-07-06T01:09:20.098023+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -768,7 +768,7 @@
       ],
       "body": "Update the mail address of Fabio after WG adoption (-01 WG document)\n",
       "createdAt": "2025-04-30T16:53:45Z",
-      "updatedAt": "2025-05-20T12:00:26Z",
+      "updatedAt": "2025-07-04T10:36:37Z",
       "closedAt": null,
       "comments": [
         {
@@ -777,6 +777,13 @@
           "body": "Wait for WG adoption and update the mail address in the -01 WG documenti",
           "createdAt": "2025-05-20T12:00:25Z",
           "updatedAt": "2025-05-20T12:00:25Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "```\n    name: Fabio Peruzzini\n    org: FiberCop\n    email: fabio.peruzzini@fibercop.com\n\n```",
+          "createdAt": "2025-07-04T10:36:37Z",
+          "updatedAt": "2025-07-04T10:36:37Z"
         }
       ]
     }
