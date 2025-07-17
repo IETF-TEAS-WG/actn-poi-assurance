@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-06T01:09:20.098023+00:00",
+  "timestamp": "2025-07-17T01:07:04.457805+00:00",
   "repo": "italobusi/draft-poidt-teas-actn-poi-assurance",
   "labels": [
     {
@@ -684,7 +684,7 @@
       "labels": [],
       "body": "Define the list of candidate RFCs/I-Ds which can be relevant for fault management, considering both IP and Optical networks",
       "createdAt": "2025-04-08T16:18:36Z",
-      "updatedAt": "2025-04-08T16:23:23Z",
+      "updatedAt": "2025-07-15T15:47:04Z",
       "closedAt": null,
       "comments": [
         {
@@ -693,6 +693,13 @@
           "body": "**[ACTN POI Assurance bi-weekly call (April 8, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-04-08)**\n\nChaode has presented the slide on incident management from IETF 116\n\nIn the context of ACTN POI, the incident management client can be the O-PNC reporting the incidents within the optical network to the MDSC (acting as the incident management client). The MDSC can also correlate the incident information received from the O-PNC and the alarms in the IP networks to report (acting as a incident management client) to the OSS (acting as the incident management client) the incidents within the POI network\n\nJeff: today the approach is to send all the alarms to the OSS. RFC8632 is a good option if you are migrating existing OSS interfaces to RESTCONF. At least in our case, we are not interested to flood the HCO with all the alarms that happens in each domain and therefore only the incident management YANG is sufficient. However, the PNC can still report all the alarms to the OSS using RFC8632.\n\nJeff: another point is that after discovered the root, not only the incident is reported but also the list of services impacted by the incident are reported.\n\nThe I-D is currently is an NMOP WG document and it seems quite stable.\n\nGabriele: I am not sure whether what you expose as incident is different than the root cause alarm.\n\n- [ ] @jbouqui153 @ggalimba56 @italobusi : review the incident draft, evaluate its applicability to ACTN POI Assurance and whether RFC8632 should still be supported at the MPI\n",
           "createdAt": "2025-04-08T16:23:08Z",
           "updatedAt": "2025-04-08T16:23:08Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "OWNER",
+          "body": "**[ACTN POI Assurance bi-weekly call (July 15, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-07-15)**\n\nRFC8632 is more appropriate for alarm management with an OSS\n\nIMHO, we should not implement RFC8632 for ACTN POI assurance between PNCs and MDSC, since there is no need to provide all the alarms to the MDSC for multi-layer fault management. This would also affect scalability of MDSC. Each individual PNC can manage alarms directly with OSS following current mode of operations for fault management.\n\nIn case of a failure in the optical network, the O-PNC will detect that the Optical Tunnel is down and the P-PNC will detect the hierarchical IP link is down. The MDSC receiving the operational-status change notifications from the PNCs, can understand that an IP link is down because of an issue within the optical network and correlate which L2/L3 VPN services are impacted.\n\ndraft-ietf-nmop-network-incident-yang defines the framework and data model for a network wide incident management solution. More and more PNCs are integrating AI/ML capabilities to filter the alarms of the underlying NEs from their domain improving both efficiency and fault diagnosis capabilities. This incident management framework could be implemented between PNCs (incident server) and MDSC or OSS (incident client) allowing a standard way to expose the incident as well as root cause analysis determined by the PNCs. This could lead to a future mode of operating a network where there is no need to collect and manage all the alarms coming from the devices, thanks to the advanced troubleshooting and root cause analysis of the PNCs (closest entities to the devices). The AI/ML capabilities are allowing to detect not only connectivity/service interruptions but also service degradations linked to complex root cause (e.g. flapping of the fiber or optical module issue etc.). The closest to the devices, the more complex root causes can be identified by the controllers and exposed to the upper layers (e.g. MDSC and/or OSS)\n\nAs a consequence it makes sense to consider the incident management framework in POI assurance draft since MDSC, for complex incidents could benefit from the deep root cause analysis performed by the PNCs. Of course, incident reports and root cause analysis of the PNCs need to offer a high accuracy so that these inputs can trigger then MDSC optimization decisions.\n",
+          "createdAt": "2025-07-15T15:35:46Z",
+          "updatedAt": "2025-07-15T15:47:04Z"
         }
       ]
     },
@@ -786,6 +793,45 @@
           "updatedAt": "2025-07-04T10:36:37Z"
         }
       ]
+    },
+    {
+      "number": 24,
+      "id": "I_kwDOJAsmzM7AsDGo",
+      "title": "Preparation for IETF 124",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/24",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "admin"
+      ],
+      "body": "",
+      "createdAt": "2025-07-15T15:38:13Z",
+      "updatedAt": "2025-07-15T15:38:54Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 25,
+      "id": "I_kwDOJAsmzM7AsDht",
+      "title": "Setup meeting series for IETF 124",
+      "url": "https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/issues/25",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "italobusi",
+        "prmanna"
+      ],
+      "labels": [
+        "admin"
+      ],
+      "body": "**[ACTN POI Assurance bi-weekly call (July 15, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-07-15)**\n\nSetup a new meeting series from September 9, 2025 till October 21, 2025 and update the Wiki page accordingly",
+      "createdAt": "2025-07-15T15:38:46Z",
+      "updatedAt": "2025-07-15T15:47:16Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
