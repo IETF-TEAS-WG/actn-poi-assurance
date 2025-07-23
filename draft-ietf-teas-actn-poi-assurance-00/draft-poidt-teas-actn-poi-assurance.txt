@@ -5,14 +5,14 @@
 TEAS WG                                                          I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 30 August 2025                                         Vodafone
+Expires: 24 January 2026                                        Vodafone
                                                             F. Peruzzini
                                                                      TIM
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                        26 February 2025
+                                                            23 July 2025
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 August 2025.
+   This Internet-Draft will expire on 24 January 2026.
 
 Copyright Notice
 
@@ -1494,9 +1494,9 @@ Table of Contents
               Ceccarelli, "Applicability of Abstraction and Control of
               Traffic Engineered Networks (ACTN) to Packet Optical
               Integration (POI)", Work in Progress, Internet-Draft,
-              draft-ietf-teas-actn-poi-applicability-14, 25 February
-              2025, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              teas-actn-poi-applicability-14>.
+              draft-ietf-teas-actn-poi-applicability-15, 4 July 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              actn-poi-applicability-15>.
 
    [I-D.yu-performance-monitoring-yang]
               Yu, C., "A YANG Data Model for Optical Performance
