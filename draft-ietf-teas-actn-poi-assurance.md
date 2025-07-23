@@ -9,8 +9,23 @@ category: info
 
 docname: draft-ietf-teas-actn-poi-assurance-latest
 submissiontype: IETF
+number:
+date:
+consensus: true
 v: 3
-workgroup: TEAS WG
+# area: "Routing"
+workgroup: "TEAS Working Group"
+keyword:
+ - next generation
+ - unicorn
+ - sparkling distributed ledger
+venue:
+  group: "Traffic Engineering Architecture and Signaling"
+  type: "Working Group"
+  mail: "teas@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/teas/"
+  github: "IETF-TEAS-WG/actn-poi-assurance"
+  latest: "https://IETF-TEAS-WG.github.io/actn-poi-assurance/draft-ietf-teas-actn-poi-assurance.html"
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, comments]
@@ -27,8 +42,8 @@ author:
     email: jeff.bouquier@vodafone.com
   -
     name: Fabio Peruzzini
-    org: TIM
-    email: fabio.peruzzini@telecomitalia.it
+    org: FiberCop
+    email: fabio.peruzzini@fibercop.com
   -
     name: Paolo Volpato
     org: Huawei Technologies
