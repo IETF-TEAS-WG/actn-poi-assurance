@@ -1,8 +1,8 @@
   R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-┌―――――――――┐
-│1.R2 down│
-│ and FRR │
-└―――――――――┘
++---------+
+|1.R2 down|
+| and FRR |
++---------+
   |2.R2 down + FRR|       |       |       |       |       |       |
   |-------------->|       |       |       |       |       |       |
   |       |       |3.R2 down + FRR|       |       |       |       |

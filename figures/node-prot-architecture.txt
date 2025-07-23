@@ -1,26 +1,26 @@
 
 
-│<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>│
-┌――――――――┐  ┌――――――――┐                     ┌――――――――┐  ┌――――――――┐
-│      P1│--│P1    P3│\        ___        /│P3    P1│--│P1      │
-│  R1    │  │ ROADM1 │ \  ____/   \____  / │ ROADM2 │  │   R2   │
-│      P2│--│P2    P4│\ \/             \/ /│P4    P2│--│P2      │
-└――――――――┘  └――――――――┘ \|    Optical    |/ └――――――――┘  └――――――――┘
+|<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>|
++--------+  +--------+                     +--------+  +--------+
+|      P1|--|P1    P3|\        ___        /|P3    P1|--|P1      |
+|  R1    |  | ROADM1 | \  ____/   \____  / | ROADM2 |  |   R2   |
+|      P2|--|P2    P4|\ \/             \/ /|P4    P2|--|P2      |
++--------+  +--------+ \|    Optical    |/ +--------+  +--------+
                         |    Network    |
-│<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>│
+|<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>|
                      x      |       |     x
-│<xX R1-R3 backup xx  x     |       |    x
-                    x   x  ┌―――――――――┐  x
-                     x   x │P3     P4│ x
-                      x  x │ ROADM3  │ x
-                      x  x │P1     P2│ x
-                      x  x └―――――――――┘ x
+|<xX R1-R3 backup xx  x     |       |    x
+                    x   x  +---------+  x
+                     x   x |P3     P4| x
+                      x  x | ROADM3  | x
+                      x  x |P1     P2| x
+                      x  x +---------+ x
                       x  x  |       |  x
-                      x  x ┌―――――――――┐ x
-                      x  x │P1     P2│ x
-                      x  x │   R3    │ x
-                      ˅  ˅ │         │ ˅
-                      -  ― └―――――――――┘ ―
+                      x  x +---------+ x
+                      x  x |P1     P2| x
+                      x  x |   R3    | x
+                      V  V |         | V
+                      -  - +---------+ -
 
 
 
