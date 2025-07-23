@@ -17,7 +17,7 @@ Expires: 24 January 2026                                        Vodafone
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
      (ACTN) for Packet Optical Integration (POI) service assurance
-               draft-poidt-teas-actn-poi-assurance-latest
+               draft-ietf-teas-actn-poi-assurance-latest
 
 Abstract
 
