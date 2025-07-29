@@ -18,6 +18,9 @@
    Controllers Interface) in the ACTN architecture. 
     " name="description">
 <meta content="xml2rfc 3.30.0" name="generator">
+<meta content="next generation" name="keyword">
+<meta content="unicorn" name="keyword">
+<meta content="sparkling distributed ledger" name="keyword">
 <meta content="draft-ietf-teas-actn-poi-assurance-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.30.0
@@ -1055,7 +1058,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Busi, et al.</td>
-<td class="center">Expires 24 January 2026</td>
+<td class="center">Expires 30 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,17 +1066,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">TEAS WG</dd>
+<dd class="workgroup">TEAS Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-ietf-teas-actn-poi-assurance-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-23" class="published">23 July 2025</time>
+<time datetime="2025-07-29" class="published">29 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-24">24 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-01-30">30 January 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1086,7 +1089,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </div>
 <div class="author">
       <div class="author-name">F. Peruzzini</div>
-<div class="org">TIM</div>
+<div class="org">FiberCop</div>
 </div>
 <div class="author">
       <div class="author-name">P. Volpato</div>
@@ -1108,6 +1111,22 @@ svg :is([fill="white"], [fill^="#fff"]) {
    the MPI (Multi-Domain Service Coordinator to Provisioning Network
    Controllers Interface) in the ACTN architecture.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-about-this-document">
+<a href="#name-about-this-document" class="section-name selfRef">About This Document</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">
+        The latest revision of this draft can be found at <span><a href="https://IETF-TEAS-WG.github.io/actn-poi-assurance/draft-ietf-teas-actn-poi-assurance.html">https://IETF-TEAS-WG.github.io/actn-poi-assurance/draft-ietf-teas-actn-poi-assurance.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-ietf-teas-actn-poi-assurance/">https://datatracker.ietf.org/doc/draft-ietf-teas-actn-poi-assurance/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">
+        Discussion of this document takes place on the
+        Traffic Engineering Architecture and Signaling Working Group mailing list (<span><a href="mailto:teas@ietf.org">mailto:teas@ietf.org</a></span>),
+        which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/teas/">https://mailarchive.ietf.org/arch/browse/teas/</a></span>.
+        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/teas/">https://www.ietf.org/mailman/listinfo/teas/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/IETF-TEAS-WG/actn-poi-assurance">https://github.com/IETF-TEAS-WG/actn-poi-assurance</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+</section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
         <h2 id="name-status-of-this-memo">
@@ -1127,7 +1146,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 24 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 30 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1307,34 +1326,150 @@ control a multi-layer and multi-domain network with two optical
 domains and two packet domains, as shown in Figure 1 of <span>[<a href="#I-D.ietf-teas-actn-poi-applicability" class="cite xref">I-D.ietf-teas-actn-poi-applicability</a>]</span>, which is copied in <a href="#fig-ref-architecture" class="auto internal xref">Figure 1</a> below.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <span id="name-reference-network-copy-of-f"></span><div id="fig-ref-architecture">
 <figure id="figure-1">
-        <div class="alignLeft art-ascii-art art-text artwork" id="section-3-2.1">
-<pre>
-                              +----------+
-                              |   MDSC   |
-                              +-----+----+
-                                    |
-                  +-----------+-----+------+-----------+
-                  |           |            |           |
-             +----+----+ +----+----+  +----+----+ +----+----+
-             | P-PNC 1 | | O-PNC 1 |  | O-PNC 2 | | P-PNC 2 |
-             +----+----+ +----+----+  +----+----+ +----+----+
-                  |           |            |           |
-                  |           \            /           |
-        +-------------------+  \          /  +-------------------+
-   CE1 / PE1             BR1 \  |        /  / BR2             PE2 \ CE2
-   o--/---o               o---\-|-------|--/---o               o---\--o
-      \   :               :   / |       |  \   :               :   /
-       \  : PKT domain 1  :  /  |       |   \  : PKT domain 2  :  /
-        +-:---------------:-+   |       |    +-:---------------:--+
-          :               :     |       |      :               :
-          :               :     |       |      :               :
-        +-:---------------:------+     +-------:---------------:--+
-       /  :               :       \   /        :               :   \
-      /   o...............o        \ /         o...............o    \
-      \     optical domain 1       / \       optical domain 2       /
-       \                          /   \                            /
-        +------------------------+     +--------------------------+
-</pre>
+        <div id="section-3-2.1">
+          <div class="alignLeft art-svg artwork" id="section-3-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="448" width="552" viewBox="0 0 552 448" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+              <path d="M 88,128 L 88,160" fill="none" stroke="black"></path>
+              <path d="M 128,96 L 128,128" fill="none" stroke="black"></path>
+              <path d="M 128,160 L 128,200" fill="none" stroke="black"></path>
+              <path d="M 168,128 L 168,160" fill="none" stroke="black"></path>
+              <path d="M 184,128 L 184,160" fill="none" stroke="black"></path>
+              <path d="M 224,32 L 224,64" fill="none" stroke="black"></path>
+              <path d="M 224,96 L 224,128" fill="none" stroke="black"></path>
+              <path d="M 224,160 L 224,176" fill="none" stroke="black"></path>
+              <path d="M 240,224 L 240,328" fill="none" stroke="black"></path>
+              <path d="M 264,128 L 264,160" fill="none" stroke="black"></path>
+              <path d="M 272,64 L 272,96" fill="none" stroke="black"></path>
+              <path d="M 288,128 L 288,160" fill="none" stroke="black"></path>
+              <path d="M 304,240 L 304,328" fill="none" stroke="black"></path>
+              <path d="M 312,32 L 312,64" fill="none" stroke="black"></path>
+              <path d="M 328,96 L 328,128" fill="none" stroke="black"></path>
+              <path d="M 328,160 L 328,176" fill="none" stroke="black"></path>
+              <path d="M 368,128 L 368,160" fill="none" stroke="black"></path>
+              <path d="M 384,128 L 384,160" fill="none" stroke="black"></path>
+              <path d="M 424,96 L 424,128" fill="none" stroke="black"></path>
+              <path d="M 424,160 L 424,200" fill="none" stroke="black"></path>
+              <path d="M 464,128 L 464,160" fill="none" stroke="black"></path>
+              <path d="M 224,32 L 312,32" fill="none" stroke="black"></path>
+              <path d="M 224,64 L 312,64" fill="none" stroke="black"></path>
+              <path d="M 128,96 L 424,96" fill="none" stroke="black"></path>
+              <path d="M 88,128 L 168,128" fill="none" stroke="black"></path>
+              <path d="M 184,128 L 264,128" fill="none" stroke="black"></path>
+              <path d="M 288,128 L 368,128" fill="none" stroke="black"></path>
+              <path d="M 384,128 L 464,128" fill="none" stroke="black"></path>
+              <path d="M 88,160 L 168,160" fill="none" stroke="black"></path>
+              <path d="M 184,160 L 264,160" fill="none" stroke="black"></path>
+              <path d="M 288,160 L 368,160" fill="none" stroke="black"></path>
+              <path d="M 384,160 L 464,160" fill="none" stroke="black"></path>
+              <path d="M 48,208 L 208,208" fill="none" stroke="black"></path>
+              <path d="M 344,208 L 504,208" fill="none" stroke="black"></path>
+              <path d="M 16,240 L 24,240" fill="none" stroke="black"></path>
+              <path d="M 40,240 L 56,240" fill="none" stroke="black"></path>
+              <path d="M 200,240 L 216,240" fill="none" stroke="black"></path>
+              <path d="M 248,240 L 296,240" fill="none" stroke="black"></path>
+              <path d="M 336,240 L 352,240" fill="none" stroke="black"></path>
+              <path d="M 496,240 L 512,240" fill="none" stroke="black"></path>
+              <path d="M 528,240 L 536,240" fill="none" stroke="black"></path>
+              <path d="M 72,288 L 184,288" fill="none" stroke="black"></path>
+              <path d="M 368,288 L 480,288" fill="none" stroke="black"></path>
+              <path d="M 496,288 L 512,288" fill="none" stroke="black"></path>
+              <path d="M 72,336 L 184,336" fill="none" stroke="black"></path>
+              <path d="M 200,336 L 248,336" fill="none" stroke="black"></path>
+              <path d="M 296,336 L 352,336" fill="none" stroke="black"></path>
+              <path d="M 368,336 L 480,336" fill="none" stroke="black"></path>
+              <path d="M 496,336 L 512,336" fill="none" stroke="black"></path>
+              <path d="M 48,416 L 248,416" fill="none" stroke="black"></path>
+              <path d="M 296,416 L 512,416" fill="none" stroke="black"></path>
+              <path d="M 28,376 L 48,416" fill="none" stroke="black"></path>
+              <path d="M 28,248 L 48,288" fill="none" stroke="black"></path>
+              <path d="M 240,320 L 268,376" fill="none" stroke="black"></path>
+              <path d="M 276,376 L 296,416" fill="none" stroke="black"></path>
+              <path d="M 208,208 L 228,248" fill="none" stroke="black"></path>
+              <path d="M 224,192 L 244,232" fill="none" stroke="black"></path>
+              <path d="M 324,248 L 344,288" fill="none" stroke="black"></path>
+              <path d="M 512,336 L 532,376" fill="none" stroke="black"></path>
+              <path d="M 504,208 L 524,248" fill="none" stroke="black"></path>
+              <path d="M 28,248 L 48,208" fill="none" stroke="black"></path>
+              <path d="M 28,376 L 48,336" fill="none" stroke="black"></path>
+              <path d="M 208,288 L 228,248" fill="none" stroke="black"></path>
+              <path d="M 304,240 L 328,192" fill="none" stroke="black"></path>
+              <path d="M 324,248 L 344,208" fill="none" stroke="black"></path>
+              <path d="M 248,416 L 268,376" fill="none" stroke="black"></path>
+              <path d="M 276,376 L 304,320" fill="none" stroke="black"></path>
+              <path d="M 508,280 L 524,248" fill="none" stroke="black"></path>
+              <path d="M 512,416 L 532,376" fill="none" stroke="black"></path>
+              <circle cx="8" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="64" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="64" cy="368" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="192" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="192" cy="368" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="360" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="488" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="488" cy="368" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <circle cx="544" cy="240" r="6" class="opendot" fill="white" stroke="black"></circle>
+              <g class="text">
+                <text x="268" y="52">MDSC</text>
+                <text x="120" y="148">P-PNC</text>
+                <text x="152" y="148">1</text>
+                <text x="216" y="148">O-PNC</text>
+                <text x="248" y="148">1</text>
+                <text x="320" y="148">O-PNC</text>
+                <text x="352" y="148">2</text>
+                <text x="416" y="148">P-PNC</text>
+                <text x="448" y="148">2</text>
+                <text x="16" y="228">CE1</text>
+                <text x="64" y="228">PE1</text>
+                <text x="192" y="228">BR1</text>
+                <text x="360" y="228">BR2</text>
+                <text x="488" y="228">PE2</text>
+                <text x="536" y="228">CE2</text>
+                <text x="232" y="244">-</text>
+                <text x="316" y="244">--</text>
+                <text x="64" y="260">:</text>
+                <text x="192" y="260">:</text>
+                <text x="360" y="260">:</text>
+                <text x="488" y="260">:</text>
+                <text x="64" y="276">:</text>
+                <text x="88" y="276">PKT</text>
+                <text x="132" y="276">domain</text>
+                <text x="168" y="276">1</text>
+                <text x="192" y="276">:</text>
+                <text x="360" y="276">:</text>
+                <text x="384" y="276">PKT</text>
+                <text x="428" y="276">domain</text>
+                <text x="464" y="276">2</text>
+                <text x="488" y="276">:</text>
+                <text x="60" y="292">-:</text>
+                <text x="196" y="292">:-</text>
+                <text x="356" y="292">-:</text>
+                <text x="488" y="292">:</text>
+                <text x="64" y="308">:</text>
+                <text x="192" y="308">:</text>
+                <text x="360" y="308">:</text>
+                <text x="488" y="308">:</text>
+                <text x="64" y="324">:</text>
+                <text x="192" y="324">:</text>
+                <text x="360" y="324">:</text>
+                <text x="488" y="324">:</text>
+                <text x="60" y="340">-:</text>
+                <text x="192" y="340">:</text>
+                <text x="360" y="340">:</text>
+                <text x="488" y="340">:</text>
+                <text x="64" y="356">:</text>
+                <text x="192" y="356">:</text>
+                <text x="360" y="356">:</text>
+                <text x="488" y="356">:</text>
+                <text x="128" y="372">...............</text>
+                <text x="420" y="372">o...............</text>
+                <text x="104" y="388">optical</text>
+                <text x="164" y="388">domain</text>
+                <text x="200" y="388">1</text>
+                <text x="368" y="388">optical</text>
+                <text x="428" y="388">domain</text>
+                <text x="464" y="388">2</text>
+              </g>
+            </svg><a href="#section-3-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
 <a href="#name-reference-network-copy-of-f" class="selfRef">Reference Network (copy of Figure 1 of RFC YYYY)</a>
@@ -1408,36 +1543,128 @@ the IP traffic may be switched to a stand-by port, reusing the same ROADM optica
 <p id="section-3.1-1">The following network topology will be considered to analyze and discuss the scenarios in in <a href="#resiliency" class="auto internal xref">Section 7</a>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <span id="name-reference-network-2"></span><div id="fig-ref-network">
 <figure id="figure-2">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-3.1-2.1">
-<pre>
-
-│&lt;xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx&gt;│
-┌――――――――┐  ┌――――――――┐                     ┌――――――――┐  ┌――――――――┐
-│      P1│--│P1    P3│\        ___        /│P3    P1│--│P1      │
-│  R1    │  │ ROADM1 │ \  ____/   \____  / │ ROADM2 │  │   R2   │
-│      P2│--│P2    P4│\ \/             \/ /│P4    P2│--│P2      │
-└――――――――┘  └――――――――┘ \|    Optical    |/ └――――――――┘  └――――――――┘
-                        |    Network    |
-│&lt;xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx&gt;│
-                     x      |       |     x
-                      x     |       |    x
-                        x  ┌―――――――――┐  x
-                         x │P3     P4│ x
-                         x │ ROADM3  │ x
-                         x │P1     P2│ x
-                         x └―――――――――┘ x
-                         x  |       |  x
-                         x ┌―――――――――┐ x
-                         x │P1     P2│ x
-                         x │   R3    │ x
-                         ˅ │         │ ˅
-                         ― └―――――――――┘ ―
-
-
-
-
-
-</pre>
+          <div id="section-3.1-2.1">
+            <div class="alignLeft art-svg artwork" id="section-3.1-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="464" width="528" viewBox="0 0 528 464" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,48 L 8,128" fill="none" stroke="black"></path>
+                <path d="M 80,64 L 80,128" fill="none" stroke="black"></path>
+                <path d="M 104,64 L 104,128" fill="none" stroke="black"></path>
+                <path d="M 176,64 L 176,128" fill="none" stroke="black"></path>
+                <path d="M 200,128 L 200,144" fill="none" stroke="black"></path>
+                <path d="M 224,208 L 224,272" fill="none" stroke="black"></path>
+                <path d="M 224,304 L 224,368" fill="none" stroke="black"></path>
+                <path d="M 232,168 L 232,200" fill="none" stroke="black"></path>
+                <path d="M 232,280 L 232,296" fill="none" stroke="black"></path>
+                <path d="M 296,168 L 296,200" fill="none" stroke="black"></path>
+                <path d="M 296,280 L 296,296" fill="none" stroke="black"></path>
+                <path d="M 304,208 L 304,272" fill="none" stroke="black"></path>
+                <path d="M 304,304 L 304,368" fill="none" stroke="black"></path>
+                <path d="M 328,128 L 328,144" fill="none" stroke="black"></path>
+                <path d="M 352,64 L 352,128" fill="none" stroke="black"></path>
+                <path d="M 424,64 L 424,128" fill="none" stroke="black"></path>
+                <path d="M 448,64 L 448,128" fill="none" stroke="black"></path>
+                <path d="M 520,48 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 80,64" fill="none" stroke="black"></path>
+                <path d="M 104,64 L 176,64" fill="none" stroke="black"></path>
+                <path d="M 352,64 L 424,64" fill="none" stroke="black"></path>
+                <path d="M 448,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 80,128" fill="none" stroke="black"></path>
+                <path d="M 104,128 L 176,128" fill="none" stroke="black"></path>
+                <path d="M 352,128 L 424,128" fill="none" stroke="black"></path>
+                <path d="M 448,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 224,208 L 304,208" fill="none" stroke="black"></path>
+                <path d="M 224,272 L 304,272" fill="none" stroke="black"></path>
+                <path d="M 224,304 L 304,304" fill="none" stroke="black"></path>
+                <path d="M 224,368 L 304,368" fill="none" stroke="black"></path>
+                <path d="M 176,96 L 200,144" fill="none" stroke="black"></path>
+                <path d="M 176,64 L 204,120" fill="none" stroke="black"></path>
+                <path d="M 276,88 L 284,104" fill="none" stroke="black"></path>
+                <path d="M 316,104 L 328,128" fill="none" stroke="black"></path>
+                <path d="M 200,128 L 212,104" fill="none" stroke="black"></path>
+                <path d="M 244,104 L 252,88" fill="none" stroke="black"></path>
+                <path d="M 324,120 L 352,64" fill="none" stroke="black"></path>
+                <path d="M 328,144 L 352,96" fill="none" stroke="black"></path>
+                <path d="M 252,88 L 276,88" fill="none" stroke="black"></path>
+                <path d="M 212,104 L 244,104" fill="none" stroke="black"></path>
+                <path d="M 284,104 L 316,104" fill="none" stroke="black"></path>
+                <path d="M 212,168 L 316,168" fill="none" stroke="black"></path>
+                <g class="text">
+                  <text x="108" y="52">&lt;xxxxxxxxxxxxxxxxxxxxxxx</text>
+                  <text x="220" y="52">IP</text>
+                  <text x="252" y="52">Link</text>
+                  <text x="296" y="52">R1-R2</text>
+                  <text x="420" y="52">xxxxxxxxxxxxxxxxxxxxxxx&gt;</text>
+                  <text x="68" y="84">P1</text>
+                  <text x="92" y="84">--</text>
+                  <text x="116" y="84">P1</text>
+                  <text x="164" y="84">P3</text>
+                  <text x="364" y="84">P3</text>
+                  <text x="412" y="84">P1</text>
+                  <text x="436" y="84">--</text>
+                  <text x="460" y="84">P1</text>
+                  <text x="36" y="100">R1</text>
+                  <text x="140" y="100">ROADM1</text>
+                  <text x="388" y="100">ROADM2</text>
+                  <text x="484" y="100">R2</text>
+                  <text x="68" y="116">P2</text>
+                  <text x="92" y="116">--</text>
+                  <text x="116" y="116">P2</text>
+                  <text x="164" y="116">P4</text>
+                  <text x="364" y="116">P4</text>
+                  <text x="412" y="116">P2</text>
+                  <text x="436" y="116">--</text>
+                  <text x="460" y="116">P2</text>
+                  <text x="264" y="132">Optical</text>
+                  <text x="264" y="148">Network</text>
+                  <text x="20" y="164">|&lt;xx</text>
+                  <text x="52" y="164">IP</text>
+                  <text x="84" y="164">Link</text>
+                  <text x="128" y="164">R1-R3</text>
+                  <text x="164" y="164">xx</text>
+                  <text x="208" y="164">\</text>
+                  <text x="320" y="164">/</text>
+                  <text x="356" y="164">xx</text>
+                  <text x="380" y="164">IP</text>
+                  <text x="412" y="164">Link</text>
+                  <text x="456" y="164">R3-R2</text>
+                  <text x="504" y="164">xxx&gt;|</text>
+                  <text x="176" y="180">x</text>
+                  <text x="344" y="180">x</text>
+                  <text x="184" y="196">x</text>
+                  <text x="336" y="196">x</text>
+                  <text x="200" y="212">x</text>
+                  <text x="328" y="212">x</text>
+                  <text x="208" y="228">x</text>
+                  <text x="236" y="228">P3</text>
+                  <text x="292" y="228">P4</text>
+                  <text x="320" y="228">x</text>
+                  <text x="208" y="244">x</text>
+                  <text x="260" y="244">ROADM3</text>
+                  <text x="320" y="244">x</text>
+                  <text x="208" y="260">x</text>
+                  <text x="236" y="260">P1</text>
+                  <text x="292" y="260">P2</text>
+                  <text x="320" y="260">x</text>
+                  <text x="208" y="276">x</text>
+                  <text x="320" y="276">x</text>
+                  <text x="208" y="292">x</text>
+                  <text x="320" y="292">x</text>
+                  <text x="208" y="308">x</text>
+                  <text x="320" y="308">x</text>
+                  <text x="208" y="324">x</text>
+                  <text x="236" y="324">P1</text>
+                  <text x="292" y="324">P2</text>
+                  <text x="320" y="324">x</text>
+                  <text x="208" y="340">x</text>
+                  <text x="260" y="340">R3</text>
+                  <text x="320" y="340">x</text>
+                  <text x="208" y="356">V</text>
+                  <text x="320" y="356">V</text>
+                  <text x="208" y="372">-</text>
+                  <text x="320" y="372">-</text>
+                </g>
+              </svg><a href="#section-3.1-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
 <a href="#name-reference-network-2" class="selfRef">Reference Network</a>
@@ -1502,26 +1729,92 @@ Depending on the point where a failure occurs, three use cases are considered:
 <p id="section-5.1-1">The following figure illustrates the reference scenario useful to discuss the fault management cases.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <span id="name-reference-scenario-for-multi"></span><div id="fig-failure-reference">
 <figure id="figure-3">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-5.1-2.1">
-<pre>
-┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-│                             MDSC                              │
-└―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
-   /\                          /\
-   || 1                        || 2
-   ||                          ||
-┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-│P-PNC │      │              O-PNC                │      │P-PNC │
-└――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
-   /\             /\           /\
-   || a           || b         || c
-   ||             ||         _____
-   ||             ||   _____/     \_______
-┌――――――┐      ┌――――――┐/                   \┌――――――┐      ┌――――――┐
-│  R1  │-----&gt;│ROADM1│      Optical        │ROADM2│-----&gt;│  R2  │
-│      │&lt;-----│      │      Network        │      │&lt;-----│      │
-└――――――┘      └――――――┘\___________________/└――――――┘      └――――――┘
-</pre>
+          <div id="section-5.1-2.1">
+            <div class="alignLeft art-svg artwork" id="section-5.1-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="304" width="528" viewBox="0 0 528 304" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,32 L 8,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 8,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 8,288" fill="none" stroke="black"></path>
+                <path d="M 32,96 L 32,120" fill="none" stroke="black"></path>
+                <path d="M 32,192 L 32,232" fill="none" stroke="black"></path>
+                <path d="M 40,96 L 40,120" fill="none" stroke="black"></path>
+                <path d="M 40,192 L 40,232" fill="none" stroke="black"></path>
+                <path d="M 64,128 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 64,240 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 120,160" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 120,288" fill="none" stroke="black"></path>
+                <path d="M 152,192 L 152,232" fill="none" stroke="black"></path>
+                <path d="M 160,192 L 160,232" fill="none" stroke="black"></path>
+                <path d="M 176,240 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 256,96 L 256,120" fill="none" stroke="black"></path>
+                <path d="M 264,96 L 264,120" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 352,288" fill="none" stroke="black"></path>
+                <path d="M 408,128 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 464,160" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 464,288" fill="none" stroke="black"></path>
+                <path d="M 520,32 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 520,128 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 520,240 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 8,32 L 520,32" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 64,128" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 408,128" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,160 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 120,160 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 464,160 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 64,240" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 176,240" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 408,240" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 72,256 L 112,256" fill="none" stroke="black"></path>
+                <path d="M 416,256 L 456,256" fill="none" stroke="black"></path>
+                <path d="M 72,272 L 112,272" fill="none" stroke="black"></path>
+                <path d="M 416,272 L 456,272" fill="none" stroke="black"></path>
+                <path d="M 8,288 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,288 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 352,288 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,288 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 276,216 L 284,232" fill="none" stroke="black"></path>
+                <path d="M 340,232 L 352,256" fill="none" stroke="black"></path>
+                <path d="M 176,256 L 188,232" fill="none" stroke="black"></path>
+                <path d="M 228,232 L 236,216" fill="none" stroke="black"></path>
+                <path d="M 236,216 L 276,216" fill="none" stroke="black"></path>
+                <path d="M 188,232 L 228,232" fill="none" stroke="black"></path>
+                <path d="M 284,232 L 340,232" fill="none" stroke="black"></path>
+                <path d="M 188,296 L 340,296" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="464,256 452,250.4 452,261.6" fill="black" transform="rotate(0,456,256)"></polygon>
+                <polygon class="arrowhead" points="424,272 412,266.4 412,277.6" fill="black" transform="rotate(180,416,272)"></polygon>
+                <polygon class="arrowhead" points="120,256 108,250.4 108,261.6" fill="black" transform="rotate(0,112,256)"></polygon>
+                <polygon class="arrowhead" points="80,272 68,266.4 68,277.6" fill="black" transform="rotate(180,72,272)"></polygon>
+                <g class="text">
+                  <text x="260" y="52">MDSC</text>
+                  <text x="36" y="84">/\</text>
+                  <text x="260" y="84">/\</text>
+                  <text x="56" y="100">1</text>
+                  <text x="280" y="100">2</text>
+                  <text x="32" y="148">P-PNC</text>
+                  <text x="256" y="148">O-PNC</text>
+                  <text x="488" y="148">P-PNC</text>
+                  <text x="36" y="180">/\</text>
+                  <text x="156" y="180">/\</text>
+                  <text x="260" y="180">/\</text>
+                  <text x="56" y="196">a</text>
+                  <text x="176" y="196">b</text>
+                  <text x="260" y="196">||</text>
+                  <text x="280" y="196">c</text>
+                  <text x="36" y="260">R1</text>
+                  <text x="148" y="260">ROADM1</text>
+                  <text x="256" y="260">Optical</text>
+                  <text x="380" y="260">ROADM2</text>
+                  <text x="492" y="260">R2</text>
+                  <text x="256" y="276">Network</text>
+                  <text x="184" y="292">\</text>
+                  <text x="344" y="292">/</text>
+                </g>
+              </svg><a href="#section-5.1-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
 <a href="#name-reference-scenario-for-multi" class="selfRef">Reference scenario for multi-layer fault management</a>
@@ -1573,26 +1866,115 @@ The two connections between a router and a ROADM carry, in addition to data traf
 A first case concerns the Tx fiber used by R1 to send traffic to ROADM1 (<a href="#fig-failure-ingress-link" class="auto internal xref">Figure 4</a>).<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 <span id="name-failure-on-the-optical-ingr"></span><div id="fig-failure-ingress-link">
 <figure id="figure-4">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-5.3-2.1">
-<pre>
-┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-│                             MDSC                              │
-└―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
-   /\                          /\
-   || IP Link down             || R1-ROADM1 Link Down
-   ||                          ||
-┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-│P-PNC │      │              O-PNC                │      │P-PNC │
-└――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
-   /\             /\                                        /\
-   || RFI status  || LOS alarm                   LFI status ||
-   || BFD Down    ||         _____                 BFD Down ||
-   ||             ||   _____/     \_______                  ||
-┌――――――┐  \/  ┌――――――┐/                   \┌――――――┐  LFI ┌――――――┐
-│  R1  │--/\-&gt;│ROADM1│--------CSF---------&gt;│ROADM2│-----&gt;│  R2  │
-│      │&lt;-----│      │&lt;-------CSF----------│      │&lt;-----│      │
-└――――――┘  RFI └――――――┘\___________________/└――――――┘  RFI └――――――┘
-</pre>
+          <div id="section-5.3-2.1">
+            <div class="alignLeft art-svg artwork" id="section-5.3-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="304" width="528" viewBox="0 0 528 304" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,32 L 8,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 8,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 8,288" fill="none" stroke="black"></path>
+                <path d="M 32,96 L 32,120" fill="none" stroke="black"></path>
+                <path d="M 32,192 L 32,232" fill="none" stroke="black"></path>
+                <path d="M 40,96 L 40,120" fill="none" stroke="black"></path>
+                <path d="M 40,192 L 40,232" fill="none" stroke="black"></path>
+                <path d="M 64,128 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 64,240 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 120,160" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 120,288" fill="none" stroke="black"></path>
+                <path d="M 152,192 L 152,232" fill="none" stroke="black"></path>
+                <path d="M 160,192 L 160,232" fill="none" stroke="black"></path>
+                <path d="M 176,240 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 256,96 L 256,120" fill="none" stroke="black"></path>
+                <path d="M 264,96 L 264,120" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 352,288" fill="none" stroke="black"></path>
+                <path d="M 408,128 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 464,160" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 464,288" fill="none" stroke="black"></path>
+                <path d="M 488,192 L 488,232" fill="none" stroke="black"></path>
+                <path d="M 496,192 L 496,232" fill="none" stroke="black"></path>
+                <path d="M 520,32 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 520,128 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 520,240 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 8,32 L 520,32" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 64,128" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 408,128" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,160 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 120,160 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 464,160 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 64,240" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 176,240" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 408,240" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 184,256 L 240,256" fill="none" stroke="black"></path>
+                <path d="M 272,256 L 344,256" fill="none" stroke="black"></path>
+                <path d="M 416,256 L 456,256" fill="none" stroke="black"></path>
+                <path d="M 72,272 L 112,272" fill="none" stroke="black"></path>
+                <path d="M 184,272 L 240,272" fill="none" stroke="black"></path>
+                <path d="M 272,272 L 344,272" fill="none" stroke="black"></path>
+                <path d="M 416,272 L 456,272" fill="none" stroke="black"></path>
+                <path d="M 8,288 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,288 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 352,288 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,288 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 88,240 L 100,264" fill="none" stroke="black"></path>
+                <path d="M 276,216 L 284,232" fill="none" stroke="black"></path>
+                <path d="M 340,232 L 352,256" fill="none" stroke="black"></path>
+                <path d="M 84,264 L 96,240" fill="none" stroke="black"></path>
+                <path d="M 176,256 L 188,232" fill="none" stroke="black"></path>
+                <path d="M 228,232 L 236,216" fill="none" stroke="black"></path>
+                <path d="M 236,216 L 276,216" fill="none" stroke="black"></path>
+                <path d="M 188,232 L 228,232" fill="none" stroke="black"></path>
+                <path d="M 284,232 L 340,232" fill="none" stroke="black"></path>
+                <path d="M 188,296 L 340,296" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="464,256 452,250.4 452,261.6" fill="black" transform="rotate(0,456,256)"></polygon>
+                <polygon class="arrowhead" points="424,272 412,266.4 412,277.6" fill="black" transform="rotate(180,416,272)"></polygon>
+                <polygon class="arrowhead" points="352,256 340,250.4 340,261.6" fill="black" transform="rotate(0,344,256)"></polygon>
+                <polygon class="arrowhead" points="192,272 180,266.4 180,277.6" fill="black" transform="rotate(180,184,272)"></polygon>
+                <polygon class="arrowhead" points="80,272 68,266.4 68,277.6" fill="black" transform="rotate(180,72,272)"></polygon>
+                <g class="text">
+                  <text x="260" y="52">MDSC</text>
+                  <text x="36" y="84">/\</text>
+                  <text x="260" y="84">/\</text>
+                  <text x="60" y="100">IP</text>
+                  <text x="92" y="100">Link</text>
+                  <text x="132" y="100">down</text>
+                  <text x="312" y="100">R1-ROADM1</text>
+                  <text x="372" y="100">Link</text>
+                  <text x="412" y="100">Down</text>
+                  <text x="32" y="148">P-PNC</text>
+                  <text x="256" y="148">O-PNC</text>
+                  <text x="488" y="148">P-PNC</text>
+                  <text x="36" y="180">/\</text>
+                  <text x="156" y="180">/\</text>
+                  <text x="492" y="180">/\</text>
+                  <text x="64" y="196">RFI</text>
+                  <text x="108" y="196">status</text>
+                  <text x="184" y="196">LOS</text>
+                  <text x="224" y="196">alarm</text>
+                  <text x="408" y="196">LFI</text>
+                  <text x="452" y="196">status</text>
+                  <text x="64" y="212">BFD</text>
+                  <text x="100" y="212">Down</text>
+                  <text x="424" y="212">BFD</text>
+                  <text x="460" y="212">Down</text>
+                  <text x="440" y="244">LFI</text>
+                  <text x="36" y="260">R1</text>
+                  <text x="76" y="260">--</text>
+                  <text x="108" y="260">-&gt;</text>
+                  <text x="148" y="260">ROADM1</text>
+                  <text x="256" y="260">CSF</text>
+                  <text x="380" y="260">ROADM2</text>
+                  <text x="492" y="260">R2</text>
+                  <text x="256" y="276">CSF</text>
+                  <text x="96" y="292">RFI</text>
+                  <text x="184" y="292">\</text>
+                  <text x="344" y="292">/</text>
+                  <text x="440" y="292">RFI</text>
+                </g>
+              </svg><a href="#section-5.3-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
 <a href="#name-failure-on-the-optical-ingr" class="selfRef">Failure on the optical ingress link</a>
@@ -1605,26 +1987,110 @@ It is up to the MDSC to correlate the events and determine what IP services are 
 <p id="section-5.3-4">A second case is depicted in figure <a href="#fig-failure-egress-link" class="auto internal xref">Figure 5</a>. The failure happens on the Rx fiber used by R2 to receive traffic from ROADM2.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
 <span id="name-failure-on-the-optical-egre"></span><div id="fig-failure-egress-link">
 <figure id="figure-5">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-5.3-5.1">
-<pre>
-┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-│                             MDSC                              │
-└―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
-   /\                          /\
-   || R2-ROADM2 Link Down      || R2-ROADM2 Link Down
-   ||                          ||
-┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-│P-PNC │      │              O-PNC                │      │P-PNC │
-└――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
-   /\                                         /\           /\
-   || RFI status                   RFI status || LOS alarm ||
-   || BFD Down               _____            ||           ||
-   ||                  _____/     \_______    ||           ||
-┌――――――┐      ┌――――――┐/                   \┌――――――┐  \/  ┌――――――┐
-│  R1  │-----&gt;│ROADM1│--------------------&gt;│ROADM2│--/\-&gt;│  R2  │
-│      │&lt;-----│      │&lt;-------CSF----------│      │&lt;-----│      │
-└――――――┘  RFI └――――――┘\___________________/└――――――┘  RFI └――――――┘
-</pre>
+          <div id="section-5.3-5.1">
+            <div class="alignLeft art-svg artwork" id="section-5.3-5.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="304" width="528" viewBox="0 0 528 304" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,32 L 8,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 8,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 8,288" fill="none" stroke="black"></path>
+                <path d="M 32,96 L 32,120" fill="none" stroke="black"></path>
+                <path d="M 32,192 L 32,232" fill="none" stroke="black"></path>
+                <path d="M 40,96 L 40,120" fill="none" stroke="black"></path>
+                <path d="M 40,192 L 40,232" fill="none" stroke="black"></path>
+                <path d="M 64,128 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 64,240 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 120,160" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 120,288" fill="none" stroke="black"></path>
+                <path d="M 176,240 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 256,96 L 256,120" fill="none" stroke="black"></path>
+                <path d="M 264,96 L 264,120" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 352,288" fill="none" stroke="black"></path>
+                <path d="M 376,192 L 376,232" fill="none" stroke="black"></path>
+                <path d="M 384,192 L 384,232" fill="none" stroke="black"></path>
+                <path d="M 408,128 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 464,160" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 464,288" fill="none" stroke="black"></path>
+                <path d="M 480,192 L 480,232" fill="none" stroke="black"></path>
+                <path d="M 488,192 L 488,232" fill="none" stroke="black"></path>
+                <path d="M 520,32 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 520,128 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 520,240 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 8,32 L 520,32" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 64,128" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 408,128" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,160 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 120,160 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 464,160 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 64,240" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 176,240" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 408,240" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 72,256 L 112,256" fill="none" stroke="black"></path>
+                <path d="M 184,256 L 344,256" fill="none" stroke="black"></path>
+                <path d="M 72,272 L 112,272" fill="none" stroke="black"></path>
+                <path d="M 184,272 L 240,272" fill="none" stroke="black"></path>
+                <path d="M 272,272 L 344,272" fill="none" stroke="black"></path>
+                <path d="M 416,272 L 456,272" fill="none" stroke="black"></path>
+                <path d="M 8,288 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,288 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 352,288 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,288 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 276,216 L 284,232" fill="none" stroke="black"></path>
+                <path d="M 340,232 L 352,256" fill="none" stroke="black"></path>
+                <path d="M 432,240 L 444,264" fill="none" stroke="black"></path>
+                <path d="M 176,256 L 188,232" fill="none" stroke="black"></path>
+                <path d="M 228,232 L 236,216" fill="none" stroke="black"></path>
+                <path d="M 428,264 L 440,240" fill="none" stroke="black"></path>
+                <path d="M 236,216 L 276,216" fill="none" stroke="black"></path>
+                <path d="M 188,232 L 228,232" fill="none" stroke="black"></path>
+                <path d="M 284,232 L 340,232" fill="none" stroke="black"></path>
+                <path d="M 188,296 L 340,296" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="424,272 412,266.4 412,277.6" fill="black" transform="rotate(180,416,272)"></polygon>
+                <polygon class="arrowhead" points="352,256 340,250.4 340,261.6" fill="black" transform="rotate(0,344,256)"></polygon>
+                <polygon class="arrowhead" points="192,272 180,266.4 180,277.6" fill="black" transform="rotate(180,184,272)"></polygon>
+                <polygon class="arrowhead" points="120,256 108,250.4 108,261.6" fill="black" transform="rotate(0,112,256)"></polygon>
+                <polygon class="arrowhead" points="80,272 68,266.4 68,277.6" fill="black" transform="rotate(180,72,272)"></polygon>
+                <g class="text">
+                  <text x="260" y="52">MDSC</text>
+                  <text x="36" y="84">/\</text>
+                  <text x="260" y="84">/\</text>
+                  <text x="88" y="100">R2-ROADM2</text>
+                  <text x="148" y="100">Link</text>
+                  <text x="188" y="100">Down</text>
+                  <text x="312" y="100">R2-ROADM2</text>
+                  <text x="372" y="100">Link</text>
+                  <text x="412" y="100">Down</text>
+                  <text x="32" y="148">P-PNC</text>
+                  <text x="256" y="148">O-PNC</text>
+                  <text x="488" y="148">P-PNC</text>
+                  <text x="36" y="180">/\</text>
+                  <text x="380" y="180">/\</text>
+                  <text x="484" y="180">/\</text>
+                  <text x="64" y="196">RFI</text>
+                  <text x="108" y="196">status</text>
+                  <text x="296" y="196">RFI</text>
+                  <text x="340" y="196">status</text>
+                  <text x="408" y="196">LOS</text>
+                  <text x="448" y="196">alarm</text>
+                  <text x="64" y="212">BFD</text>
+                  <text x="100" y="212">Down</text>
+                  <text x="36" y="260">R1</text>
+                  <text x="148" y="260">ROADM1</text>
+                  <text x="380" y="260">ROADM2</text>
+                  <text x="420" y="260">--</text>
+                  <text x="452" y="260">-&gt;</text>
+                  <text x="492" y="260">R2</text>
+                  <text x="256" y="276">CSF</text>
+                  <text x="96" y="292">RFI</text>
+                  <text x="184" y="292">\</text>
+                  <text x="344" y="292">/</text>
+                  <text x="440" y="292">RFI</text>
+                </g>
+              </svg><a href="#section-5.3-5.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
 <a href="#name-failure-on-the-optical-egre" class="selfRef">Failure on the optical egress link</a>
@@ -1639,26 +2105,111 @@ As noted, MDSC correlates the events to determine the affected services.<a href=
 <p id="section-5.3-7">A failure may also occur when the two unidirectional fibers connecting a router, e.g. R1, to a ROADM, e.g. ROADM2, are affected, for example for a simultaneous fiber cut, as shown in figure <a href="#fig-failure-bidir-link" class="auto internal xref">Figure 6</a>.<a href="#section-5.3-7" class="pilcrow">¶</a></p>
 <span id="name-failure-on-the-access-link"></span><div id="fig-failure-bidir-link">
 <figure id="figure-6">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-5.3-8.1">
-<pre>
-┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-│                             MDSC                              │
-└―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
-   /\                          /\
-   || R1-ROADM1 Link Down      || R1-ROADM1 Link Down
-   ||                          ||
-┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-│P-PNC │      │              O-PNC                │      │P-PNC │
-└――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
-   /\            /\                                        /\
-   || LOS alarm  || LOS alarm                   LFI status ||
-   ||            ||                               BFD down ||
-   ||            ||    _____/     \_______                 ||
-┌――――――┐      ┌――――――┐/                   \┌――――――┐  LFI ┌――――――┐
-│  R1  │--\/-&gt;│ROADM1│--------CSF---------&gt;│ROADM2│-----&gt;│  R2  │
-│      │&lt;-/\--│      │&lt;-------CSF----------│      │&lt;-----│      │
-└――――――┘      └――――――┘\___________________/└――――――┘  RFI └――――――┘
-</pre>
+          <div id="section-5.3-8.1">
+            <div class="alignLeft art-svg artwork" id="section-5.3-8.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="304" width="528" viewBox="0 0 528 304" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,32 L 8,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 8,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 8,288" fill="none" stroke="black"></path>
+                <path d="M 32,96 L 32,120" fill="none" stroke="black"></path>
+                <path d="M 32,192 L 32,232" fill="none" stroke="black"></path>
+                <path d="M 40,96 L 40,120" fill="none" stroke="black"></path>
+                <path d="M 40,192 L 40,232" fill="none" stroke="black"></path>
+                <path d="M 64,128 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 64,240 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 120,160" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 120,288" fill="none" stroke="black"></path>
+                <path d="M 144,192 L 144,232" fill="none" stroke="black"></path>
+                <path d="M 152,192 L 152,232" fill="none" stroke="black"></path>
+                <path d="M 176,240 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 256,96 L 256,120" fill="none" stroke="black"></path>
+                <path d="M 264,96 L 264,120" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 352,288" fill="none" stroke="black"></path>
+                <path d="M 408,128 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 408,240 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 464,160" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 464,288" fill="none" stroke="black"></path>
+                <path d="M 480,192 L 480,232" fill="none" stroke="black"></path>
+                <path d="M 488,192 L 488,232" fill="none" stroke="black"></path>
+                <path d="M 520,32 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 520,128 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 520,240 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 8,32 L 520,32" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 64,128" fill="none" stroke="black"></path>
+                <path d="M 120,128 L 408,128" fill="none" stroke="black"></path>
+                <path d="M 464,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,160 L 64,160" fill="none" stroke="black"></path>
+                <path d="M 120,160 L 408,160" fill="none" stroke="black"></path>
+                <path d="M 464,160 L 520,160" fill="none" stroke="black"></path>
+                <path d="M 8,240 L 64,240" fill="none" stroke="black"></path>
+                <path d="M 120,240 L 176,240" fill="none" stroke="black"></path>
+                <path d="M 352,240 L 408,240" fill="none" stroke="black"></path>
+                <path d="M 464,240 L 520,240" fill="none" stroke="black"></path>
+                <path d="M 184,256 L 240,256" fill="none" stroke="black"></path>
+                <path d="M 272,256 L 344,256" fill="none" stroke="black"></path>
+                <path d="M 416,256 L 456,256" fill="none" stroke="black"></path>
+                <path d="M 184,272 L 240,272" fill="none" stroke="black"></path>
+                <path d="M 272,272 L 344,272" fill="none" stroke="black"></path>
+                <path d="M 416,272 L 456,272" fill="none" stroke="black"></path>
+                <path d="M 8,288 L 64,288" fill="none" stroke="black"></path>
+                <path d="M 120,288 L 176,288" fill="none" stroke="black"></path>
+                <path d="M 352,288 L 408,288" fill="none" stroke="black"></path>
+                <path d="M 464,288 L 520,288" fill="none" stroke="black"></path>
+                <path d="M 88,256 L 96,272" fill="none" stroke="black"></path>
+                <path d="M 340,232 L 352,256" fill="none" stroke="black"></path>
+                <path d="M 88,272 L 96,256" fill="none" stroke="black"></path>
+                <path d="M 176,256 L 188,232" fill="none" stroke="black"></path>
+                <path d="M 188,232 L 228,232" fill="none" stroke="black"></path>
+                <path d="M 284,232 L 340,232" fill="none" stroke="black"></path>
+                <path d="M 188,296 L 340,296" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="464,256 452,250.4 452,261.6" fill="black" transform="rotate(0,456,256)"></polygon>
+                <polygon class="arrowhead" points="424,272 412,266.4 412,277.6" fill="black" transform="rotate(180,416,272)"></polygon>
+                <polygon class="arrowhead" points="352,256 340,250.4 340,261.6" fill="black" transform="rotate(0,344,256)"></polygon>
+                <polygon class="arrowhead" points="192,272 180,266.4 180,277.6" fill="black" transform="rotate(180,184,272)"></polygon>
+                <g class="text">
+                  <text x="260" y="52">MDSC</text>
+                  <text x="36" y="84">/\</text>
+                  <text x="260" y="84">/\</text>
+                  <text x="88" y="100">R1-ROADM1</text>
+                  <text x="148" y="100">Link</text>
+                  <text x="188" y="100">Down</text>
+                  <text x="312" y="100">R1-ROADM1</text>
+                  <text x="372" y="100">Link</text>
+                  <text x="412" y="100">Down</text>
+                  <text x="32" y="148">P-PNC</text>
+                  <text x="256" y="148">O-PNC</text>
+                  <text x="488" y="148">P-PNC</text>
+                  <text x="36" y="180">/\</text>
+                  <text x="148" y="180">/\</text>
+                  <text x="484" y="180">/\</text>
+                  <text x="64" y="196">LOS</text>
+                  <text x="104" y="196">alarm</text>
+                  <text x="176" y="196">LOS</text>
+                  <text x="216" y="196">alarm</text>
+                  <text x="400" y="196">LFI</text>
+                  <text x="444" y="196">status</text>
+                  <text x="416" y="212">BFD</text>
+                  <text x="452" y="212">down</text>
+                  <text x="232" y="228">/</text>
+                  <text x="280" y="228">\</text>
+                  <text x="440" y="244">LFI</text>
+                  <text x="36" y="260">R1</text>
+                  <text x="76" y="260">--</text>
+                  <text x="108" y="260">-&gt;</text>
+                  <text x="148" y="260">ROADM1</text>
+                  <text x="256" y="260">CSF</text>
+                  <text x="380" y="260">ROADM2</text>
+                  <text x="492" y="260">R2</text>
+                  <text x="76" y="276">&lt;-</text>
+                  <text x="108" y="276">--</text>
+                  <text x="256" y="276">CSF</text>
+                  <text x="184" y="292">\</text>
+                  <text x="344" y="292">/</text>
+                  <text x="440" y="292">RFI</text>
+                </g>
+              </svg><a href="#section-5.3-8.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
 <a href="#name-failure-on-the-access-link" class="selfRef">Failure on the access link</a>
@@ -1691,7 +2242,7 @@ At the IP level the missing reception of the BFD messages against R2 triggers a 
 that are taken to solve issues affecting network performance and that may degrade the quality of the services offered to the network customers.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">For the scope of the present document, which focuses on multi-layer, multi-domain networks, two cases are of interest:
 1. The optical layer detects, through performance data measurement, collection and analysis, that an abnormal condition (e.g. a physical signal degradation) has arised or is going to happen in either of the optical domains considered in <a href="#fig-ref-architecture" class="auto internal xref">Figure 1</a>. The O-PNC provides relevant information to the MDSC (e.g. the fiber where the degration was detected), which triggers correlation analysis by the MDSC to detect if any services are impacted at the IP level and, if the case, to take corrective actions, through the P-PNC (e.g. traffic rerouting).
-2. The IP layer detects, through performance data measurement, collection and analysis, that the Service Level Agreement (SLA) associated with transport of a VPN service is not conformant at least in one of the two IP domains represented in <a href="#fig-ref-architecture" class="auto internal xref">Figure 1</a>. The P-PNC provides relevant information to the MDSC (e.g. the IP tunnel carrying the VPN service), which enables the MDSC to take reactive measures, through the support of the P-PNC (e.g. reroute the IP traffic on a different IP path). The MDSC can take further steps, such as to verify through the O-PNC if any failure or degradation has happened in the optical layer but this is out of the scope of case #2. The attention here is on the IP multi-domain, end-to-end performance management.<a href="#section-6-2" class="pilcrow">¶</a></p>
+2. The IP layer detects, through performance data measurement, collection and analysis, that the Service Level Agreement (SLA) associated with transport of a VPN service is not conformant at least in one of the two IP domains represented in <a href="#fig-ref-architecture" class="auto internal xref">Figure 1</a>. The P-PNC provides relevant information to the MDSC (e.g. the IP tunnel carrying the VPN service), which enables the MDSC to take reactive measures, through the support of the P-PNC (e.g. reroute the IP traffic on a different IP path). The MDSC can take further steps, such as to verify through the O-PNC if any failure or degradation has happened in the optical layer but this is out of the scope of case 2. The attention here is on the IP multi-domain, end-to-end performance management.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">The two cases are further detailed in the relevant subsections.<a href="#section-6-3" class="pilcrow">¶</a></p>
 <div id="optical-performance-management">
 <section id="section-6.1">
@@ -1811,39 +2362,145 @@ the time taken by the process to create an optical backup tends to be longer tha
 As a result, the interaction between the two layers follows the mimics shown in the next figure.<a href="#section-7.1.1-1" class="pilcrow">¶</a></p>
 <span id="name-fault-detection-with-optica"></span><div id="fig-fault-restoration">
 <figure id="figure-7">
-            <div class="alignLeft art-ascii-art art-text artwork" id="section-7.1.1-2.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-  |       |1a.Fault notification  |       |       |       |       |
-  |       |--------------&gt;|       |       |       |       |       |
-  |       |       |       |2a.Fault notification  |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |1b.Fault notification  |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |2b.Fault notification  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-┌――――――┐
-│3.FRR │
-└――――――┘
-  |4.IP service switched (backup path through R3) |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |5.IP service switched  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-   ┌―――――――――――――┐                 ┌―――――――――――――┐
-   │6.Restoration│&lt;---------------&gt;│6.Restoration│
-   └―――――――――――――┘                 └―――――――――――――┘
-  |       |7.Path ready   |   7.Path ready|       |       |       |
-  |       |--------------&gt;|&lt;--------------|       |       |       |
-  |       |       |       |8.Notification |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-┌――――――――┐
-│9.Revert│
-└――――――――┘
-  |10.IP service reverted |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |11.IP service reverted |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-</pre>
+            <div id="section-7.1.1-2.1">
+              <div class="alignLeft art-svg artwork" id="section-7.1.1-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="552" viewBox="0 0 552 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                  <path d="M 8,176 L 8,208" fill="none" stroke="black"></path>
+                  <path d="M 8,400 L 8,432" fill="none" stroke="black"></path>
+                  <path d="M 24,48 L 24,168" fill="none" stroke="black"></path>
+                  <path d="M 24,216 L 24,272" fill="none" stroke="black"></path>
+                  <path d="M 24,336 L 24,392" fill="none" stroke="black"></path>
+                  <path d="M 24,440 L 24,496" fill="none" stroke="black"></path>
+                  <path d="M 32,288 L 32,320" fill="none" stroke="black"></path>
+                  <path d="M 64,176 L 64,208" fill="none" stroke="black"></path>
+                  <path d="M 80,400 L 80,432" fill="none" stroke="black"></path>
+                  <path d="M 88,48 L 88,96" fill="none" stroke="black"></path>
+                  <path d="M 88,136 L 88,160" fill="none" stroke="black"></path>
+                  <path d="M 88,248 L 88,280" fill="none" stroke="black"></path>
+                  <path d="M 88,328 L 88,384" fill="none" stroke="black"></path>
+                  <path d="M 88,472 L 88,496" fill="none" stroke="black"></path>
+                  <path d="M 144,288 L 144,320" fill="none" stroke="black"></path>
+                  <path d="M 152,72 L 152,96" fill="none" stroke="black"></path>
+                  <path d="M 152,128 L 152,160" fill="none" stroke="black"></path>
+                  <path d="M 152,240 L 152,272" fill="none" stroke="black"></path>
+                  <path d="M 152,360 L 152,384" fill="none" stroke="black"></path>
+                  <path d="M 152,464 L 152,496" fill="none" stroke="black"></path>
+                  <path d="M 216,64 L 216,128" fill="none" stroke="black"></path>
+                  <path d="M 216,336 L 216,384" fill="none" stroke="black"></path>
+                  <path d="M 216,448 L 216,464" fill="none" stroke="black"></path>
+                  <path d="M 280,48 L 280,64" fill="none" stroke="black"></path>
+                  <path d="M 280,96 L 280,128" fill="none" stroke="black"></path>
+                  <path d="M 280,448 L 280,464" fill="none" stroke="black"></path>
+                  <path d="M 288,288 L 288,320" fill="none" stroke="black"></path>
+                  <path d="M 344,48 L 344,64" fill="none" stroke="black"></path>
+                  <path d="M 344,96 L 344,160" fill="none" stroke="black"></path>
+                  <path d="M 344,240 L 344,280" fill="none" stroke="black"></path>
+                  <path d="M 344,328 L 344,384" fill="none" stroke="black"></path>
+                  <path d="M 344,448 L 344,496" fill="none" stroke="black"></path>
+                  <path d="M 400,288 L 400,320" fill="none" stroke="black"></path>
+                  <path d="M 408,48 L 408,160" fill="none" stroke="black"></path>
+                  <path d="M 408,224 L 408,272" fill="none" stroke="black"></path>
+                  <path d="M 408,336 L 408,384" fill="none" stroke="black"></path>
+                  <path d="M 408,448 L 408,496" fill="none" stroke="black"></path>
+                  <path d="M 472,48 L 472,160" fill="none" stroke="black"></path>
+                  <path d="M 472,224 L 472,272" fill="none" stroke="black"></path>
+                  <path d="M 472,336 L 472,384" fill="none" stroke="black"></path>
+                  <path d="M 472,448 L 472,496" fill="none" stroke="black"></path>
+                  <path d="M 536,48 L 536,160" fill="none" stroke="black"></path>
+                  <path d="M 536,224 L 536,272" fill="none" stroke="black"></path>
+                  <path d="M 536,336 L 536,384" fill="none" stroke="black"></path>
+                  <path d="M 536,448 L 536,496" fill="none" stroke="black"></path>
+                  <path d="M 96,64 L 208,64" fill="none" stroke="black"></path>
+                  <path d="M 224,96 L 272,96" fill="none" stroke="black"></path>
+                  <path d="M 32,128 L 144,128" fill="none" stroke="black"></path>
+                  <path d="M 160,160 L 272,160" fill="none" stroke="black"></path>
+                  <path d="M 8,176 L 64,176" fill="none" stroke="black"></path>
+                  <path d="M 8,208 L 64,208" fill="none" stroke="black"></path>
+                  <path d="M 32,240 L 144,240" fill="none" stroke="black"></path>
+                  <path d="M 160,272 L 272,272" fill="none" stroke="black"></path>
+                  <path d="M 40,288 L 136,288" fill="none" stroke="black"></path>
+                  <path d="M 296,288 L 392,288" fill="none" stroke="black"></path>
+                  <path d="M 152,304 L 280,304" fill="none" stroke="black"></path>
+                  <path d="M 40,320 L 144,320" fill="none" stroke="black"></path>
+                  <path d="M 288,320 L 392,320" fill="none" stroke="black"></path>
+                  <path d="M 96,352 L 208,352" fill="none" stroke="black"></path>
+                  <path d="M 224,352 L 336,352" fill="none" stroke="black"></path>
+                  <path d="M 224,384 L 272,384" fill="none" stroke="black"></path>
+                  <path d="M 8,400 L 72,400" fill="none" stroke="black"></path>
+                  <path d="M 8,432 L 80,432" fill="none" stroke="black"></path>
+                  <path d="M 32,464 L 144,464" fill="none" stroke="black"></path>
+                  <path d="M 160,496 L 272,496" fill="none" stroke="black"></path>
+                  <path d="M 40,288 C 31.16936,288 24,280.83064 24,272" fill="none" stroke="black"></path>
+                  <path d="M 136,288 C 144.83064,288 152,280.83064 152,272" fill="none" stroke="black"></path>
+                  <path d="M 296,288 C 287.16936,288 280,280.83064 280,272" fill="none" stroke="black"></path>
+                  <path d="M 392,288 C 400.83064,288 408,280.83064 408,272" fill="none" stroke="black"></path>
+                  <path d="M 40,320 C 31.16936,320 24,327.16936 24,336" fill="none" stroke="black"></path>
+                  <path d="M 392,320 C 400.83064,320 408,327.16936 408,336" fill="none" stroke="black"></path>
+                  <path d="M 72,400 C 80.83064,400 88,392.83064 88,384" fill="none" stroke="black"></path>
+                  <polygon class="arrowhead" points="288,304 276,298.4 276,309.6" fill="black" transform="rotate(0,280,304)"></polygon>
+                  <polygon class="arrowhead" points="280,496 268,490.4 268,501.6" fill="black" transform="rotate(0,272,496)"></polygon>
+                  <polygon class="arrowhead" points="280,384 268,378.4 268,389.6" fill="black" transform="rotate(0,272,384)"></polygon>
+                  <polygon class="arrowhead" points="280,272 268,266.4 268,277.6" fill="black" transform="rotate(0,272,272)"></polygon>
+                  <polygon class="arrowhead" points="280,160 268,154.4 268,165.6" fill="black" transform="rotate(0,272,160)"></polygon>
+                  <polygon class="arrowhead" points="280,96 268,90.4 268,101.6" fill="black" transform="rotate(0,272,96)"></polygon>
+                  <polygon class="arrowhead" points="232,352 220,346.4 220,357.6" fill="black" transform="rotate(180,224,352)"></polygon>
+                  <polygon class="arrowhead" points="216,352 204,346.4 204,357.6" fill="black" transform="rotate(0,208,352)"></polygon>
+                  <polygon class="arrowhead" points="216,64 204,58.4 204,69.6" fill="black" transform="rotate(0,208,64)"></polygon>
+                  <polygon class="arrowhead" points="160,304 148,298.4 148,309.6" fill="black" transform="rotate(180,152,304)"></polygon>
+                  <polygon class="arrowhead" points="152,464 140,458.4 140,469.6" fill="black" transform="rotate(0,144,464)"></polygon>
+                  <polygon class="arrowhead" points="152,240 140,234.4 140,245.6" fill="black" transform="rotate(0,144,240)"></polygon>
+                  <polygon class="arrowhead" points="152,128 140,122.4 140,133.6" fill="black" transform="rotate(0,144,128)"></polygon>
+                  <g class="text">
+                    <text x="28" y="36">R1</text>
+                    <text x="92" y="36">ROADM1</text>
+                    <text x="160" y="36">P-PNC</text>
+                    <text x="224" y="36">O-PNC</text>
+                    <text x="284" y="36">MDSC</text>
+                    <text x="348" y="36">ROADM2</text>
+                    <text x="412" y="36">R2</text>
+                    <text x="476" y="36">ROADM3</text>
+                    <text x="540" y="36">R3</text>
+                    <text x="124" y="52">1a.Fault</text>
+                    <text x="212" y="52">notification</text>
+                    <text x="252" y="84">2a.Fault</text>
+                    <text x="340" y="84">notification</text>
+                    <text x="60" y="116">1b.Fault</text>
+                    <text x="148" y="116">notification</text>
+                    <text x="188" y="148">2b.Fault</text>
+                    <text x="276" y="148">notification</text>
+                    <text x="280" y="164">|</text>
+                    <text x="32" y="196">3.FRR</text>
+                    <text x="44" y="228">4.IP</text>
+                    <text x="96" y="228">service</text>
+                    <text x="164" y="228">switched</text>
+                    <text x="232" y="228">(backup</text>
+                    <text x="284" y="228">path</text>
+                    <text x="336" y="228">through</text>
+                    <text x="384" y="228">R3)</text>
+                    <text x="216" y="244">|</text>
+                    <text x="280" y="244">|</text>
+                    <text x="172" y="260">5.IP</text>
+                    <text x="224" y="260">service</text>
+                    <text x="292" y="260">switched</text>
+                    <text x="88" y="308">6.Restoration</text>
+                    <text x="344" y="308">6.Restoration</text>
+                    <text x="116" y="340">7.Path</text>
+                    <text x="168" y="340">ready</text>
+                    <text x="268" y="340">7.Path</text>
+                    <text x="320" y="340">ready</text>
+                    <text x="276" y="372">8.Notification</text>
+                    <text x="280" y="388">|</text>
+                    <text x="44" y="420">9.Revert</text>
+                    <text x="48" y="452">10.IP</text>
+                    <text x="104" y="452">service</text>
+                    <text x="172" y="452">reverted</text>
+                    <text x="176" y="484">11.IP</text>
+                    <text x="232" y="484">service</text>
+                    <text x="300" y="484">reverted</text>
+                    <text x="280" y="500">|</text>
+                  </g>
+                </svg><a href="#section-7.1.1-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-7" class="selfRef">Figure 7</a>:
 <a href="#name-fault-detection-with-optica" class="selfRef">Fault detection with optical restoration</a>
@@ -1913,31 +2570,96 @@ to hold-off FRR on R1 and wait that optical protection is completed.
 The process is shown in the next figure.<a href="#section-7.1.2-1" class="pilcrow">¶</a></p>
 <span id="name-fault-detection-with-optical"></span><div id="fig-fault-protection">
 <figure id="figure-8">
-            <div class="alignLeft art-ascii-art art-text artwork" id="section-7.1.2-2.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-  |       |1a.Fault notification  |       |       |       |       |
-  |       |--------------&gt;|       |       |       |       |       |
-  |       |       |       |2a.Fault notification  |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |1b.Fault notification  |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |2b.Fault notification  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-┌――――――┐
-│3.Hold│
-└――――――┘
-   ┌―――――――――――――┐
-   │4.Protection │-------&gt;|--------------&gt;|
-   └―――――――――――――┘
-  |       |5.Path ready   |   5.Path ready|       |       |       |
-  |       |--------------&gt;|&lt;--------------|       |       |       |
-  |       |       |       |6.Notification |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-┌――――――――┐
-│7.IP Up │
-└――――――――┘
-</pre>
+            <div id="section-7.1.2-2.1">
+              <div class="alignLeft art-svg artwork" id="section-7.1.2-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="384" width="552" viewBox="0 0 552 384" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                  <path d="M 8,176 L 8,208" fill="none" stroke="black"></path>
+                  <path d="M 8,336 L 8,368" fill="none" stroke="black"></path>
+                  <path d="M 24,48 L 24,168" fill="none" stroke="black"></path>
+                  <path d="M 24,272 L 24,328" fill="none" stroke="black"></path>
+                  <path d="M 32,224 L 32,256" fill="none" stroke="black"></path>
+                  <path d="M 64,176 L 64,208" fill="none" stroke="black"></path>
+                  <path d="M 80,336 L 80,368" fill="none" stroke="black"></path>
+                  <path d="M 88,48 L 88,96" fill="none" stroke="black"></path>
+                  <path d="M 88,136 L 88,160" fill="none" stroke="black"></path>
+                  <path d="M 88,264 L 88,320" fill="none" stroke="black"></path>
+                  <path d="M 144,224 L 144,256" fill="none" stroke="black"></path>
+                  <path d="M 152,72 L 152,96" fill="none" stroke="black"></path>
+                  <path d="M 152,128 L 152,160" fill="none" stroke="black"></path>
+                  <path d="M 152,296 L 152,320" fill="none" stroke="black"></path>
+                  <path d="M 216,64 L 216,128" fill="none" stroke="black"></path>
+                  <path d="M 216,272 L 216,320" fill="none" stroke="black"></path>
+                  <path d="M 280,48 L 280,64" fill="none" stroke="black"></path>
+                  <path d="M 280,96 L 280,128" fill="none" stroke="black"></path>
+                  <path d="M 344,48 L 344,64" fill="none" stroke="black"></path>
+                  <path d="M 344,96 L 344,160" fill="none" stroke="black"></path>
+                  <path d="M 344,272 L 344,320" fill="none" stroke="black"></path>
+                  <path d="M 408,48 L 408,160" fill="none" stroke="black"></path>
+                  <path d="M 408,272 L 408,320" fill="none" stroke="black"></path>
+                  <path d="M 472,48 L 472,160" fill="none" stroke="black"></path>
+                  <path d="M 472,272 L 472,320" fill="none" stroke="black"></path>
+                  <path d="M 536,48 L 536,160" fill="none" stroke="black"></path>
+                  <path d="M 536,272 L 536,320" fill="none" stroke="black"></path>
+                  <path d="M 96,64 L 208,64" fill="none" stroke="black"></path>
+                  <path d="M 224,96 L 272,96" fill="none" stroke="black"></path>
+                  <path d="M 32,128 L 144,128" fill="none" stroke="black"></path>
+                  <path d="M 160,160 L 272,160" fill="none" stroke="black"></path>
+                  <path d="M 8,176 L 64,176" fill="none" stroke="black"></path>
+                  <path d="M 8,208 L 64,208" fill="none" stroke="black"></path>
+                  <path d="M 32,224 L 144,224" fill="none" stroke="black"></path>
+                  <path d="M 152,240 L 208,240" fill="none" stroke="black"></path>
+                  <path d="M 224,240 L 336,240" fill="none" stroke="black"></path>
+                  <path d="M 40,256 L 144,256" fill="none" stroke="black"></path>
+                  <path d="M 96,288 L 208,288" fill="none" stroke="black"></path>
+                  <path d="M 224,288 L 336,288" fill="none" stroke="black"></path>
+                  <path d="M 224,320 L 272,320" fill="none" stroke="black"></path>
+                  <path d="M 8,336 L 72,336" fill="none" stroke="black"></path>
+                  <path d="M 8,368 L 80,368" fill="none" stroke="black"></path>
+                  <path d="M 40,256 C 31.16936,256 24,263.16936 24,272" fill="none" stroke="black"></path>
+                  <path d="M 72,336 C 80.83064,336 88,328.83064 88,320" fill="none" stroke="black"></path>
+                  <polygon class="arrowhead" points="344,240 332,234.4 332,245.6" fill="black" transform="rotate(0,336,240)"></polygon>
+                  <polygon class="arrowhead" points="280,320 268,314.4 268,325.6" fill="black" transform="rotate(0,272,320)"></polygon>
+                  <polygon class="arrowhead" points="280,160 268,154.4 268,165.6" fill="black" transform="rotate(0,272,160)"></polygon>
+                  <polygon class="arrowhead" points="280,96 268,90.4 268,101.6" fill="black" transform="rotate(0,272,96)"></polygon>
+                  <polygon class="arrowhead" points="232,288 220,282.4 220,293.6" fill="black" transform="rotate(180,224,288)"></polygon>
+                  <polygon class="arrowhead" points="216,288 204,282.4 204,293.6" fill="black" transform="rotate(0,208,288)"></polygon>
+                  <polygon class="arrowhead" points="216,240 204,234.4 204,245.6" fill="black" transform="rotate(0,208,240)"></polygon>
+                  <polygon class="arrowhead" points="216,64 204,58.4 204,69.6" fill="black" transform="rotate(0,208,64)"></polygon>
+                  <polygon class="arrowhead" points="152,128 140,122.4 140,133.6" fill="black" transform="rotate(0,144,128)"></polygon>
+                  <g class="text">
+                    <text x="28" y="36">R1</text>
+                    <text x="92" y="36">ROADM1</text>
+                    <text x="160" y="36">P-PNC</text>
+                    <text x="224" y="36">O-PNC</text>
+                    <text x="284" y="36">MDSC</text>
+                    <text x="348" y="36">ROADM2</text>
+                    <text x="412" y="36">R2</text>
+                    <text x="476" y="36">ROADM3</text>
+                    <text x="540" y="36">R3</text>
+                    <text x="124" y="52">1a.Fault</text>
+                    <text x="212" y="52">notification</text>
+                    <text x="252" y="84">2a.Fault</text>
+                    <text x="340" y="84">notification</text>
+                    <text x="60" y="116">1b.Fault</text>
+                    <text x="148" y="116">notification</text>
+                    <text x="188" y="148">2b.Fault</text>
+                    <text x="276" y="148">notification</text>
+                    <text x="280" y="164">|</text>
+                    <text x="36" y="196">3.Hold</text>
+                    <text x="84" y="244">4.Protection</text>
+                    <text x="216" y="244">|</text>
+                    <text x="344" y="244">|</text>
+                    <text x="116" y="276">5.Path</text>
+                    <text x="168" y="276">ready</text>
+                    <text x="268" y="276">5.Path</text>
+                    <text x="320" y="276">ready</text>
+                    <text x="276" y="308">6.Notification</text>
+                    <text x="280" y="324">|</text>
+                    <text x="28" y="356">7.IP</text>
+                    <text x="60" y="356">Up</text>
+                  </g>
+                </svg><a href="#section-7.1.2-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-8" class="selfRef">Figure 8</a>:
 <a href="#name-fault-detection-with-optical" class="selfRef">Fault detection with optical protection</a>
@@ -1995,45 +2717,147 @@ At the of maintenance, the network configuration is moved back to the initial co
 <p id="section-7.2-2">The next figure shows the process adopted to handle the maintenance window.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
 <span id="name-maintenance-window-operatio"></span><div id="fig-maintenance">
 <figure id="figure-9">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.2-3.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-  |       |       |1.Switch to backup path|       |       |       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |2.Switch to backup path|       |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |3.IP service switched  |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |4.IP service switched  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-  |       |       |       |5.Compute optical backup       |       |
-  |       |       |       |&lt;------|       |       |       |       |
-  |       |6.Enable optical backup|       |       |       |       |
-  |       |&lt;--------------|--------------&gt;|       |       |       |
-  |       |7.Acknowledge  |7.Acknowledge  |       |       |       |
-  |       |--------------&gt;|&lt;--------------|       |       |       |
-  |       |       |       |8.Acknowledge  |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |       |9.Switch to optical backup     |       |
-  |       |       |       |&lt;------|       |       |       |       |
-  |       |9.Switch to optical backup     |       |       |       |
-  |       |&lt;--------------|--------------&gt;|       |       |       |
-  |       |10.Acknowledge |10.Acknowledge |       |       |       |
-  |       |--------------&gt;|&lt;--------------|       |       |       |
-  |       |       |       |11.Acknowledge |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |12.Revert to initial path      |       |       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |13.Revert to initial path      |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |14.IP service reverted |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |15.IP service reverted |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-          ┌―――――――――――――――――――――――――――――――┐
-          │     16.Maintenance window     │
-          └―――――――――――――――――――――――――――――――┘
-</pre>
+          <div id="section-7.2-3.1">
+            <div class="alignLeft art-svg artwork" id="section-7.2-3.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="624" width="536" viewBox="0 0 536 624" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,48 L 8,544" fill="none" stroke="black"></path>
+                <path d="M 72,48 L 72,64" fill="none" stroke="black"></path>
+                <path d="M 72,136 L 72,448" fill="none" stroke="black"></path>
+                <path d="M 72,520 L 72,592" fill="none" stroke="black"></path>
+                <path d="M 136,40 L 136,64" fill="none" stroke="black"></path>
+                <path d="M 136,128 L 136,192" fill="none" stroke="black"></path>
+                <path d="M 136,264 L 136,320" fill="none" stroke="black"></path>
+                <path d="M 136,392 L 136,448" fill="none" stroke="black"></path>
+                <path d="M 136,512 L 136,552" fill="none" stroke="black"></path>
+                <path d="M 200,72 L 200,128" fill="none" stroke="black"></path>
+                <path d="M 200,168 L 200,192" fill="none" stroke="black"></path>
+                <path d="M 200,224 L 200,320" fill="none" stroke="black"></path>
+                <path d="M 200,352 L 200,416" fill="none" stroke="black"></path>
+                <path d="M 200,480 L 200,512" fill="none" stroke="black"></path>
+                <path d="M 264,64 L 264,128" fill="none" stroke="black"></path>
+                <path d="M 264,192 L 264,216" fill="none" stroke="black"></path>
+                <path d="M 264,448 L 264,512" fill="none" stroke="black"></path>
+                <path d="M 328,48 L 328,160" fill="none" stroke="black"></path>
+                <path d="M 328,192 L 328,288" fill="none" stroke="black"></path>
+                <path d="M 328,320 L 328,416" fill="none" stroke="black"></path>
+                <path d="M 328,448 L 328,592" fill="none" stroke="black"></path>
+                <path d="M 392,48 L 392,160" fill="none" stroke="black"></path>
+                <path d="M 392,192 L 392,288" fill="none" stroke="black"></path>
+                <path d="M 392,320 L 392,544" fill="none" stroke="black"></path>
+                <path d="M 456,48 L 456,544" fill="none" stroke="black"></path>
+                <path d="M 520,48 L 520,544" fill="none" stroke="black"></path>
+                <path d="M 144,64 L 256,64" fill="none" stroke="black"></path>
+                <path d="M 16,96 L 128,96" fill="none" stroke="black"></path>
+                <path d="M 16,128 L 128,128" fill="none" stroke="black"></path>
+                <path d="M 144,160 L 256,160" fill="none" stroke="black"></path>
+                <path d="M 208,192 L 256,192" fill="none" stroke="black"></path>
+                <path d="M 80,224 L 192,224" fill="none" stroke="black"></path>
+                <path d="M 208,224 L 320,224" fill="none" stroke="black"></path>
+                <path d="M 80,256 L 192,256" fill="none" stroke="black"></path>
+                <path d="M 208,256 L 320,256" fill="none" stroke="black"></path>
+                <path d="M 208,288 L 256,288" fill="none" stroke="black"></path>
+                <path d="M 208,320 L 256,320" fill="none" stroke="black"></path>
+                <path d="M 80,352 L 192,352" fill="none" stroke="black"></path>
+                <path d="M 208,352 L 320,352" fill="none" stroke="black"></path>
+                <path d="M 80,384 L 192,384" fill="none" stroke="black"></path>
+                <path d="M 208,384 L 320,384" fill="none" stroke="black"></path>
+                <path d="M 208,416 L 256,416" fill="none" stroke="black"></path>
+                <path d="M 144,448 L 256,448" fill="none" stroke="black"></path>
+                <path d="M 16,480 L 128,480" fill="none" stroke="black"></path>
+                <path d="M 16,512 L 128,512" fill="none" stroke="black"></path>
+                <path d="M 144,544 L 256,544" fill="none" stroke="black"></path>
+                <path d="M 72,560 L 328,560" fill="none" stroke="black"></path>
+                <path d="M 72,592 L 328,592" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="328,352 316,346.4 316,357.6" fill="black" transform="rotate(0,320,352)"></polygon>
+                <polygon class="arrowhead" points="328,224 316,218.4 316,229.6" fill="black" transform="rotate(0,320,224)"></polygon>
+                <polygon class="arrowhead" points="264,544 252,538.4 252,549.6" fill="black" transform="rotate(0,256,544)"></polygon>
+                <polygon class="arrowhead" points="264,416 252,410.4 252,421.6" fill="black" transform="rotate(0,256,416)"></polygon>
+                <polygon class="arrowhead" points="264,288 252,282.4 252,293.6" fill="black" transform="rotate(0,256,288)"></polygon>
+                <polygon class="arrowhead" points="264,160 252,154.4 252,165.6" fill="black" transform="rotate(0,256,160)"></polygon>
+                <polygon class="arrowhead" points="216,384 204,378.4 204,389.6" fill="black" transform="rotate(180,208,384)"></polygon>
+                <polygon class="arrowhead" points="216,320 204,314.4 204,325.6" fill="black" transform="rotate(180,208,320)"></polygon>
+                <polygon class="arrowhead" points="216,256 204,250.4 204,261.6" fill="black" transform="rotate(180,208,256)"></polygon>
+                <polygon class="arrowhead" points="216,192 204,186.4 204,197.6" fill="black" transform="rotate(180,208,192)"></polygon>
+                <polygon class="arrowhead" points="200,384 188,378.4 188,389.6" fill="black" transform="rotate(0,192,384)"></polygon>
+                <polygon class="arrowhead" points="200,256 188,250.4 188,261.6" fill="black" transform="rotate(0,192,256)"></polygon>
+                <polygon class="arrowhead" points="152,448 140,442.4 140,453.6" fill="black" transform="rotate(180,144,448)"></polygon>
+                <polygon class="arrowhead" points="152,64 140,58.4 140,69.6" fill="black" transform="rotate(180,144,64)"></polygon>
+                <polygon class="arrowhead" points="136,512 124,506.4 124,517.6" fill="black" transform="rotate(0,128,512)"></polygon>
+                <polygon class="arrowhead" points="136,128 124,122.4 124,133.6" fill="black" transform="rotate(0,128,128)"></polygon>
+                <polygon class="arrowhead" points="88,352 76,346.4 76,357.6" fill="black" transform="rotate(180,80,352)"></polygon>
+                <polygon class="arrowhead" points="88,224 76,218.4 76,229.6" fill="black" transform="rotate(180,80,224)"></polygon>
+                <polygon class="arrowhead" points="24,480 12,474.4 12,485.6" fill="black" transform="rotate(180,16,480)"></polygon>
+                <polygon class="arrowhead" points="24,96 12,90.4 12,101.6" fill="black" transform="rotate(180,16,96)"></polygon>
+                <g class="text">
+                  <text x="12" y="36">R1</text>
+                  <text x="76" y="36">ROADM1</text>
+                  <text x="144" y="36">P-PNC</text>
+                  <text x="208" y="36">O-PNC</text>
+                  <text x="268" y="36">MDSC</text>
+                  <text x="332" y="36">ROADM2</text>
+                  <text x="396" y="36">R2</text>
+                  <text x="460" y="36">ROADM3</text>
+                  <text x="524" y="36">R3</text>
+                  <text x="172" y="52">1.Switch</text>
+                  <text x="220" y="52">to</text>
+                  <text x="260" y="52">backup</text>
+                  <text x="308" y="52">path</text>
+                  <text x="44" y="84">2.Switch</text>
+                  <text x="92" y="84">to</text>
+                  <text x="132" y="84">backup</text>
+                  <text x="180" y="84">path</text>
+                  <text x="136" y="100">|</text>
+                  <text x="28" y="116">3.IP</text>
+                  <text x="80" y="116">service</text>
+                  <text x="148" y="116">switched</text>
+                  <text x="156" y="148">4.IP</text>
+                  <text x="208" y="148">service</text>
+                  <text x="276" y="148">switched</text>
+                  <text x="264" y="164">|</text>
+                  <text x="240" y="180">5.Compute</text>
+                  <text x="312" y="180">optical</text>
+                  <text x="372" y="180">backup</text>
+                  <text x="108" y="212">6.Enable</text>
+                  <text x="176" y="212">optical</text>
+                  <text x="236" y="212">backup</text>
+                  <text x="128" y="244">7.Acknowledge</text>
+                  <text x="256" y="244">7.Acknowledge</text>
+                  <text x="256" y="276">8.Acknowledge</text>
+                  <text x="264" y="292">|</text>
+                  <text x="236" y="308">9.Switch</text>
+                  <text x="284" y="308">to</text>
+                  <text x="328" y="308">optical</text>
+                  <text x="388" y="308">backup</text>
+                  <text x="264" y="324">|</text>
+                  <text x="108" y="340">9.Switch</text>
+                  <text x="156" y="340">to</text>
+                  <text x="200" y="340">optical</text>
+                  <text x="260" y="340">backup</text>
+                  <text x="132" y="372">10.Acknowledge</text>
+                  <text x="260" y="372">10.Acknowledge</text>
+                  <text x="260" y="404">11.Acknowledge</text>
+                  <text x="264" y="420">|</text>
+                  <text x="176" y="436">12.Revert</text>
+                  <text x="228" y="436">to</text>
+                  <text x="272" y="436">initial</text>
+                  <text x="324" y="436">path</text>
+                  <text x="48" y="468">13.Revert</text>
+                  <text x="100" y="468">to</text>
+                  <text x="144" y="468">initial</text>
+                  <text x="196" y="468">path</text>
+                  <text x="136" y="484">|</text>
+                  <text x="32" y="500">14.IP</text>
+                  <text x="88" y="500">service</text>
+                  <text x="156" y="500">reverted</text>
+                  <text x="160" y="532">15.IP</text>
+                  <text x="216" y="532">service</text>
+                  <text x="284" y="532">reverted</text>
+                  <text x="264" y="548">|</text>
+                  <text x="172" y="580">16.Maintenance</text>
+                  <text x="260" y="580">window</text>
+                </g>
+              </svg><a href="#section-7.2-3.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-9" class="selfRef">Figure 9</a>:
 <a href="#name-maintenance-window-operatio" class="selfRef">Maintenance window operation</a>
@@ -2108,26 +2932,37 @@ Differently from ordinary LAG, the traffic is not redistributed over the survivi
 If on the IP layer this scenario introduces the complexity of handling an extra port both on R1 and ROADM1, on the optical layer the configuration, as depicted in figure <a href="#fig-ref-network" class="auto internal xref">Figure 2</a>, does not change as only N optical channels (e.g. lambdas) are used, as shown in figure <a href="#fig-N-1-port-prot-architecture" class="auto internal xref">Figure 10</a>.<a href="#section-7.3-2" class="pilcrow">¶</a></p>
 <span id="name-use-of-n1-protection-on-r1"></span><div id="fig-N-1-port-prot-architecture">
 <figure id="figure-10">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.3-3.1">
-<pre>
-
-
-┌――――――――――┐   ┌――――――――――┐
-│        P1│---│P1        │
-│          │   │       OP1│
-│        P2│---│P2        │
-│    R1    │   │  ROADM1  │
-│        P3│---│P3        │
-│          │   │       OP2│
-│        PP│---│PP        │
-└――――――――――┘   └――――――――――┘
-
-
-
-
-
-
-</pre>
+          <div id="section-7.3-3.1">
+            <div class="alignLeft art-svg artwork" id="section-7.3-3.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="304" width="224" viewBox="0 0 224 304" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,64 L 8,192" fill="none" stroke="black"></path>
+                <path d="M 96,64 L 96,192" fill="none" stroke="black"></path>
+                <path d="M 128,64 L 128,192" fill="none" stroke="black"></path>
+                <path d="M 216,64 L 216,192" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 96,64" fill="none" stroke="black"></path>
+                <path d="M 128,64 L 216,64" fill="none" stroke="black"></path>
+                <path d="M 104,80 L 120,80" fill="none" stroke="black"></path>
+                <path d="M 104,112 L 120,112" fill="none" stroke="black"></path>
+                <path d="M 104,144 L 120,144" fill="none" stroke="black"></path>
+                <path d="M 104,176 L 120,176" fill="none" stroke="black"></path>
+                <path d="M 8,192 L 96,192" fill="none" stroke="black"></path>
+                <path d="M 128,192 L 216,192" fill="none" stroke="black"></path>
+                <g class="text">
+                  <text x="84" y="84">P1</text>
+                  <text x="140" y="84">P1</text>
+                  <text x="200" y="100">OP1</text>
+                  <text x="84" y="116">P2</text>
+                  <text x="140" y="116">P2</text>
+                  <text x="52" y="132">R1</text>
+                  <text x="172" y="132">ROADM1</text>
+                  <text x="84" y="148">P3</text>
+                  <text x="140" y="148">P3</text>
+                  <text x="200" y="164">OP2</text>
+                  <text x="84" y="180">PP</text>
+                  <text x="140" y="180">PP</text>
+                </g>
+              </svg><a href="#section-7.3-3.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-10" class="selfRef">Figure 10</a>:
 <a href="#name-use-of-n1-protection-on-r1" class="selfRef">Use of N:1 protection on R1</a>
@@ -2139,44 +2974,156 @@ It has to be noted that the mechanism to deal with the on-the-fly reconfiguratio
 <p id="section-7.3-5">The next figure shows the process adopted to handle N:1 port protection.<a href="#section-7.3-5" class="pilcrow">¶</a></p>
 <span id="name-n1-protection-operation"></span><div id="fig-N-1-port-prot">
 <figure id="figure-11">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.3-6.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-  |1.Port R1/P1 failure   |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |2.Port R1/P1 failure   |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-┌―――――――┐
-│ 3.FRR │
-└―――――――┘
-  |4.IP service switched  |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |5.IP service switched  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-┌―――――――┐
-│6.PP Up│
-└―――――――┘
-  |7.Port R1/PP Up|       |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |8.Port R1/PP Up|       |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-  |       |       |       |9.Reconfigure access &amp; connect new path|
-  |       |       |       |&lt;------|       |       |       |       |
-  |       |10.Reconfigure access &amp; connect new path       |       |
-  |       |&lt;--------------|       |       |       |       |       |
-  |       |11.Acknowledge |       |       |       |       |       |
-  |       |--------------&gt;|       |       |       |       |       |
-  |       |       |       |12.Acknowledge |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |13.Switch back to initial path |       |       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |14.Switch back to initial path |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |15.IP service switched |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |16.IP service switched |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-</pre>
+          <div id="section-7.3-6.1">
+            <div class="alignLeft art-svg artwork" id="section-7.3-6.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="592" width="552" viewBox="0 0 552 592" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,112 L 8,144" fill="none" stroke="black"></path>
+                <path d="M 8,224 L 8,256" fill="none" stroke="black"></path>
+                <path d="M 24,48 L 24,104" fill="none" stroke="black"></path>
+                <path d="M 24,152 L 24,216" fill="none" stroke="black"></path>
+                <path d="M 24,264 L 24,576" fill="none" stroke="black"></path>
+                <path d="M 72,112 L 72,144" fill="none" stroke="black"></path>
+                <path d="M 72,224 L 72,256" fill="none" stroke="black"></path>
+                <path d="M 88,72 L 88,96" fill="none" stroke="black"></path>
+                <path d="M 88,184 L 88,208" fill="none" stroke="black"></path>
+                <path d="M 88,296 L 88,480" fill="none" stroke="black"></path>
+                <path d="M 88,552 L 88,576" fill="none" stroke="black"></path>
+                <path d="M 152,64 L 152,96" fill="none" stroke="black"></path>
+                <path d="M 152,176 L 152,208" fill="none" stroke="black"></path>
+                <path d="M 152,272 L 152,352" fill="none" stroke="black"></path>
+                <path d="M 152,424 L 152,480" fill="none" stroke="black"></path>
+                <path d="M 152,544 L 152,576" fill="none" stroke="black"></path>
+                <path d="M 216,40 L 216,64" fill="none" stroke="black"></path>
+                <path d="M 216,160 L 216,176" fill="none" stroke="black"></path>
+                <path d="M 216,272 L 216,288" fill="none" stroke="black"></path>
+                <path d="M 216,328 L 216,352" fill="none" stroke="black"></path>
+                <path d="M 216,384 L 216,448" fill="none" stroke="black"></path>
+                <path d="M 216,512 L 216,544" fill="none" stroke="black"></path>
+                <path d="M 280,48 L 280,64" fill="none" stroke="black"></path>
+                <path d="M 280,160 L 280,176" fill="none" stroke="black"></path>
+                <path d="M 280,272 L 280,320" fill="none" stroke="black"></path>
+                <path d="M 280,384 L 280,416" fill="none" stroke="black"></path>
+                <path d="M 280,480 L 280,544" fill="none" stroke="black"></path>
+                <path d="M 344,48 L 344,96" fill="none" stroke="black"></path>
+                <path d="M 344,160 L 344,208" fill="none" stroke="black"></path>
+                <path d="M 344,272 L 344,320" fill="none" stroke="black"></path>
+                <path d="M 344,384 L 344,448" fill="none" stroke="black"></path>
+                <path d="M 344,480 L 344,576" fill="none" stroke="black"></path>
+                <path d="M 408,48 L 408,96" fill="none" stroke="black"></path>
+                <path d="M 408,160 L 408,208" fill="none" stroke="black"></path>
+                <path d="M 408,272 L 408,320" fill="none" stroke="black"></path>
+                <path d="M 408,384 L 408,576" fill="none" stroke="black"></path>
+                <path d="M 472,48 L 472,96" fill="none" stroke="black"></path>
+                <path d="M 472,160 L 472,208" fill="none" stroke="black"></path>
+                <path d="M 472,272 L 472,320" fill="none" stroke="black"></path>
+                <path d="M 472,352 L 472,576" fill="none" stroke="black"></path>
+                <path d="M 536,48 L 536,96" fill="none" stroke="black"></path>
+                <path d="M 536,160 L 536,208" fill="none" stroke="black"></path>
+                <path d="M 536,272 L 536,576" fill="none" stroke="black"></path>
+                <path d="M 32,64 L 144,64" fill="none" stroke="black"></path>
+                <path d="M 160,96 L 272,96" fill="none" stroke="black"></path>
+                <path d="M 8,112 L 72,112" fill="none" stroke="black"></path>
+                <path d="M 8,144 L 72,144" fill="none" stroke="black"></path>
+                <path d="M 32,176 L 144,176" fill="none" stroke="black"></path>
+                <path d="M 160,208 L 272,208" fill="none" stroke="black"></path>
+                <path d="M 8,224 L 72,224" fill="none" stroke="black"></path>
+                <path d="M 8,256 L 72,256" fill="none" stroke="black"></path>
+                <path d="M 32,288 L 144,288" fill="none" stroke="black"></path>
+                <path d="M 160,320 L 272,320" fill="none" stroke="black"></path>
+                <path d="M 224,352 L 272,352" fill="none" stroke="black"></path>
+                <path d="M 96,384 L 208,384" fill="none" stroke="black"></path>
+                <path d="M 96,416 L 208,416" fill="none" stroke="black"></path>
+                <path d="M 224,448 L 272,448" fill="none" stroke="black"></path>
+                <path d="M 160,480 L 272,480" fill="none" stroke="black"></path>
+                <path d="M 32,512 L 144,512" fill="none" stroke="black"></path>
+                <path d="M 32,544 L 144,544" fill="none" stroke="black"></path>
+                <path d="M 160,576 L 272,576" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="280,576 268,570.4 268,581.6" fill="black" transform="rotate(0,272,576)"></polygon>
+                <polygon class="arrowhead" points="280,448 268,442.4 268,453.6" fill="black" transform="rotate(0,272,448)"></polygon>
+                <polygon class="arrowhead" points="280,320 268,314.4 268,325.6" fill="black" transform="rotate(0,272,320)"></polygon>
+                <polygon class="arrowhead" points="280,208 268,202.4 268,213.6" fill="black" transform="rotate(0,272,208)"></polygon>
+                <polygon class="arrowhead" points="280,96 268,90.4 268,101.6" fill="black" transform="rotate(0,272,96)"></polygon>
+                <polygon class="arrowhead" points="232,352 220,346.4 220,357.6" fill="black" transform="rotate(180,224,352)"></polygon>
+                <polygon class="arrowhead" points="216,416 204,410.4 204,421.6" fill="black" transform="rotate(0,208,416)"></polygon>
+                <polygon class="arrowhead" points="168,480 156,474.4 156,485.6" fill="black" transform="rotate(180,160,480)"></polygon>
+                <polygon class="arrowhead" points="152,544 140,538.4 140,549.6" fill="black" transform="rotate(0,144,544)"></polygon>
+                <polygon class="arrowhead" points="152,288 140,282.4 140,293.6" fill="black" transform="rotate(0,144,288)"></polygon>
+                <polygon class="arrowhead" points="152,176 140,170.4 140,181.6" fill="black" transform="rotate(0,144,176)"></polygon>
+                <polygon class="arrowhead" points="152,64 140,58.4 140,69.6" fill="black" transform="rotate(0,144,64)"></polygon>
+                <polygon class="arrowhead" points="104,384 92,378.4 92,389.6" fill="black" transform="rotate(180,96,384)"></polygon>
+                <polygon class="arrowhead" points="40,512 28,506.4 28,517.6" fill="black" transform="rotate(180,32,512)"></polygon>
+                <g class="text">
+                  <text x="28" y="36">R1</text>
+                  <text x="92" y="36">ROADM1</text>
+                  <text x="160" y="36">P-PNC</text>
+                  <text x="224" y="36">O-PNC</text>
+                  <text x="284" y="36">MDSC</text>
+                  <text x="348" y="36">ROADM2</text>
+                  <text x="412" y="36">R2</text>
+                  <text x="476" y="36">ROADM3</text>
+                  <text x="540" y="36">R3</text>
+                  <text x="52" y="52">1.Port</text>
+                  <text x="104" y="52">R1/P1</text>
+                  <text x="160" y="52">failure</text>
+                  <text x="180" y="84">2.Port</text>
+                  <text x="232" y="84">R1/P1</text>
+                  <text x="288" y="84">failure</text>
+                  <text x="280" y="100">|</text>
+                  <text x="40" y="132">3.FRR</text>
+                  <text x="44" y="164">4.IP</text>
+                  <text x="96" y="164">service</text>
+                  <text x="164" y="164">switched</text>
+                  <text x="172" y="196">5.IP</text>
+                  <text x="224" y="196">service</text>
+                  <text x="292" y="196">switched</text>
+                  <text x="280" y="212">|</text>
+                  <text x="28" y="244">6.PP</text>
+                  <text x="60" y="244">Up</text>
+                  <text x="52" y="276">7.Port</text>
+                  <text x="104" y="276">R1/PP</text>
+                  <text x="140" y="276">Up</text>
+                  <text x="180" y="308">8.Port</text>
+                  <text x="232" y="308">R1/PP</text>
+                  <text x="268" y="308">Up</text>
+                  <text x="272" y="340">9.Reconfigure</text>
+                  <text x="356" y="340">access</text>
+                  <text x="392" y="340">&amp;</text>
+                  <text x="432" y="340">connect</text>
+                  <text x="480" y="340">new</text>
+                  <text x="516" y="340">path</text>
+                  <text x="280" y="356">|</text>
+                  <text x="344" y="356">|</text>
+                  <text x="408" y="356">|</text>
+                  <text x="148" y="372">10.Reconfigure</text>
+                  <text x="236" y="372">access</text>
+                  <text x="272" y="372">&amp;</text>
+                  <text x="312" y="372">connect</text>
+                  <text x="360" y="372">new</text>
+                  <text x="396" y="372">path</text>
+                  <text x="148" y="404">11.Acknowledge</text>
+                  <text x="276" y="436">12.Acknowledge</text>
+                  <text x="280" y="452">|</text>
+                  <text x="192" y="468">13.Switch</text>
+                  <text x="252" y="468">back</text>
+                  <text x="284" y="468">to</text>
+                  <text x="328" y="468">initial</text>
+                  <text x="380" y="468">path</text>
+                  <text x="64" y="500">14.Switch</text>
+                  <text x="124" y="500">back</text>
+                  <text x="156" y="500">to</text>
+                  <text x="200" y="500">initial</text>
+                  <text x="252" y="500">path</text>
+                  <text x="152" y="516">|</text>
+                  <text x="48" y="532">15.IP</text>
+                  <text x="104" y="532">service</text>
+                  <text x="172" y="532">switched</text>
+                  <text x="176" y="564">16.IP</text>
+                  <text x="232" y="564">service</text>
+                  <text x="300" y="564">switched</text>
+                  <text x="280" y="580">|</text>
+                </g>
+              </svg><a href="#section-7.3-6.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-11" class="selfRef">Figure 11</a>:
 <a href="#name-n1-protection-operation" class="selfRef">N:1 protection operation</a>
@@ -2246,36 +3193,143 @@ The underlying assumption is that it is not possible to R2 to communicate to P-P
 MDSC instructs the optical layer to find available optical resources, activate a new optical path between ROADM1 and ROADM3 and finally move the traffic previously associated to R1-R2 to the newly created optical path. When this second optical path is available, MDSC triggers a new switch of the traffic so that R1 can now steers the previous R1-R2 traffic to the new optical path. The final configuration is shown in figure <a href="#fig-node-prot-architecture" class="auto internal xref">Figure 12</a>.<a href="#section-7.4-1" class="pilcrow">¶</a></p>
 <span id="name-ip-configuration-after-the-"></span><div id="fig-node-prot-architecture">
 <figure id="figure-12">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.4-2.1">
-<pre>
-
-│&lt;xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx&gt;│
-┌――――――――┐  ┌――――――――┐                     ┌――――――――┐  ┌――――――――┐
-│      P1│--│P1    P3│\        ___        /│P3    P1│--│P1      │
-│  R1    │  │ ROADM1 │ \  ____/   \____  / │ ROADM2 │  │   R2   │
-│      P2│--│P2    P4│\ \/             \/ /│P4    P2│--│P2      │
-└――――――――┘  └――――――――┘ \|    Optical    |/ └――――――――┘  └――――――――┘
-                        |    Network    |
-│&lt;xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx&gt;│
-                     x      |       |     x
-│&lt;xX R1-R3 backup xx  x     |       |    x
-                    x   x  ┌―――――――――┐  x
-                     x   x │P3     P4│ x
-                      x  x │ ROADM3  │ x
-                      x  x │P1     P2│ x
-                      x  x └―――――――――┘ x
-                      x  x  |       |  x
-                      x  x ┌―――――――――┐ x
-                      x  x │P1     P2│ x
-                      x  x │   R3    │ x
-                      ˅  ˅ │         │ ˅
-                      -  ― └―――――――――┘ ―
-
-
-
-
-
-</pre>
+          <div id="section-7.4-2.1">
+            <div class="alignLeft art-svg artwork" id="section-7.4-2.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="464" width="528" viewBox="0 0 528 464" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,48 L 8,128" fill="none" stroke="black"></path>
+                <path d="M 80,64 L 80,128" fill="none" stroke="black"></path>
+                <path d="M 104,64 L 104,128" fill="none" stroke="black"></path>
+                <path d="M 176,64 L 176,128" fill="none" stroke="black"></path>
+                <path d="M 200,128 L 200,144" fill="none" stroke="black"></path>
+                <path d="M 224,208 L 224,272" fill="none" stroke="black"></path>
+                <path d="M 224,304 L 224,368" fill="none" stroke="black"></path>
+                <path d="M 232,168 L 232,200" fill="none" stroke="black"></path>
+                <path d="M 232,280 L 232,296" fill="none" stroke="black"></path>
+                <path d="M 296,168 L 296,200" fill="none" stroke="black"></path>
+                <path d="M 296,280 L 296,296" fill="none" stroke="black"></path>
+                <path d="M 304,208 L 304,272" fill="none" stroke="black"></path>
+                <path d="M 304,304 L 304,368" fill="none" stroke="black"></path>
+                <path d="M 328,128 L 328,144" fill="none" stroke="black"></path>
+                <path d="M 352,64 L 352,128" fill="none" stroke="black"></path>
+                <path d="M 424,64 L 424,128" fill="none" stroke="black"></path>
+                <path d="M 448,64 L 448,128" fill="none" stroke="black"></path>
+                <path d="M 520,48 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 8,64 L 80,64" fill="none" stroke="black"></path>
+                <path d="M 104,64 L 176,64" fill="none" stroke="black"></path>
+                <path d="M 352,64 L 424,64" fill="none" stroke="black"></path>
+                <path d="M 448,64 L 520,64" fill="none" stroke="black"></path>
+                <path d="M 8,128 L 80,128" fill="none" stroke="black"></path>
+                <path d="M 104,128 L 176,128" fill="none" stroke="black"></path>
+                <path d="M 352,128 L 424,128" fill="none" stroke="black"></path>
+                <path d="M 448,128 L 520,128" fill="none" stroke="black"></path>
+                <path d="M 224,208 L 304,208" fill="none" stroke="black"></path>
+                <path d="M 224,272 L 304,272" fill="none" stroke="black"></path>
+                <path d="M 224,304 L 304,304" fill="none" stroke="black"></path>
+                <path d="M 224,368 L 304,368" fill="none" stroke="black"></path>
+                <path d="M 176,96 L 200,144" fill="none" stroke="black"></path>
+                <path d="M 176,64 L 204,120" fill="none" stroke="black"></path>
+                <path d="M 276,88 L 284,104" fill="none" stroke="black"></path>
+                <path d="M 316,104 L 328,128" fill="none" stroke="black"></path>
+                <path d="M 200,128 L 212,104" fill="none" stroke="black"></path>
+                <path d="M 244,104 L 252,88" fill="none" stroke="black"></path>
+                <path d="M 324,120 L 352,64" fill="none" stroke="black"></path>
+                <path d="M 328,144 L 352,96" fill="none" stroke="black"></path>
+                <path d="M 252,88 L 276,88" fill="none" stroke="black"></path>
+                <path d="M 212,104 L 244,104" fill="none" stroke="black"></path>
+                <path d="M 284,104 L 316,104" fill="none" stroke="black"></path>
+                <path d="M 212,168 L 316,168" fill="none" stroke="black"></path>
+                <g class="text">
+                  <text x="108" y="52">&lt;xxxxxxxxxxxxxxxxxxxxxxx</text>
+                  <text x="220" y="52">IP</text>
+                  <text x="252" y="52">Link</text>
+                  <text x="296" y="52">R1-R2</text>
+                  <text x="420" y="52">xxxxxxxxxxxxxxxxxxxxxxx&gt;</text>
+                  <text x="68" y="84">P1</text>
+                  <text x="92" y="84">--</text>
+                  <text x="116" y="84">P1</text>
+                  <text x="164" y="84">P3</text>
+                  <text x="364" y="84">P3</text>
+                  <text x="412" y="84">P1</text>
+                  <text x="436" y="84">--</text>
+                  <text x="460" y="84">P1</text>
+                  <text x="36" y="100">R1</text>
+                  <text x="140" y="100">ROADM1</text>
+                  <text x="388" y="100">ROADM2</text>
+                  <text x="484" y="100">R2</text>
+                  <text x="68" y="116">P2</text>
+                  <text x="92" y="116">--</text>
+                  <text x="116" y="116">P2</text>
+                  <text x="164" y="116">P4</text>
+                  <text x="364" y="116">P4</text>
+                  <text x="412" y="116">P2</text>
+                  <text x="436" y="116">--</text>
+                  <text x="460" y="116">P2</text>
+                  <text x="264" y="132">Optical</text>
+                  <text x="264" y="148">Network</text>
+                  <text x="20" y="164">|&lt;xx</text>
+                  <text x="52" y="164">IP</text>
+                  <text x="84" y="164">Link</text>
+                  <text x="128" y="164">R1-R3</text>
+                  <text x="164" y="164">xx</text>
+                  <text x="208" y="164">\</text>
+                  <text x="320" y="164">/</text>
+                  <text x="356" y="164">xx</text>
+                  <text x="380" y="164">IP</text>
+                  <text x="412" y="164">Link</text>
+                  <text x="456" y="164">R3-R2</text>
+                  <text x="504" y="164">xxx&gt;|</text>
+                  <text x="176" y="180">x</text>
+                  <text x="344" y="180">x</text>
+                  <text x="20" y="196">|&lt;xX</text>
+                  <text x="64" y="196">R1-R3</text>
+                  <text x="116" y="196">backup</text>
+                  <text x="156" y="196">xx</text>
+                  <text x="184" y="196">x</text>
+                  <text x="336" y="196">x</text>
+                  <text x="168" y="212">x</text>
+                  <text x="200" y="212">x</text>
+                  <text x="328" y="212">x</text>
+                  <text x="176" y="228">x</text>
+                  <text x="208" y="228">x</text>
+                  <text x="236" y="228">P3</text>
+                  <text x="292" y="228">P4</text>
+                  <text x="320" y="228">x</text>
+                  <text x="184" y="244">x</text>
+                  <text x="208" y="244">x</text>
+                  <text x="260" y="244">ROADM3</text>
+                  <text x="320" y="244">x</text>
+                  <text x="184" y="260">x</text>
+                  <text x="208" y="260">x</text>
+                  <text x="236" y="260">P1</text>
+                  <text x="292" y="260">P2</text>
+                  <text x="320" y="260">x</text>
+                  <text x="184" y="276">x</text>
+                  <text x="208" y="276">x</text>
+                  <text x="320" y="276">x</text>
+                  <text x="184" y="292">x</text>
+                  <text x="208" y="292">x</text>
+                  <text x="320" y="292">x</text>
+                  <text x="184" y="308">x</text>
+                  <text x="208" y="308">x</text>
+                  <text x="320" y="308">x</text>
+                  <text x="184" y="324">x</text>
+                  <text x="208" y="324">x</text>
+                  <text x="236" y="324">P1</text>
+                  <text x="292" y="324">P2</text>
+                  <text x="320" y="324">x</text>
+                  <text x="184" y="340">x</text>
+                  <text x="208" y="340">x</text>
+                  <text x="260" y="340">R3</text>
+                  <text x="320" y="340">x</text>
+                  <text x="184" y="356">V</text>
+                  <text x="208" y="356">V</text>
+                  <text x="320" y="356">V</text>
+                  <text x="184" y="372">-</text>
+                  <text x="208" y="372">-</text>
+                  <text x="320" y="372">-</text>
+                </g>
+              </svg><a href="#section-7.4-2.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-12" class="selfRef">Figure 12</a>:
 <a href="#name-ip-configuration-after-the-" class="selfRef">IP configuration after the creation of a second optical path</a>
@@ -2284,38 +3338,135 @@ MDSC instructs the optical layer to find available optical resources, activate a
 <p id="section-7.4-3">The next figure shows the process adopted to handle the node protection case.<a href="#section-7.4-3" class="pilcrow">¶</a></p>
 <span id="name-node-protection-operation"></span><div id="fig-node-prot">
 <figure id="figure-13">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.4-4.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-┌―――――――――┐
-│1.R2 down│
-│ and FRR │
-└―――――――――┘
-  |2.R2 down + FRR|       |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |3.R2 down + FRR|       |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-  |4.IP service switched  |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |5.IP service switched  |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-  |       |       |       |6.Setup optical backup path    |       |
-  |       |       |       |&lt;------|       |       |       |       |
-  |       |7.Setup path   |7.Setup path   |       |       |       |
-  |       |&lt;--------------|------------------------------&gt;|       |
-  |       |8.Acknowledge  |       |       |       |       |       |
-  |       |--------------&gt;|&lt;------------------------------|       |
-  |       |       |       |9.Backup path available|       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |10.Deploy new IP path and switch traffic       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |11.Deploy new path then switch |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |12.IP service switched |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |13.IP service switched |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-</pre>
+          <div id="section-7.4-4.1">
+            <div class="alignLeft art-svg artwork" id="section-7.4-4.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="496" width="552" viewBox="0 0 552 496" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,48 L 8,96" fill="none" stroke="black"></path>
+                <path d="M 24,104 L 24,480" fill="none" stroke="black"></path>
+                <path d="M 88,48 L 88,96" fill="none" stroke="black"></path>
+                <path d="M 88,136 L 88,160" fill="none" stroke="black"></path>
+                <path d="M 88,200 L 88,384" fill="none" stroke="black"></path>
+                <path d="M 88,456 L 88,480" fill="none" stroke="black"></path>
+                <path d="M 152,112 L 152,160" fill="none" stroke="black"></path>
+                <path d="M 152,192 L 152,256" fill="none" stroke="black"></path>
+                <path d="M 152,328 L 152,384" fill="none" stroke="black"></path>
+                <path d="M 152,448 L 152,480" fill="none" stroke="black"></path>
+                <path d="M 216,112 L 216,128" fill="none" stroke="black"></path>
+                <path d="M 216,168 L 216,192" fill="none" stroke="black"></path>
+                <path d="M 216,232 L 216,352" fill="none" stroke="black"></path>
+                <path d="M 216,416 L 216,448" fill="none" stroke="black"></path>
+                <path d="M 280,112 L 280,192" fill="none" stroke="black"></path>
+                <path d="M 280,384 L 280,448" fill="none" stroke="black"></path>
+                <path d="M 344,112 L 344,224" fill="none" stroke="black"></path>
+                <path d="M 344,256 L 344,280" fill="none" stroke="black"></path>
+                <path d="M 344,384 L 344,480" fill="none" stroke="black"></path>
+                <path d="M 408,112 L 408,224" fill="none" stroke="black"></path>
+                <path d="M 408,256 L 408,280" fill="none" stroke="black"></path>
+                <path d="M 408,328 L 408,352" fill="none" stroke="black"></path>
+                <path d="M 408,384 L 408,480" fill="none" stroke="black"></path>
+                <path d="M 472,112 L 472,352" fill="none" stroke="black"></path>
+                <path d="M 472,384 L 472,480" fill="none" stroke="black"></path>
+                <path d="M 536,112 L 536,480" fill="none" stroke="black"></path>
+                <path d="M 8,48 L 88,48" fill="none" stroke="black"></path>
+                <path d="M 8,96 L 88,96" fill="none" stroke="black"></path>
+                <path d="M 32,128 L 144,128" fill="none" stroke="black"></path>
+                <path d="M 160,160 L 272,160" fill="none" stroke="black"></path>
+                <path d="M 32,192 L 144,192" fill="none" stroke="black"></path>
+                <path d="M 160,224 L 272,224" fill="none" stroke="black"></path>
+                <path d="M 224,256 L 272,256" fill="none" stroke="black"></path>
+                <path d="M 96,288 L 208,288" fill="none" stroke="black"></path>
+                <path d="M 224,288 L 464,288" fill="none" stroke="black"></path>
+                <path d="M 96,320 L 208,320" fill="none" stroke="black"></path>
+                <path d="M 224,320 L 464,320" fill="none" stroke="black"></path>
+                <path d="M 224,352 L 272,352" fill="none" stroke="black"></path>
+                <path d="M 160,384 L 272,384" fill="none" stroke="black"></path>
+                <path d="M 32,416 L 144,416" fill="none" stroke="black"></path>
+                <path d="M 32,448 L 144,448" fill="none" stroke="black"></path>
+                <path d="M 160,480 L 272,480" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="472,288 460,282.4 460,293.6" fill="black" transform="rotate(0,464,288)"></polygon>
+                <polygon class="arrowhead" points="280,480 268,474.4 268,485.6" fill="black" transform="rotate(0,272,480)"></polygon>
+                <polygon class="arrowhead" points="280,352 268,346.4 268,357.6" fill="black" transform="rotate(0,272,352)"></polygon>
+                <polygon class="arrowhead" points="280,224 268,218.4 268,229.6" fill="black" transform="rotate(0,272,224)"></polygon>
+                <polygon class="arrowhead" points="280,160 268,154.4 268,165.6" fill="black" transform="rotate(0,272,160)"></polygon>
+                <polygon class="arrowhead" points="232,320 220,314.4 220,325.6" fill="black" transform="rotate(180,224,320)"></polygon>
+                <polygon class="arrowhead" points="232,256 220,250.4 220,261.6" fill="black" transform="rotate(180,224,256)"></polygon>
+                <polygon class="arrowhead" points="216,320 204,314.4 204,325.6" fill="black" transform="rotate(0,208,320)"></polygon>
+                <polygon class="arrowhead" points="168,384 156,378.4 156,389.6" fill="black" transform="rotate(180,160,384)"></polygon>
+                <polygon class="arrowhead" points="152,448 140,442.4 140,453.6" fill="black" transform="rotate(0,144,448)"></polygon>
+                <polygon class="arrowhead" points="152,192 140,186.4 140,197.6" fill="black" transform="rotate(0,144,192)"></polygon>
+                <polygon class="arrowhead" points="152,128 140,122.4 140,133.6" fill="black" transform="rotate(0,144,128)"></polygon>
+                <polygon class="arrowhead" points="104,288 92,282.4 92,293.6" fill="black" transform="rotate(180,96,288)"></polygon>
+                <polygon class="arrowhead" points="40,416 28,410.4 28,421.6" fill="black" transform="rotate(180,32,416)"></polygon>
+                <g class="text">
+                  <text x="28" y="36">R1</text>
+                  <text x="92" y="36">ROADM1</text>
+                  <text x="160" y="36">P-PNC</text>
+                  <text x="224" y="36">O-PNC</text>
+                  <text x="284" y="36">MDSC</text>
+                  <text x="348" y="36">ROADM2</text>
+                  <text x="412" y="36">R2</text>
+                  <text x="476" y="36">ROADM3</text>
+                  <text x="540" y="36">R3</text>
+                  <text x="28" y="68">1.R2</text>
+                  <text x="68" y="68">down</text>
+                  <text x="32" y="84">and</text>
+                  <text x="64" y="84">FRR</text>
+                  <text x="44" y="116">2.R2</text>
+                  <text x="84" y="116">down</text>
+                  <text x="112" y="116">+</text>
+                  <text x="136" y="116">FRR</text>
+                  <text x="172" y="148">3.R2</text>
+                  <text x="212" y="148">down</text>
+                  <text x="240" y="148">+</text>
+                  <text x="264" y="148">FRR</text>
+                  <text x="44" y="180">4.IP</text>
+                  <text x="96" y="180">service</text>
+                  <text x="164" y="180">switched</text>
+                  <text x="172" y="212">5.IP</text>
+                  <text x="224" y="212">service</text>
+                  <text x="292" y="212">switched</text>
+                  <text x="280" y="228">|</text>
+                  <text x="248" y="244">6.Setup</text>
+                  <text x="312" y="244">optical</text>
+                  <text x="372" y="244">backup</text>
+                  <text x="420" y="244">path</text>
+                  <text x="280" y="260">|</text>
+                  <text x="120" y="276">7.Setup</text>
+                  <text x="172" y="276">path</text>
+                  <text x="248" y="276">7.Setup</text>
+                  <text x="300" y="276">path</text>
+                  <text x="144" y="308">8.Acknowledge</text>
+                  <text x="280" y="308">|</text>
+                  <text x="344" y="308">|</text>
+                  <text x="408" y="308">|</text>
+                  <text x="252" y="340">9.Backup</text>
+                  <text x="308" y="340">path</text>
+                  <text x="368" y="340">available</text>
+                  <text x="280" y="356">|</text>
+                  <text x="344" y="356">|</text>
+                  <text x="192" y="372">10.Deploy</text>
+                  <text x="248" y="372">new</text>
+                  <text x="276" y="372">IP</text>
+                  <text x="308" y="372">path</text>
+                  <text x="344" y="372">and</text>
+                  <text x="388" y="372">switch</text>
+                  <text x="448" y="372">traffic</text>
+                  <text x="64" y="404">11.Deploy</text>
+                  <text x="120" y="404">new</text>
+                  <text x="156" y="404">path</text>
+                  <text x="196" y="404">then</text>
+                  <text x="244" y="404">switch</text>
+                  <text x="152" y="420">|</text>
+                  <text x="48" y="436">12.IP</text>
+                  <text x="104" y="436">service</text>
+                  <text x="172" y="436">switched</text>
+                  <text x="176" y="468">13.IP</text>
+                  <text x="232" y="468">service</text>
+                  <text x="300" y="468">switched</text>
+                  <text x="280" y="484">|</text>
+                </g>
+              </svg><a href="#section-7.4-4.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
 <a href="#name-node-protection-operation" class="selfRef">Node protection operation</a>
@@ -2396,38 +3547,133 @@ guaranteeing a hitless switching.<a href="#section-7.5-3.3.1" class="pilcrow">¶
 <p id="section-7.5-4">The mimics of the steps requested is shown in the next figure.<a href="#section-7.5-4" class="pilcrow">¶</a></p>
 <span id="name-hitless-multi-layer-reversi"></span><div id="fig-hitless-reversion">
 <figure id="figure-14">
-          <div class="alignLeft art-ascii-art art-text artwork" id="section-7.5-5.1">
-<pre>
-  R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-  |       |1.Fiber back online notification       |       |       |
-  |       |--------------&gt;|       |       |       |       |       |
-  |       |       |       |2.Fiber back online notification       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |3.Switch to backup path|       |       |       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |4.Switch to backup path|       |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |5.Service switch notification  |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |6.Service switch notification  |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-  |       |       |       |7.Revert to primary    |       |       |
-  |       |       |       |&lt;------|       |       |       |       |
-  |       |8.Revert to primary    |       |       |       |       |
-  |       |&lt;--------------|--------------&gt;|       |       |       |
-  |       |9.Acknowledge  |       |       |       |       |       |
-  |       |--------------&gt;|&lt;--------------|       |       |       |
-  |       |       |       |10.Acknowledge |       |       |       |
-  |       |       |       |------&gt;|       |       |       |       |
-  |       |       |11.Revert to initial path      |       |       |
-  |       |       |&lt;--------------|       |       |       |       |
-  |12.Revert to initial path      |       |       |       |       |
-  |&lt;--------------|       |       |       |       |       |       |
-  |13.IP service reverted |       |       |       |       |       |
-  |--------------&gt;|       |       |       |       |       |       |
-  |       |       |14.IP service reverted |       |       |       |
-  |       |       |--------------&gt;|       |       |       |       |
-</pre>
+          <div id="section-7.5-5.1">
+            <div class="alignLeft art-svg artwork" id="section-7.5-5.1.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="512" width="536" viewBox="0 0 536 512" class="diagram" text-anchor="middle" font-family="monospace" font-size="13px" stroke-linecap="round">
+                <path d="M 8,48 L 8,480" fill="none" stroke="black"></path>
+                <path d="M 72,48 L 72,128" fill="none" stroke="black"></path>
+                <path d="M 72,200 L 72,384" fill="none" stroke="black"></path>
+                <path d="M 72,456 L 72,480" fill="none" stroke="black"></path>
+                <path d="M 136,72 L 136,128" fill="none" stroke="black"></path>
+                <path d="M 136,192 L 136,256" fill="none" stroke="black"></path>
+                <path d="M 136,328 L 136,384" fill="none" stroke="black"></path>
+                <path d="M 136,448 L 136,480" fill="none" stroke="black"></path>
+                <path d="M 200,64 L 200,96" fill="none" stroke="black"></path>
+                <path d="M 200,136 L 200,160" fill="none" stroke="black"></path>
+                <path d="M 200,232 L 200,256" fill="none" stroke="black"></path>
+                <path d="M 200,288 L 200,352" fill="none" stroke="black"></path>
+                <path d="M 200,416 L 200,448" fill="none" stroke="black"></path>
+                <path d="M 264,128 L 264,192" fill="none" stroke="black"></path>
+                <path d="M 264,256 L 264,280" fill="none" stroke="black"></path>
+                <path d="M 264,384 L 264,448" fill="none" stroke="black"></path>
+                <path d="M 328,96 L 328,192" fill="none" stroke="black"></path>
+                <path d="M 328,256 L 328,352" fill="none" stroke="black"></path>
+                <path d="M 328,384 L 328,480" fill="none" stroke="black"></path>
+                <path d="M 392,48 L 392,64" fill="none" stroke="black"></path>
+                <path d="M 392,96 L 392,480" fill="none" stroke="black"></path>
+                <path d="M 456,48 L 456,64" fill="none" stroke="black"></path>
+                <path d="M 456,96 L 456,480" fill="none" stroke="black"></path>
+                <path d="M 520,48 L 520,480" fill="none" stroke="black"></path>
+                <path d="M 80,64 L 192,64" fill="none" stroke="black"></path>
+                <path d="M 208,96 L 256,96" fill="none" stroke="black"></path>
+                <path d="M 144,128 L 256,128" fill="none" stroke="black"></path>
+                <path d="M 16,160 L 128,160" fill="none" stroke="black"></path>
+                <path d="M 16,192 L 128,192" fill="none" stroke="black"></path>
+                <path d="M 144,224 L 256,224" fill="none" stroke="black"></path>
+                <path d="M 208,256 L 256,256" fill="none" stroke="black"></path>
+                <path d="M 80,288 L 192,288" fill="none" stroke="black"></path>
+                <path d="M 208,288 L 320,288" fill="none" stroke="black"></path>
+                <path d="M 80,320 L 192,320" fill="none" stroke="black"></path>
+                <path d="M 208,320 L 320,320" fill="none" stroke="black"></path>
+                <path d="M 208,352 L 256,352" fill="none" stroke="black"></path>
+                <path d="M 144,384 L 256,384" fill="none" stroke="black"></path>
+                <path d="M 16,416 L 128,416" fill="none" stroke="black"></path>
+                <path d="M 16,448 L 128,448" fill="none" stroke="black"></path>
+                <path d="M 144,480 L 256,480" fill="none" stroke="black"></path>
+                <polygon class="arrowhead" points="328,288 316,282.4 316,293.6" fill="black" transform="rotate(0,320,288)"></polygon>
+                <polygon class="arrowhead" points="264,480 252,474.4 252,485.6" fill="black" transform="rotate(0,256,480)"></polygon>
+                <polygon class="arrowhead" points="264,352 252,346.4 252,357.6" fill="black" transform="rotate(0,256,352)"></polygon>
+                <polygon class="arrowhead" points="264,224 252,218.4 252,229.6" fill="black" transform="rotate(0,256,224)"></polygon>
+                <polygon class="arrowhead" points="264,96 252,90.4 252,101.6" fill="black" transform="rotate(0,256,96)"></polygon>
+                <polygon class="arrowhead" points="216,320 204,314.4 204,325.6" fill="black" transform="rotate(180,208,320)"></polygon>
+                <polygon class="arrowhead" points="216,256 204,250.4 204,261.6" fill="black" transform="rotate(180,208,256)"></polygon>
+                <polygon class="arrowhead" points="200,320 188,314.4 188,325.6" fill="black" transform="rotate(0,192,320)"></polygon>
+                <polygon class="arrowhead" points="200,64 188,58.4 188,69.6" fill="black" transform="rotate(0,192,64)"></polygon>
+                <polygon class="arrowhead" points="152,384 140,378.4 140,389.6" fill="black" transform="rotate(180,144,384)"></polygon>
+                <polygon class="arrowhead" points="152,128 140,122.4 140,133.6" fill="black" transform="rotate(180,144,128)"></polygon>
+                <polygon class="arrowhead" points="136,448 124,442.4 124,453.6" fill="black" transform="rotate(0,128,448)"></polygon>
+                <polygon class="arrowhead" points="136,192 124,186.4 124,197.6" fill="black" transform="rotate(0,128,192)"></polygon>
+                <polygon class="arrowhead" points="88,288 76,282.4 76,293.6" fill="black" transform="rotate(180,80,288)"></polygon>
+                <polygon class="arrowhead" points="24,416 12,410.4 12,421.6" fill="black" transform="rotate(180,16,416)"></polygon>
+                <polygon class="arrowhead" points="24,160 12,154.4 12,165.6" fill="black" transform="rotate(180,16,160)"></polygon>
+                <g class="text">
+                  <text x="12" y="36">R1</text>
+                  <text x="76" y="36">ROADM1</text>
+                  <text x="144" y="36">P-PNC</text>
+                  <text x="208" y="36">O-PNC</text>
+                  <text x="268" y="36">MDSC</text>
+                  <text x="332" y="36">ROADM2</text>
+                  <text x="396" y="36">R2</text>
+                  <text x="460" y="36">ROADM3</text>
+                  <text x="524" y="36">R3</text>
+                  <text x="104" y="52">1.Fiber</text>
+                  <text x="156" y="52">back</text>
+                  <text x="204" y="52">online</text>
+                  <text x="284" y="52">notification</text>
+                  <text x="264" y="68">|</text>
+                  <text x="328" y="68">|</text>
+                  <text x="232" y="84">2.Fiber</text>
+                  <text x="284" y="84">back</text>
+                  <text x="332" y="84">online</text>
+                  <text x="412" y="84">notification</text>
+                  <text x="264" y="100">|</text>
+                  <text x="172" y="116">3.Switch</text>
+                  <text x="220" y="116">to</text>
+                  <text x="260" y="116">backup</text>
+                  <text x="308" y="116">path</text>
+                  <text x="44" y="148">4.Switch</text>
+                  <text x="92" y="148">to</text>
+                  <text x="132" y="148">backup</text>
+                  <text x="180" y="148">path</text>
+                  <text x="136" y="164">|</text>
+                  <text x="48" y="180">5.Service</text>
+                  <text x="116" y="180">switch</text>
+                  <text x="196" y="180">notification</text>
+                  <text x="200" y="196">|</text>
+                  <text x="176" y="212">6.Service</text>
+                  <text x="244" y="212">switch</text>
+                  <text x="324" y="212">notification</text>
+                  <text x="264" y="228">|</text>
+                  <text x="328" y="228">|</text>
+                  <text x="236" y="244">7.Revert</text>
+                  <text x="284" y="244">to</text>
+                  <text x="328" y="244">primary</text>
+                  <text x="108" y="276">8.Revert</text>
+                  <text x="156" y="276">to</text>
+                  <text x="200" y="276">primary</text>
+                  <text x="128" y="308">9.Acknowledge</text>
+                  <text x="264" y="308">|</text>
+                  <text x="260" y="340">10.Acknowledge</text>
+                  <text x="264" y="356">|</text>
+                  <text x="176" y="372">11.Revert</text>
+                  <text x="228" y="372">to</text>
+                  <text x="272" y="372">initial</text>
+                  <text x="324" y="372">path</text>
+                  <text x="48" y="404">12.Revert</text>
+                  <text x="100" y="404">to</text>
+                  <text x="144" y="404">initial</text>
+                  <text x="196" y="404">path</text>
+                  <text x="136" y="420">|</text>
+                  <text x="32" y="436">13.IP</text>
+                  <text x="88" y="436">service</text>
+                  <text x="156" y="436">reverted</text>
+                  <text x="160" y="468">14.IP</text>
+                  <text x="216" y="468">service</text>
+                  <text x="284" y="468">reverted</text>
+                  <text x="264" y="484">|</text>
+                </g>
+              </svg><a href="#section-7.5-5.1.1" class="pilcrow">¶</a>
+</div>
 </div>
 <figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
 <a href="#name-hitless-multi-layer-reversi" class="selfRef">hitless multi-layer reversion</a>
@@ -2619,10 +3865,10 @@ guaranteeing a hitless switching.<a href="#section-7.5-3.3.1" class="pilcrow">¶
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Fabio Peruzzini</span></div>
-<div dir="auto" class="left"><span class="org">TIM</span></div>
+<div dir="auto" class="left"><span class="org">FiberCop</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:fabio.peruzzini@telecomitalia.it" class="email">fabio.peruzzini@telecomitalia.it</a>
+<a href="mailto:fabio.peruzzini@fibercop.com" class="email">fabio.peruzzini@fibercop.com</a>
 </div>
 </address>
 <address class="vcard">

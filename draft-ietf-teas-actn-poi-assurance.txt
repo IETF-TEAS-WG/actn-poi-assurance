@@ -2,17 +2,17 @@
 
 
 
-TEAS WG                                                          I. Busi
+TEAS Working Group                                               I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 24 January 2026                                        Vodafone
+Expires: 30 January 2026                                        Vodafone
                                                             F. Peruzzini
-                                                                     TIM
+                                                                FiberCop
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                            23 July 2025
+                                                            29 July 2025
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -36,6 +36,24 @@ Abstract
    specific focus on the MPI (Multi-Domain Service Coordinator to
    Provisioning Network Controllers Interface) in the ACTN architecture.
 
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at https://IETF-TEAS-
+   WG.github.io/actn-poi-assurance/draft-ietf-teas-actn-poi-
+   assurance.html.  Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-ietf-teas-actn-poi-assurance/.
+
+   Discussion of this document takes place on the Traffic Engineering
+   Architecture and Signaling Working Group mailing list
+   (mailto:teas@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/teas/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/teas/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/IETF-TEAS-WG/actn-poi-assurance.
+
 Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
@@ -51,7 +69,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 January 2026.
+   This Internet-Draft will expire on 30 January 2026.
 
 Copyright Notice
 
@@ -330,27 +348,27 @@ Table of Contents
    The following network topology will be considered to analyze and
    discuss the scenarios in in Section 7.
 
-   │<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>│
-   ┌――――――――┐  ┌――――――――┐                     ┌――――――――┐  ┌――――――――┐
-   │      P1│--│P1    P3│\        ___        /│P3    P1│--│P1      │
-   │  R1    │  │ ROADM1 │ \  ____/   \____  / │ ROADM2 │  │   R2   │
-   │      P2│--│P2    P4│\ \/             \/ /│P4    P2│--│P2      │
-   └――――――――┘  └――――――――┘ \|    Optical    |/ └――――――――┘  └――――――――┘
+   |<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>|
+   +--------+  +--------+                     +--------+  +--------+
+   |      P1|--|P1    P3|\        ___        /|P3    P1|--|P1      |
+   |  R1    |  | ROADM1 | \  ____/   \____  / | ROADM2 |  |   R2   |
+   |      P2|--|P2    P4|\ \/             \/ /|P4    P2|--|P2      |
+   +--------+  +--------+ \|    Optical    |/ +--------+  +--------+
                            |    Network    |
-   │<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>│
+   |<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>|
                         x      |       |     x
                          x     |       |    x
-                           x  ┌―――――――――┐  x
-                            x │P3     P4│ x
-                            x │ ROADM3  │ x
-                            x │P1     P2│ x
-                            x └―――――――――┘ x
+                           x  +---------+  x
+                            x |P3     P4| x
+                            x | ROADM3  | x
+                            x |P1     P2| x
+                            x +---------+ x
                             x  |       |  x
-                            x ┌―――――――――┐ x
-                            x │P1     P2│ x
-                            x │   R3    │ x
-                            ˅ │         │ ˅
-                            ― └―――――――――┘ ―
+                            x +---------+ x
+                            x |P1     P2| x
+                            x |   R3    | x
+                            V |         | V
+                            - +---------+ -
 
                         Figure 2: Reference Network
 
@@ -423,23 +441,23 @@ Table of Contents
    The following figure illustrates the reference scenario useful to
    discuss the fault management cases.
 
-   ┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-   │                             MDSC                              │
-   └―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
+   +---------------------------------------------------------------+
+   |                             MDSC                              |
+   +---------------------------------------------------------------+
       /\                          /\
       || 1                        || 2
       ||                          ||
-   ┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-   │P-PNC │      │              O-PNC                │      │P-PNC │
-   └――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
+   +------+      +-----------------------------------+      +------+
+   |P-PNC |      |              O-PNC                |      |P-PNC |
+   +------+      +-----------------------------------+      +------+
       /\             /\           /\
       || a           || b         || c
       ||             ||         _____
       ||             ||   _____/     \_______
-   ┌――――――┐      ┌――――――┐/                   \┌――――――┐      ┌――――――┐
-   │  R1  │----->│ROADM1│      Optical        │ROADM2│----->│  R2  │
-   │      │<-----│      │      Network        │      │<-----│      │
-   └――――――┘      └――――――┘\___________________/└――――――┘      └――――――┘
+   +------+      +------+/                   \+------+      +------+
+   |  R1  |----->|ROADM1|      Optical        |ROADM2|----->|  R2  |
+   |      |<-----|      |      Network        |      |<-----|      |
+   +------+      +------+\___________________/+------+      +------+
 
        Figure 3: Reference scenario for multi-layer fault management
 
@@ -551,23 +569,23 @@ Table of Contents
    between a router and a ROADM.  A first case concerns the Tx fiber
    used by R1 to send traffic to ROADM1 (Figure 4).
 
-   ┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-   │                             MDSC                              │
-   └―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
+   +---------------------------------------------------------------+
+   |                             MDSC                              |
+   +---------------------------------------------------------------+
       /\                          /\
       || IP Link down             || R1-ROADM1 Link Down
       ||                          ||
-   ┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-   │P-PNC │      │              O-PNC                │      │P-PNC │
-   └――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
+   +------+      +-----------------------------------+      +------+
+   |P-PNC |      |              O-PNC                |      |P-PNC |
+   +------+      +-----------------------------------+      +------+
       /\             /\                                        /\
       || RFI status  || LOS alarm                   LFI status ||
       || BFD Down    ||         _____                 BFD Down ||
       ||             ||   _____/     \_______                  ||
-   ┌――――――┐  \/  ┌――――――┐/                   \┌――――――┐  LFI ┌――――――┐
-   │  R1  │--/\->│ROADM1│--------CSF--------->│ROADM2│----->│  R2  │
-   │      │<-----│      │<-------CSF----------│      │<-----│      │
-   └――――――┘  RFI └――――――┘\___________________/└――――――┘  RFI └――――――┘
+   +------+  \/  +------+/                   \+------+  LFI +------+
+   |  R1  |--/\->|ROADM1|--------CSF--------->|ROADM2|----->|  R2  |
+   |      |<-----|      |<-------CSF----------|      |<-----|      |
+   +------+  RFI +------+\___________________/+------+  RFI +------+
 
                Figure 4: Failure on the optical ingress link
 
@@ -592,23 +610,23 @@ Table of Contents
    A second case is depicted in figure Figure 5.  The failure happens on
    the Rx fiber used by R2 to receive traffic from ROADM2.
 
-   ┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-   │                             MDSC                              │
-   └―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
+   +---------------------------------------------------------------+
+   |                             MDSC                              |
+   +---------------------------------------------------------------+
       /\                          /\
       || R2-ROADM2 Link Down      || R2-ROADM2 Link Down
       ||                          ||
-   ┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-   │P-PNC │      │              O-PNC                │      │P-PNC │
-   └――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
+   +------+      +-----------------------------------+      +------+
+   |P-PNC |      |              O-PNC                |      |P-PNC |
+   +------+      +-----------------------------------+      +------+
       /\                                         /\           /\
       || RFI status                   RFI status || LOS alarm ||
       || BFD Down               _____            ||           ||
       ||                  _____/     \_______    ||           ||
-   ┌――――――┐      ┌――――――┐/                   \┌――――――┐  \/  ┌――――――┐
-   │  R1  │----->│ROADM1│-------------------->│ROADM2│--/\->│  R2  │
-   │      │<-----│      │<-------CSF----------│      │<-----│      │
-   └――――――┘  RFI └――――――┘\___________________/└――――――┘  RFI └――――――┘
+   +------+      +------+/                   \+------+  \/  +------+
+   |  R1  |----->|ROADM1|-------------------->|ROADM2|--/\->|  R2  |
+   |      |<-----|      |<-------CSF----------|      |<-----|      |
+   +------+  RFI +------+\___________________/+------+  RFI +------+
 
                 Figure 5: Failure on the optical egress link
 
@@ -630,23 +648,23 @@ Table of Contents
    for example for a simultaneous fiber cut, as shown in figure
    Figure 6.
 
-   ┌―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┐
-   │                             MDSC                              │
-   └―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――┘
+   +---------------------------------------------------------------+
+   |                             MDSC                              |
+   +---------------------------------------------------------------+
       /\                          /\
       || R1-ROADM1 Link Down      || R1-ROADM1 Link Down
       ||                          ||
-   ┌――――――┐      ┌―――――――――――――――――――――――――――――――――――┐      ┌――――――┐
-   │P-PNC │      │              O-PNC                │      │P-PNC │
-   └――――――┘      └―――――――――――――――――――――――――――――――――――┘      └――――――┘
+   +------+      +-----------------------------------+      +------+
+   |P-PNC |      |              O-PNC                |      |P-PNC |
+   +------+      +-----------------------------------+      +------+
       /\            /\                                        /\
       || LOS alarm  || LOS alarm                   LFI status ||
       ||            ||                               BFD down ||
       ||            ||    _____/     \_______                 ||
-   ┌――――――┐      ┌――――――┐/                   \┌――――――┐  LFI ┌――――――┐
-   │  R1  │--\/->│ROADM1│--------CSF--------->│ROADM2│----->│  R2  │
-   │      │<-/\--│      │<-------CSF----------│      │<-----│      │
-   └――――――┘      └――――――┘\___________________/└――――――┘  RFI └――――――┘
+   +------+      +------+/                   \+------+  LFI +------+
+   |  R1  |--\/->|ROADM1|--------CSF--------->|ROADM2|----->|  R2  |
+   |      |<-/\--|      |<-------CSF----------|      |<-----|      |
+   +------+      +------+\___________________/+------+  RFI +------+
 
                     Figure 6: Failure on the access link
 
@@ -697,9 +715,9 @@ Table of Contents
    measures, through the support of the P-PNC (e.g. reroute the IP
    traffic on a different IP path).  The MDSC can take further steps,
    such as to verify through the O-PNC if any failure or degradation has
-   happened in the optical layer but this is out of the scope of case
-   #2.  The attention here is on the IP multi-domain, end-to-end
-   performance management.
+   happened in the optical layer but this is out of the scope of case 2.
+   The attention here is on the IP multi-domain, end-to-end performance
+   management.
 
    The two cases are further detailed in the relevant subsections.
 
@@ -833,23 +851,23 @@ Table of Contents
      |-------------->|       |       |       |       |       |       |
      |       |       |2b.Fault notification  |       |       |       |
      |       |       |-------------->|       |       |       |       |
-   ┌――――――┐
-   │3.FRR │
-   └――――――┘
+   +------+
+   |3.FRR |
+   +------+
      |4.IP service switched (backup path through R3) |       |       |
      |-------------->|       |       |       |       |       |       |
      |       |       |5.IP service switched  |       |       |       |
      |       |       |-------------->|       |       |       |       |
-      ┌―――――――――――――┐                 ┌―――――――――――――┐
-      │6.Restoration│<--------------->│6.Restoration│
-      └―――――――――――――┘                 └―――――――――――――┘
+      +-------------+                 +-------------+
+      |6.Restoration|<--------------->|6.Restoration|
+      +-------------+                 +-------------+
      |       |7.Path ready   |   7.Path ready|       |       |       |
      |       |-------------->|<--------------|       |       |       |
      |       |       |       |8.Notification |       |       |       |
      |       |       |       |------>|       |       |       |       |
-   ┌――――――――┐
-   │9.Revert│
-   └――――――――┘
+   +--------+
+   |9.Revert|
+   +--------+
      |10.IP service reverted |       |       |       |       |       |
      |-------------->|       |       |       |       |       |       |
      |       |       |11.IP service reverted |       |       |       |
@@ -930,19 +948,19 @@ Table of Contents
      |-------------->|       |       |       |       |       |       |
      |       |       |2b.Fault notification  |       |       |       |
      |       |       |-------------->|       |       |       |       |
-   ┌――――――┐
-   │3.Hold│
-   └――――――┘
-      ┌―――――――――――――┐
-      │4.Protection │------->|-------------->|
-      └―――――――――――――┘
+   +------+
+   |3.Hold|
+   +------+
+      +-------------+
+      |4.Protection |------->|-------------->|
+      +-------------+
      |       |5.Path ready   |   5.Path ready|       |       |       |
      |       |-------------->|<--------------|       |       |       |
      |       |       |       |6.Notification |       |       |       |
      |       |       |       |------>|       |       |       |       |
-   ┌――――――――┐
-   │7.IP Up │
-   └――――――――┘
+   +--------+
+   |7.IP Up |
+   +--------+
 
              Figure 8: Fault detection with optical protection
 
@@ -1043,9 +1061,9 @@ Table of Contents
      |-------------->|       |       |       |       |       |       |
      |       |       |15.IP service reverted |       |       |       |
      |       |       |-------------->|       |       |       |       |
-             ┌―――――――――――――――――――――――――――――――┐
-             │     16.Maintenance window     │
-             └―――――――――――――――――――――――――――――――┘
+             +-------------------------------+
+             |     16.Maintenance window     |
+             +-------------------------------+
 
                    Figure 9: Maintenance window operation
 
@@ -1125,15 +1143,15 @@ Table of Contents
    figure Figure 2, does not change as only N optical channels (e.g.
    lambdas) are used, as shown in figure Figure 10.
 
-   ┌――――――――――┐   ┌――――――――――┐
-   │        P1│---│P1        │
-   │          │   │       OP1│
-   │        P2│---│P2        │
-   │    R1    │   │  ROADM1  │
-   │        P3│---│P3        │
-   │          │   │       OP2│
-   │        PP│---│PP        │
-   └――――――――――┘   └――――――――――┘
+   +----------+   +----------+
+   |        P1|---|P1        |
+   |          |   |       OP1|
+   |        P2|---|P2        |
+   |    R1    |   |  ROADM1  |
+   |        P3|---|P3        |
+   |          |   |       OP2|
+   |        PP|---|PP        |
+   +----------+   +----------+
 
                    Figure 10: Use of N:1 protection on R1
 
@@ -1157,16 +1175,16 @@ Table of Contents
      |-------------->|       |       |       |       |       |       |
      |       |       |2.Port R1/P1 failure   |       |       |       |
      |       |       |-------------->|       |       |       |       |
-   ┌―――――――┐
-   │ 3.FRR │
-   └―――――――┘
+   +-------+
+   | 3.FRR |
+   +-------+
      |4.IP service switched  |       |       |       |       |       |
      |-------------->|       |       |       |       |       |       |
      |       |       |5.IP service switched  |       |       |       |
      |       |       |-------------->|       |       |       |       |
-   ┌―――――――┐
-   │6.PP Up│
-   └―――――――┘
+   +-------+
+   |6.PP Up|
+   +-------+
      |7.Port R1/PP Up|       |       |       |       |       |       |
      |-------------->|       |       |       |       |       |       |
      |       |       |8.Port R1/PP Up|       |       |       |       |
@@ -1261,27 +1279,27 @@ Table of Contents
    R1 can now steers the previous R1-R2 traffic to the new optical path.
    The final configuration is shown in figure Figure 12.
 
-   │<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>│
-   ┌――――――――┐  ┌――――――――┐                     ┌――――――――┐  ┌――――――――┐
-   │      P1│--│P1    P3│\        ___        /│P3    P1│--│P1      │
-   │  R1    │  │ ROADM1 │ \  ____/   \____  / │ ROADM2 │  │   R2   │
-   │      P2│--│P2    P4│\ \/             \/ /│P4    P2│--│P2      │
-   └――――――――┘  └――――――――┘ \|    Optical    |/ └――――――――┘  └――――――――┘
+   |<xxxxxxxxxxxxxxxxxxxxxxx IP Link R1-R2 xxxxxxxxxxxxxxxxxxxxxxx>|
+   +--------+  +--------+                     +--------+  +--------+
+   |      P1|--|P1    P3|\        ___        /|P3    P1|--|P1      |
+   |  R1    |  | ROADM1 | \  ____/   \____  / | ROADM2 |  |   R2   |
+   |      P2|--|P2    P4|\ \/             \/ /|P4    P2|--|P2      |
+   +--------+  +--------+ \|    Optical    |/ +--------+  +--------+
                            |    Network    |
-   │<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>│
+   |<xx IP Link R1-R3 xx    \_____________/   xx IP Link R3-R2 xxx>|
                         x      |       |     x
-   │<xX R1-R3 backup xx  x     |       |    x
-                       x   x  ┌―――――――――┐  x
-                        x   x │P3     P4│ x
-                         x  x │ ROADM3  │ x
-                         x  x │P1     P2│ x
-                         x  x └―――――――――┘ x
+   |<xX R1-R3 backup xx  x     |       |    x
+                       x   x  +---------+  x
+                        x   x |P3     P4| x
+                         x  x | ROADM3  | x
+                         x  x |P1     P2| x
+                         x  x +---------+ x
                          x  x  |       |  x
-                         x  x ┌―――――――――┐ x
-                         x  x │P1     P2│ x
-                         x  x │   R3    │ x
-                         ˅  ˅ │         │ ˅
-                         -  ― └―――――――――┘ ―
+                         x  x +---------+ x
+                         x  x |P1     P2| x
+                         x  x |   R3    | x
+                         V  V |         | V
+                         -  - +---------+ -
 
          Figure 12: IP configuration after the creation of a second
                                 optical path
@@ -1290,10 +1308,10 @@ Table of Contents
    protection case.
 
      R1    ROADM1   P-PNC   O-PNC   MDSC   ROADM2    R2    ROADM3    R3
-   ┌―――――――――┐
-   │1.R2 down│
-   │ and FRR │
-   └―――――――――┘
+   +---------+
+   |1.R2 down|
+   | and FRR |
+   +---------+
      |2.R2 down + FRR|       |       |       |       |       |       |
      |-------------->|       |       |       |       |       |       |
      |       |       |3.R2 down + FRR|       |       |       |       |
@@ -1586,8 +1604,8 @@ Authors' Addresses
 
 
    Fabio Peruzzini
-   TIM
-   Email: fabio.peruzzini@telecomitalia.it
+   FiberCop
+   Email: fabio.peruzzini@fibercop.com
 
 
    Paolo Volpato
