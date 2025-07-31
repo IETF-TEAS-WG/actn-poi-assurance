@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-24T01:06:57.571969+00:00",
+  "timestamp": "2025-07-31T01:07:55.421811+00:00",
   "repo": "IETF-TEAS-WG/actn-poi-assurance",
   "labels": [
     {
@@ -764,19 +764,17 @@
       "id": "I_kwDOJAsmzM60tv2U",
       "title": "Update mail address of Fabio",
       "url": "https://github.com/IETF-TEAS-WG/actn-poi-assurance/issues/23",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
         "italobusi"
       ],
-      "labels": [
-        "wait"
-      ],
+      "labels": [],
       "body": "Update the mail address of Fabio after WG adoption (-01 WG document)\n",
       "createdAt": "2025-04-30T16:53:45Z",
-      "updatedAt": "2025-07-04T10:36:37Z",
-      "closedAt": null,
+      "updatedAt": "2025-07-30T13:29:37Z",
+      "closedAt": "2025-07-30T13:29:37Z",
       "comments": [
         {
           "author": "italobusi",
@@ -791,6 +789,13 @@
           "body": "```\n    name: Fabio Peruzzini\n    org: FiberCop\n    email: fabio.peruzzini@fibercop.com\n\n```",
           "createdAt": "2025-07-04T10:36:37Z",
           "updatedAt": "2025-07-04T10:36:37Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed with d11944b018261aace9712f32ae7754cc71b74d7b",
+          "createdAt": "2025-07-30T13:29:37Z",
+          "updatedAt": "2025-07-30T13:29:37Z"
         }
       ]
     },
@@ -838,7 +843,7 @@
       "id": "I_kwDOJAsmzM7CG2Ka",
       "title": "Fix idnits",
       "url": "https://github.com/IETF-TEAS-WG/actn-poi-assurance/issues/26",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -847,9 +852,17 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-07-23T14:16:09Z",
-      "updatedAt": "2025-07-23T14:16:09Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-07-30T13:29:51Z",
+      "closedAt": "2025-07-30T13:29:51Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed with 2a81336bbcc0fa25c4886724c7db0399da603f18",
+          "createdAt": "2025-07-30T13:29:51Z",
+          "updatedAt": "2025-07-30T13:29:51Z"
+        }
+      ]
     }
   ],
   "pulls": [
