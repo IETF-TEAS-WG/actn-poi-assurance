@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-31T01:07:55.421811+00:00",
+  "timestamp": "2025-08-03T01:14:32.951433+00:00",
   "repo": "IETF-TEAS-WG/actn-poi-assurance",
   "labels": [
     {
@@ -822,7 +822,7 @@
       "id": "I_kwDOJAsmzM7AsDht",
       "title": "Setup meeting series for IETF 124",
       "url": "https://github.com/IETF-TEAS-WG/actn-poi-assurance/issues/25",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -834,9 +834,17 @@
       ],
       "body": "**[ACTN POI Assurance bi-weekly call (July 15, 2025)](https://github.com/italobusi/draft-poidt-teas-actn-poi-assurance/wiki/minutes-2025-07-15)**\n\nSetup a new meeting series from September 9, 2025 till October 21, 2025 and update the Wiki page accordingly",
       "createdAt": "2025-07-15T15:38:46Z",
-      "updatedAt": "2025-07-15T15:47:16Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-07-31T10:11:09Z",
+      "closedAt": "2025-07-31T10:11:08Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Done: https://mailarchive.ietf.org/arch/msg/teas/bCN8mG11enDjOi94gUiIF0YnSjA/",
+          "createdAt": "2025-07-31T10:11:09Z",
+          "updatedAt": "2025-07-31T10:11:09Z"
+        }
+      ]
     },
     {
       "number": 26,
