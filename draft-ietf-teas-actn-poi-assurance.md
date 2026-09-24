@@ -116,32 +116,99 @@ normative:
 
 # Introduction
 
-Service assurance is a critical aspect of Operations, Administration and Management
-(OAM). It consists of activities and processes intended to guarantee a specified Service Level Agreement (SLA) for the customer of a telecommunication service. Service assurance includes both fault management, to correct service anomalies and network faults, and performance management, to monitor service and network parameters and provide early warning of potential service-related issues.
+Service assurance is a critical aspect of Operations, Administration
+and Management (OAM). It consists of activities and processes
+intended to guarantee a specified Service Level Agreement (SLA) for
+the customer of a telecommunication service. Service assurance
+includes both fault management, to correct service anomalies and
+network faults, and performance management, to monitor service and
+network parameters and provide early warning of potential service-
+related issues.
 
-Within the scope of this document, service assurance is discussed in the context of a multi-layer, multi-domain network. This document leverages the Abstraction and Control of TE Networks (ACTN) framework {{!RFC8453}} and further expands the analysis of its applicability to multi-layer packet-optical integrated networks {{!I-D.ietf-teas-actn-poi-applicability}}, adding considerations specific to fault and performance management scenarios.
+Within the scope of this document, service assurance is discussed in
+the context of a multi-layer network, composed by a packet layer and
+an optical layer. This document leverages the Abstraction and Control
+of TE Networks (ACTN) framework [RFC8453] and further expands the
+analysis of its applicability, discussed in
+[I-D.ietf-teas-actn-poi-applicability], to multi-layer packet-optical
+integrated networks, adding considerations specific to fault and
+performance management scenarios.
 
-As already highlighted in {{!I-D.ietf-teas-actn-poi-applicability}}, a multi-layer network is composed of an IP layer and an optical transport layer. A multi-domain network is composed of at least two different administrative domains (e.g., core and edge) under the control of the same organization (e.g. the same network operator). Service assurance applies to end-to-end L2VPN or L3VPN connectivity services configured over IP and underlying transport optical paths that require multi-layer coordination.
+Differently to [I-D.ietf-teas-actn-poi-applicability], the scope of
+this document limits to single-domain networks. Hence, the networks
+considered by this analysis are administered by a single organization
+(e.g., a single network provider) and are composed by two technically
+distinct layers (as said, packet and optical). The two layers may
+by manageged by different operational teams within the same
+organization.
+   
+Service assurance applies to end-to-end L2VPN or L3VPN connectivity
+services configured over IP and underlying transport optical paths
+that require multi-layer coordination.
+To guarantee the SLAs associated with VPN services, service assurance
+is performed through collaboration among the ACTN control entities
+[RFC8453]: 
+* the Multi-Domain Service Coordinator (MDSC), acting as the 
+  top-level controller, and
+* the Provisioning Network Controllers (PNCs), deployed in the
+  Packet (P-PNC) and Optical (O-PNC) layers.
 
-To guarantee the SLAs associated with VPN services, service assurance is performed through collaboration among the ACTN control entities {{!RFC8453}}: the Multi-Domain Service Coordinator (MDSC), acting as the top-level controller, and the Provisioning Network Controllers (PNCs) deployed in both the packet (P-PNC) and optical (O-PNC) layers.
+This document aligns with current field operational procedures and
+[I-D.ietf-teas-actn-poi-applicability], which assume both the P-PNC
+and the O-PNC provide the MDSC with enough information for performing
+Root Cause Analysis (RCA). The MDSC correlates the events, alarms or
+notifications related to either a packet or an optical network failure
+with the impacted services at the IP layer.
+   
+In particular for the optical network, the set of information shared
+by the O-PNC to the MDSC depends on local configuration adopted at the
+MDSC-PNC Interface (MPI) [RFC8453]. In general, this may include
+information about the optical path, tunnel, or fiber where the failure
+happened, together with its location and operational state (e.g.,
+"down"), while hiding further topology details. This data is sufficient
+for the MDSC to perform multi-layer correlation and discover which IP
+links, Label Switched Paths (LSPs), and VPNs are affected.
+	  
+The analysis of the YANG data models applicable to service assurance
+(fault and performance) is in scope of this document. 
+The development of new YANG models/modules to support the missing
+functions is instead not in scope of the present document. 
+To this extent, this document acts as a framework that provides a gap
+analysis and identifies topics for future work to be addressed in other
+documents.	  
+	  
+A related effort is described in [I-D.ietf-ccamp-actn-optical-transport-mgmt], which enhances the ACTN
+architecture for optical networks with Fault, Configuration, Accounting,
+Performance, and Security (FCAPS) management capabilities, including the
+addition of rich-detail network management (RDNM) to the MPI. While that
+document addresses the general integration of YANG-based FCAPS 
+capabilities into ACTN for optical networks, the present document
+focuses on multi-layer (packet and optical) service assurance in Packet
+Optical Integration (POI) scenarios, specifically analyzing fault
+detection, performance monitoring, and resiliency coordination across
+the packet and optical layers.
+	  
+The document has the following organization. Section 2 lists the
+conventions and definitions used in the text. Section 3 discusses the
+reference network in scope for the relevant service assurance cases.
+Section 4 identifies the YANG data models applicable to service assurance
+and provides a gap analysis for modules that are still missing. Section
+5 identifies the possible faults, either in the optical layer, the IP
+layer, or both. Section 6 deals with performance management aspects of
+service assurance in a packet-optical integrated network. Finally, 
+Section 7 discusses the protection mechanisms available for the most
+typical fault scenarios of a multi-layer network.
 
-This document aligns with current field operational procedures and {{!I-D.ietf-teas-actn-poi-applicability}}, which assume both the P-PNC and the O-PNC provide the MDSC with enough information for performing Root Cause Analysis (RCA), correlating for example an event or an alarm related to either a packet or an optical network failure with the impacted services at the IP layer.
-
-In particular for the optical network, the set of information shared by the O-PNC to the MDSC depends on local configuration adopted at the MDSC-PNC Interface (MPI) {{RFC8453}}. In general, this may include information about the optical path, tunnel, or fiber where the failure happened, together with its location and operational state (e.g., "down"), while hiding further topology details. This data is sufficient for the MDSC to perform multi-layer correlation and discover which IP links, Label Switched Paths (LSPs), and VPNs are affected.
-
-The analysis of the YANG data models applicable to service assurance (fault and performance) is in scope of this document. The development of new YANG models/modules to support the missing functions is instead not in scope of the present document. To this extent, this document acts as a framework that provides a gap analysis and identifies topics for future work to be addressed in other documents.
-
-A related effort is described in {{?I-D.ietf-ccamp-actn-optical-transport-mgmt}}, which enhances the ACTN architecture for optical networks with FCAPS (Fault, Configuration, Accounting, Performance, and Security) management capabilities, including the addition of rich-detail network management (RDNM) to the MPI. While that document addresses the general integration of YANG-based FCAPS capabilities into ACTN for optical networks, the present document focuses on multi-layer (packet and optical) service assurance in Packet Optical Integration (POI) scenarios, specifically analyzing fault detection, performance monitoring, and resiliency coordination across the packet and optical layers.
-
-The document has the following organization. Section 2 lists the conventions and definitions used in the text. Section 3 discusses the reference network in scope for the relevant service assurance cases. Section 4 identifies the YANG data models applicable to service assurance and provides a gap analysis for modules that are still missing.
-
-Section 5 identifies the possible faults, either in the optical layer, the IP layer, or both. Section 6 deals with performance management aspects of service assurance in a packet-optical integrated network. Finally, Section 7 discusses the protection mechanisms available for the most typical fault scenarios of a multi-layer, multi-domain network.
-
-For each multi-technology scenario, the document analyzes how to use the interfaces and the data models of the ACTN architecture.
-
+For each multi-technology scenario, the document analyzes how to use
+the interfaces and the data models of the ACTN architecture.
+   
 A summary of the gaps identified in this analysis is provided in Section 8.
-
-Understanding the degree of standardization and the identified gaps will help assess the feasibility of integration between packet and optical Dense Wavelength Division Multiplexing (DWDM) domains (and optionally the Optical Transport Network (OTN) layer) from an end-to-end, multi-vendor service assurance perspective.
+   
+Understanding the degree of standardization and the identified gaps will
+help assess the feasibility of integration between packet and optical
+Dense Wavelength Division Multiplexing (DWDM) domains (and optionally
+the Optical Transport Network (OTN) layer) from an end-to-end,
+multi-vendor service assurance perspective.
 
 # Conventions and Definitions
 
