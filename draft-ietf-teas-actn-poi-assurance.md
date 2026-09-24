@@ -92,25 +92,25 @@ normative:
 
 --- abstract
 
-This document extends the analysis of the applicability of
-Abstraction and Control of TE Networks (ACTN) architecture to Packet
-Optical Integration (POI) to cover multi-layer service assurance
-scenarios. Specifically, the ACTN architecture supports service
-assurance through the detection and correlation of failures across
-the optical and packet layers, with failure handling performed
-through the relevant PNC. The MDSC can also request health checks
-for IP services across multi-domain paths for SLA conformance
-assessment. The PNCs may also be configured with thresholds so that
-alerts are reported when relevant service or network conditions
-exceed defined limits. It is assumed that the underlying
-transport optical network carries end-to-end IP services such as
-L2VPN or L3VPN connectivity services, with specific Service Level
-Agreement (SLA) requirements.
+   This document extends the analysis of the applicability of
+   Abstraction and Control of Traffic Engineered Networks (ACTN)
+   architecture to Packet Optical Integration (POI) to cover multi-layer
+   service assurance scenarios in a single-domain network. Specifically, the ACTN architecture is
+   analyzed to support service assurance through the detection and 
+   correlation of failures across the optical and packet layers, with
+   failure handling performed through the relevant Provisioning Network
+   Controller (PNC) in coopearation with the Multi-Domain Service
+   Coordinator (MDSC). The PNCs may be configured with thresholds so
+   that alerts are reported to the MDSC when relevant service or network
+   conditions exceed defined limits. It is assumed that the underlying
+   transport optical network carries end-to-end IP services such as
+   L2VPN or L3VPN connectivity services, with specific Service Level
+   Agreement (SLA) requirements.
 
-Existing IETF protocols and data models are identified for each
-multi-layer (packet over optical) service assurance scenario with a specific focus on
-the MPI (Multi-Domain Service Coordinator to Provisioning Network
-Controllers Interface) in the ACTN architecture.
+   Existing IETF protocols and data models are identified for each
+   multi-layer (packet over optical) service assurance scenario with a specific focus on
+   the Multi-Domain Service Coordinator to Provisioning Network
+   Controllers Interface (MPI) in the ACTN architecture.
 
 --- middle
 
