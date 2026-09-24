@@ -5,14 +5,14 @@
 TEAS Working Group                                               I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 31 January 2027                                        Vodafone
+Expires: 28 March 2027                                          Vodafone
                                                             F. Peruzzini
                                                                 FiberCop
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                            30 July 2026
+                                                       24 September 2026
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -22,24 +22,25 @@ Applicability of Abstraction and Control of Traffic Engineered Networks
 Abstract
 
    This document extends the analysis of the applicability of
-   Abstraction and Control of TE Networks (ACTN) architecture to Packet
-   Optical Integration (POI) to cover multi-layer service assurance
-   scenarios.  Specifically, the ACTN architecture supports service
+   Abstraction and Control of Traffic Engineered Networks (ACTN)
+   architecture to Packet Optical Integration (POI) to cover multi-layer
+   service assurance scenarios in a single-domain network.
+   Specifically, the ACTN architecture is analyzed to support service
    assurance through the detection and correlation of failures across
    the optical and packet layers, with failure handling performed
-   through the relevant PNC.  The MDSC can also request health checks
-   for IP services across multi-domain paths for SLA conformance
-   assessment.  The PNCs may also be configured with thresholds so that
-   alerts are reported when relevant service or network conditions
-   exceed defined limits.  It is assumed that the underlying transport
-   optical network carries end-to-end IP services such as L2VPN or L3VPN
-   connectivity services, with specific Service Level Agreement (SLA)
-   requirements.
+   through the relevant Provisioning Network Controller (PNC) in
+   coopearation with the Multi-Domain Service Coordinator (MDSC).  The
+   PNCs may be configured with thresholds so that alerts are reported to
+   the MDSC when relevant service or network conditions exceed defined
+   limits.  It is assumed that the underlying transport optical network
+   carries end-to-end IP services such as L2VPN or L3VPN connectivity
+   services, with specific Service Level Agreement (SLA) requirements.
 
    Existing IETF protocols and data models are identified for each
    multi-layer (packet over optical) service assurance scenario with a
-   specific focus on the MPI (Multi-Domain Service Coordinator to
-   Provisioning Network Controllers Interface) in the ACTN architecture.
+   specific focus on the Multi-Domain Service Coordinator to
+   Provisioning Network Controllers Interface (MPI) in the ACTN
+   architecture.
 
 About This Document
 
@@ -74,7 +75,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 January 2027.
+   This Internet-Draft will expire on 28 March 2027.
 
 Copyright Notice
 
@@ -138,34 +139,40 @@ Table of Contents
    related issues.
 
    Within the scope of this document, service assurance is discussed in
-   the context of a multi-layer, multi-domain network.  This document
-   leverages the Abstraction and Control of TE Networks (ACTN) framework
-   [RFC8453] and further expands the analysis of its applicability to
-   multi-layer packet-optical integrated networks
-   [I-D.ietf-teas-actn-poi-applicability], adding considerations
-   specific to fault and performance management scenarios.
+   the context of a multi-layer network, composed by a packet layer and
+   an optical layer.  This document leverages the Abstraction and
+   Control of TE Networks (ACTN) framework [RFC8453] and further expands
+   the analysis of its applicability, discussed in
+   [I-D.ietf-teas-actn-poi-applicability], to multi-layer packet-optical
+   integrated networks, adding considerations specific to fault and
+   performance management scenarios.
 
-   As already highlighted in [I-D.ietf-teas-actn-poi-applicability], a
-   multi-layer network is composed of an IP layer and an optical
-   transport layer.  A multi-domain network is composed of at least two
-   different administrative domains (e.g., core and edge) under the
-   control of the same organization (e.g. the same network operator).
+   Differently to [I-D.ietf-teas-actn-poi-applicability], the scope of
+   this document limits to single-domain networks.  Hence, the networks
+   considered by this analysis are administered by a single organization
+   (e.g., a single network provider) and are composed by two technically
+   distinct layers (as said, packet and optical).  The two layers may by
+   manageged by different operational teams within the same
+   organization.
+
    Service assurance applies to end-to-end L2VPN or L3VPN connectivity
    services configured over IP and underlying transport optical paths
-   that require multi-layer coordination.
+   that require multi-layer coordination.  To guarantee the SLAs
+   associated with VPN services, service assurance is performed through
+   collaboration among the ACTN control entities [RFC8453]:
 
-   To guarantee the SLAs associated with VPN services, service assurance
-   is performed through collaboration among the ACTN control entities
-   [RFC8453]: the Multi-Domain Service Coordinator (MDSC), acting as the
-   top-level controller, and the Provisioning Network Controllers (PNCs)
-   deployed in both the packet (P-PNC) and optical (O-PNC) layers.
+   *  the Multi-Domain Service Coordinator (MDSC), acting as the top-
+      level controller, and
+
+   *  the Provisioning Network Controllers (PNCs), deployed in the
+      Packet (P-PNC) and Optical (O-PNC) layers.
 
    This document aligns with current field operational procedures and
    [I-D.ietf-teas-actn-poi-applicability], which assume both the P-PNC
    and the O-PNC provide the MDSC with enough information for performing
-   Root Cause Analysis (RCA), correlating for example an event or an
-   alarm related to either a packet or an optical network failure with
-   the impacted services at the IP layer.
+   Root Cause Analysis (RCA).  The MDSC correlates the events, alarms or
+   notifications related to either a packet or an optical network
+   failure with the impacted services at the IP layer.
 
    In particular for the optical network, the set of information shared
    by the O-PNC to the MDSC depends on local configuration adopted at
@@ -187,29 +194,28 @@ Table of Contents
 
    A related effort is described in
    [I-D.ietf-ccamp-actn-optical-transport-mgmt], which enhances the ACTN
-   architecture for optical networks with FCAPS (Fault, Configuration,
-   Accounting, Performance, and Security) management capabilities,
-   including the addition of rich-detail network management (RDNM) to
-   the MPI.  While that document addresses the general integration of
-   YANG-based FCAPS capabilities into ACTN for optical networks, the
-   present document focuses on multi-layer (packet and optical) service
-   assurance in Packet Optical Integration (POI) scenarios, specifically
-   analyzing fault detection, performance monitoring, and resiliency
-   coordination across the packet and optical layers.
+   architecture for optical networks with Fault, Configuration,
+   Accounting, Performance, and Security (FCAPS) management
+   capabilities, including the addition of rich-detail network
+   management (RDNM) to the MPI.  While that document addresses the
+   general integration of YANG-based FCAPS capabilities into ACTN for
+   optical networks, the present document focuses on multi-layer (packet
+   and optical) service assurance in Packet Optical Integration (POI)
+   scenarios, specifically analyzing fault detection, performance
+   monitoring, and resiliency coordination across the packet and optical
+   layers.
 
    The document has the following organization.  Section 2 lists the
    conventions and definitions used in the text.  Section 3 discusses
    the reference network in scope for the relevant service assurance
    cases.  Section 4 identifies the YANG data models applicable to
    service assurance and provides a gap analysis for modules that are
-   still missing.
-
-   Section 5 identifies the possible faults, either in the optical
-   layer, the IP layer, or both.  Section 6 deals with performance
-   management aspects of service assurance in a packet-optical
-   integrated network.  Finally, Section 7 discusses the protection
-   mechanisms available for the most typical fault scenarios of a multi-
-   layer, multi-domain network.
+   still missing.  Section 5 identifies the possible faults, either in
+   the optical layer, the IP layer, or both.  Section 6 deals with
+   performance management aspects of service assurance in a packet-
+   optical integrated network.  Finally, Section 7 discusses the
+   protection mechanisms available for the most typical fault scenarios
+   of a multi-layer network.
 
    For each multi-technology scenario, the document analyzes how to use
    the interfaces and the data models of the ACTN architecture.
@@ -227,8 +233,8 @@ Table of Contents
 
 2.1.  Terminology
 
-   This document uses the ACTN terminology defined in [RFC8453]
-   [RFC8453] and in [I-D.ietf-teas-actn-poi-applicability].
+   This document uses the ACTN terminology defined in [RFC8453] and in
+   [I-D.ietf-teas-actn-poi-applicability].
 
    In addition, this document uses the following terminology.
 
@@ -244,146 +250,136 @@ Table of Contents
 
    This document analyses several scenarios for service assurance in
    Packet and Optical Integration (POI) in which ACTN hierarchy is
-   deployed to control a multi-layer and multi-domain network with two
-   optical domains and two packet domains, as shown in Figure 1 of
-   [I-D.ietf-teas-actn-poi-applicability], which is copied in Figure 1
-   below.
+   deployed to control a single-domain, multi-layer network.  As
+   mentioned, this case differs from the one depicted by Figure 1 of
+   [I-D.ietf-teas-actn-poi-applicability], where a multi-domain packet
+   and optical is considered.  The reference network in scope of this
+   document is shown in Figure 1.
 
-                               +----------+
-                               |   MDSC   |
-                               +-----+----+
-                                     |
-                   +-----------+-----+------+-----------+
-                   |           |            |           |
-              +----+----+ +----+----+  +----+----+ +----+----+
-              | P-PNC 1 | | O-PNC 1 |  | O-PNC 2 | | P-PNC 2 |
-              +----+----+ +----+----+  +----+----+ +----+----+
-                   |           |            |           |
-                   |           \            /           |
-         +-------------------+  \          /  +-------------------+
-    CE1 / PE1             BR1 \  |        /  / BR2             PE2 \ CE2
-    o--/---o               o---\-|-------|--/---o               o---\--o
-       \   :               :   / |       |  \   :               :   /
-        \  : PKT domain 1  :  /  |       |   \  : PKT domain 2  :  /
-         +-:---------------:-+   |       |    +-:---------------:--+
-           :               :     |       |      :               :
-           :               :     |       |      :               :
-         +-:---------------:------+     +-------:---------------:--+
-        /  :               :       \   /        :               :   \
-       /   o...............o        \ /         o...............o    \
-       \     optical domain 1       / \       optical domain 2       /
-        \                          /   \                            /
-         +------------------------+     +--------------------------+
+   [Editor's mote: Italo please change the figure].
 
-       Figure 1: Reference Network (copy of Figure 1 of RFC YYYY)
+      +---+
+      |   |
+      +---+
 
-   EDITORS NOTE: Replace RFC YYYY with the RFC number of
-   [I-D.ietf-teas-actn-poi-applicability] once it has been published.
+         Figure 1: Reference Network (copy of Figure 1 of RFC YYYY)
 
-   In general, service assurance involves fault detection and
-   localization; performance monitoring as well as re-routing
-   (protection).
-
-   The use of grey interfaces on routers' ports, as outlined in
-   [I-D.ietf-teas-actn-poi-applicability], is the only case considered
-   in this document.  The use of colored optical interfaces on routers'
-   ports is instead out of the scope and may be analyzed in a separate
-   document.
-
-   The MDSC is responsible for coordinating the whole multi-domain,
-   multi-layer (packet and optical) network.  MDSC interacts with the
-   different Provisioning Network Controllers (O/P-PNCs) through the MPI
-   interface.  The MPI interface presents an abstracted topology to
-   MDSC, hiding the technology-specific aspects of the network and the
-   topology details (depending on the policy chosen regarding the level
-   of abstraction supported).
+   Note that the network considered in this document may be based on
+   multiple optical subdomains, as shown in Figure 1.  In such a case,
+   multiple O-PNCs are present, each coordinating its own subdomain.  In
+   all cases, a single packet domain is considered.  The reason for this
+   choice is better explained in section 8.  Here it is worth noting
+   that for consolidated operational motivations (e.g., dependence on
+   deeply technical or proprietary parameters, low use of unified
+   transport APIs), optical domains are often partitioned in subdomains.
+   For the discussion on why multi-domain packet networks are out of the
+   scope of this document, please refer to section 8.
 
    Following the assumptions of section 2.1.2 of
    [I-D.ietf-teas-actn-poi-applicability], this document analyses
    scenarios where the MDSC uses the partial summarization approach to
-   coordinate multi-domain/multi-layer path computation.  As a
-   consequence, the MDSC has an abstracted view of the TE topology of
-   both the IP and optical network domains.  When the MDSC is instructed
-   for example by an Orchestrator or Operations Support System (OSS) to
-   set up a VPN service, it performs path compution across the multi-
-   layer/multi-domain network based on its abstracted topology and then
-   delegates both the P- and O-PNCs to perform local path computation
-   within their respective domains.
+   coordinate multi-layer path computation, with the difference already
+   noted that it applies to a single-domain network.  Hence, the MDSC
+   has an abstracted view of the TE topology of both the IP and optical
+   network layers.  When the MDSC is instructed, for example by an
+   Orchestrator or an Operations Support System (OSS), to set up a VPN
+   service, it performs path compution across the multi-layer network
+   based on its abstracted topology and then delegates both the P-PNC
+   and the O-PNCs to perform local path computation within their
+   respective domains.
 
-   This document assumes that the basic configuration of the L2/L3 VPN
-   services, and in particular of the multi-domain TE path in the packet
-   layer, is the same as described in section 5 of
-   [I-D.ietf-teas-actn-poi-applicability].  The only exception is that
-   section Section 7 defines additional multi-layer mechanisms besides
-   the local protection in the packet layer described in section 5.2.3
-   of [I-D.ietf-teas-actn-poi-applicability].
+   For the analysis developed by this document, the following
+   assumptions are taken:
 
-   P-PNCs are responsible for setting up the TE paths between any two
-   PEs or BRs in their respective controlled domains, as requested by
-   MDSC, and providing topology information to the MDSC.
+   *  The use of grey interfaces on routers' ports, as outlined in
+      [I-D.ietf-teas-actn-poi-applicability], is the only case
+      considered in this document.  The use of colored optical
+      interfaces on routers' ports is out of the scope and may be
+      analyzed in a separate document.
 
-   O-PNCs are responsible for providing to the MDSC an abstract TE
-   topology view of their underlying optical network resources.  They
-   perform single-domain local path computation, when requested by the
-   MDSC.  They also perform optical tunnel setup, when requested by the
-   MDSC.
+   *  The basic configuration of the L2/L3 VPN services is considered,
+      i.e. a VPN service is setup between Provider's Edge (PE) routers
+      in theIP layer.  The VPN is carried over a TE path.  As noted, it
+      is the same case described in section 5 of
+      [I-D.ietf-teas-actn-poi-applicability] with the difference that
+      the target of the present analysis are single-domain networks.
 
-   No GMPLS-UNI interaction between IP and Optical equipment is
-   considered.  This is also the assumption followed in this document:
-   the MDSC performs the function of multi-layer/multi-domain path
-   computation through the same mechanisms described in
-   [I-D.ietf-teas-actn-poi-applicability].
+   *  The local protection adopted in the packet layer and discussed
+      insection 5.2.3 of [I-D.ietf-teas-actn-poi-applicability] is
+      complemented by further additional multi-layer mechanisms, as
+      elaborated on in section 7.
 
-      TO DO: Complete the description of the pre-requisites of MDSC in
-      the cases discussed.
+   *  No GMPLS-UNI interaction between IP and Optical equipment is
+      considered.  This is also the assumption followed in this
+      document: the MDSC performs the function of multi-layer path
+      computation through the same mechanisms described in
+      [I-D.ietf-teas-actn-poi-applicability].
 
    The following list summarizes the main assumptions about how MDSC can
    handle the service assurance cases described in this document.  Most
    of them have already been described in
-   [I-D.ietf-teas-actn-poi-applicability].
+   [I-D.ietf-teas-actn-poi-applicability] but here they are applied
+   specifically to a single-domain, multi-layer network.
 
-   1.  The MDSC has acquired the topology of the multi-layer topology as
-       described in section 2 of [I-D.ietf-teas-actn-poi-applicability].
+   *  The MDSC is responsible for coordinating the whole multi-layer
+      (packet and optical) network.  The MDSC interacts with the P-PNC
+      and the O-PNC(s) through the MPI interface.  The MPI interface
+      presents an abstracted topology to MDSC, hiding the technology-
+      specific aspects of the network and the topology details
+      (depending on the policy chosen regarding the level of abstraction
+      supported) as described in section 2 of
+      [I-D.ietf-teas-actn-poi-applicability].
 
-   2.  MDSC is aware of the multi-domain interconnection links between
-       different IP domains (Inter-domain Ethernet links).  The MDSC is
-       also aware of the multi-layer connections between the IP and the
-       optical layers as exposed by the P-PNC and the O-PNC (for
-       example, between a PE router and a corresponding optical node).
+   *  The P-PNC is responsible for setting up the TE paths between any
+      two PEs in the controlled packet domain, as requested by the MDSC
+      during service configuration, and providing topology information
+      to the MDSC.
 
-   3.  MDSC is aware of any topology or service change in near real-time
-       through coordination with the O/P-PNCs.  This applies in the case
-       of a fault or a maintenance activity involving either the IP or
-       the DWDM layer.
+   *  The O-PNC(s) are responsible for providing to the MDSC an abstract
+      TE topology view of their underlying optical network resources.
+      They perform single-domain local path computation, when requested
+      by the MDSC.  They also perform optical tunnel setup, when
+      requested by the MDSC.
 
-   4.  MDSC may coordinate, if configured to do so, with the O/P-PNC to
-       perform fault management actions when a network failure in the IP
-       or optical network is detected, as referenced in section 7 on
-       Multi-layer Resiliency.
+   *  The MDSC is aware of the multi-layer connections between the IP
+      and the optical layers as exposed by the P-PNC and the O-PNC(s)
+      (for example, between a PE router and a corresponding optical
+      node).
 
-   5.  Before a planned maintenance window in the optical layer, MDSC
-       can request the underlying P-PNC to move a given set of LSPs or
-       SR-TE paths to avoid a particular link that will become under
-       maintenance status.  This is performed before the start of the
-       maintenance window.  Based on operator decision, MDSC could
-       request to P-PNC to revert the set of LSPs or SR-TE paths through
-       the initial link once maintenance activities have finalised.
+   *  The MDSC is aware of any topology or service change in near real-
+      time through coordination with the PNCs.  This applies in the case
+      of a fault or a maintenance activity involving either the IP or
+      the DWDM layer.
 
-   6.  When the O-PNC detects a degradation of optical performance (e.g.
-       a Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained
-       over a certain period of time), it alerts the MDSC so that the
-       MDSC relates the warning to an IP link.
+   *  The MDSC may coordinate, if configured to do so, with either the
+      P-PNC or the O-PNC(s) (or both) to perform fault management
+      actions when a network failure in the IP or optical network is
+      detected, as referenced in section 7 on Multi-layer Resiliency.
 
-   7.  MDSC distinguishes between IP and Optical failures.  For example,
-       in the case of the failure of an IP port of a router, the TE path
-       may be switched to a stand-by port, reusing the same
-       Reconfigurable Optical Add-Drop Multiplexer (ROADM) optical
-       resources (lambda, optical path) and keeping the end-to-end IP
-       connection.  If a remote IP node fails, then a re-route of
-       optical resources takes place together with a switch of the local
-       IP port in order to establish a new connection with a different
-       IP node used for protection.  In both cases, the P-PNC passes the
-       related notifications to the MDSC.
+   *  Before a planned maintenance window in the optical layer, the MDSC
+      can request the underlying P-PNC to move a given set of LSPs or
+      SR-TE paths to avoid a particular link that will undergo
+      maintenance status.  This is performed before the start of the
+      maintenance window.  Based on operator decision, the MDSC could
+      request to the P-PNC to revert the set of LSPs or SR-TE paths
+      through the initial link once maintenance activities have been
+      finalised.
+
+   *  When the O-PNC detects a degradation of optical performance (e.g.
+      a Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained
+      over a certain period of time), it alerts the MDSC so that the
+      MDSC relates the warning to an IP link.
+
+   *  The MDSC distinguishes between IP and Optical failures.  For
+      example, in the case of a failure of an IP port of a router, the
+      TE path may be switched to a stand-by port, reusing the same
+      Reconfigurable Optical Add-Drop Multiplexer (ROADM) optical
+      resources (lambda, optical path) and keeping the end-to-end IP
+      connection.  If a remote IP node fails, then a re-route of optical
+      resources takes place together with a switch of the local IP port
+      in order to establish a new connection with a different IP node
+      used for protection.  In both cases, the P-PNC passes the related
+      notifications to the MDSC.
 
 3.1.  Reference Network
 
@@ -1618,9 +1614,9 @@ Table of Contents
               Ceccarelli, "Applicability of Abstraction and Control of
               Traffic Engineered Networks (ACTN) to Packet Optical
               Integration (POI)", Work in Progress, Internet-Draft,
-              draft-ietf-teas-actn-poi-applicability-19, 11 June 2026,
+              draft-ietf-teas-actn-poi-applicability-20, 31 August 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-poi-applicability-19>.
+              actn-poi-applicability-20>.
 
    [I-D.yu-performance-monitoring-yang]
               Yu, C., "A YANG Data Model for Optical Performance
