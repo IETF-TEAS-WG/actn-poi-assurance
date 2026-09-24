@@ -96,7 +96,7 @@ normative:
    Abstraction and Control of Traffic Engineered Networks (ACTN)
    architecture to Packet Optical Integration (POI) to cover multi-layer
    service assurance scenarios in a single-domain network. Specifically, the ACTN architecture is
-   analyzed to support service assurance through the detection and 
+   analyzed to support service assurance through the detection and
    correlation of failures across the optical and packet layers, with
    failure handling performed through the relevant Provisioning Network
    Controller (PNC) in coopearation with the Multi-Domain Service
@@ -128,66 +128,67 @@ related issues.
 Within the scope of this document, service assurance is discussed in
 the context of a multi-layer network, composed by a packet layer and
 an optical layer. This document leverages the Abstraction and Control
-of TE Networks (ACTN) framework [RFC8453] and further expands the
+of TE Networks (ACTN) framework {{!RFC8453}} and further expands the
 analysis of its applicability, discussed in
-[I-D.ietf-teas-actn-poi-applicability], to multi-layer packet-optical
+{{!I-D.ietf-teas-actn-poi-applicability}}, to multi-layer packet-optical
 integrated networks, adding considerations specific to fault and
 performance management scenarios.
 
-Differently to [I-D.ietf-teas-actn-poi-applicability], the scope of
+Differently to {{!I-D.ietf-teas-actn-poi-applicability}}, the scope of
 this document limits to single-domain networks. Hence, the networks
 considered by this analysis are administered by a single organization
 (e.g., a single network provider) and are composed by two technically
 distinct layers (as said, packet and optical). The two layers may
 by manageged by different operational teams within the same
 organization.
-   
+
 Service assurance applies to end-to-end L2VPN or L3VPN connectivity
 services configured over IP and underlying transport optical paths
 that require multi-layer coordination.
 To guarantee the SLAs associated with VPN services, service assurance
 is performed through collaboration among the ACTN control entities
-[RFC8453]: 
-* the Multi-Domain Service Coordinator (MDSC), acting as the 
+{{!RFC8453}}:
+
+* the Multi-Domain Service Coordinator (MDSC), acting as the
   top-level controller, and
 * the Provisioning Network Controllers (PNCs), deployed in the
   Packet (P-PNC) and Optical (O-PNC) layers.
 
 This document aligns with current field operational procedures and
-[I-D.ietf-teas-actn-poi-applicability], which assume both the P-PNC
+{{!I-D.ietf-teas-actn-poi-applicability}}, which assume both the P-PNC
 and the O-PNC provide the MDSC with enough information for performing
 Root Cause Analysis (RCA). The MDSC correlates the events, alarms or
 notifications related to either a packet or an optical network failure
 with the impacted services at the IP layer.
-   
+
 In particular for the optical network, the set of information shared
 by the O-PNC to the MDSC depends on local configuration adopted at the
-MDSC-PNC Interface (MPI) [RFC8453]. In general, this may include
+MDSC-PNC Interface (MPI) {{!RFC8453}}. In general, this may include
 information about the optical path, tunnel, or fiber where the failure
 happened, together with its location and operational state (e.g.,
 "down"), while hiding further topology details. This data is sufficient
 for the MDSC to perform multi-layer correlation and discover which IP
 links, Label Switched Paths (LSPs), and VPNs are affected.
-	  
+
 The analysis of the YANG data models applicable to service assurance
-(fault and performance) is in scope of this document. 
+(fault and performance) is in scope of this document.
 The development of new YANG models/modules to support the missing
-functions is instead not in scope of the present document. 
+functions is instead not in scope of the present document.
 To this extent, this document acts as a framework that provides a gap
 analysis and identifies topics for future work to be addressed in other
-documents.	  
-	  
-A related effort is described in [I-D.ietf-ccamp-actn-optical-transport-mgmt], which enhances the ACTN
+documents.
+
+A related effort is described in {{?I-D.ietf-ccamp-actn-optical-transport-mgmt}}, which enhances the ACTN
 architecture for optical networks with Fault, Configuration, Accounting,
 Performance, and Security (FCAPS) management capabilities, including the
 addition of rich-detail network management (RDNM) to the MPI. While that
-document addresses the general integration of YANG-based FCAPS 
+document addresses the general integration of YANG-based FCAPS
 capabilities into ACTN for optical networks, the present document
 focuses on multi-layer (packet and optical) service assurance in Packet
 Optical Integration (POI) scenarios, specifically analyzing fault
 detection, performance monitoring, and resiliency coordination across
 the packet and optical layers.
-	  
+
 The document has the following organization. Section 2 lists the
 conventions and definitions used in the text. Section 3 discusses the
 reference network in scope for the relevant service assurance cases.
@@ -195,15 +196,15 @@ Section 4 identifies the YANG data models applicable to service assurance
 and provides a gap analysis for modules that are still missing. Section
 5 identifies the possible faults, either in the optical layer, the IP
 layer, or both. Section 6 deals with performance management aspects of
-service assurance in a packet-optical integrated network. Finally, 
+service assurance in a packet-optical integrated network. Finally,
 Section 7 discusses the protection mechanisms available for the most
 typical fault scenarios of a multi-layer network.
 
 For each multi-technology scenario, the document analyzes how to use
 the interfaces and the data models of the ACTN architecture.
-   
+
 A summary of the gaps identified in this analysis is provided in Section 8.
-   
+
 Understanding the degree of standardization and the identified gaps will
 help assess the feasibility of integration between packet and optical
 Dense Wavelength Division Multiplexing (DWDM) domains (and optionally
@@ -213,7 +214,7 @@ multi-vendor service assurance perspective.
 # Conventions and Definitions
 
 ## Terminology
-This document uses the ACTN terminology defined in [RFC8453] {{RFC8453}} and in {{!I-D.ietf-teas-actn-poi-applicability}}.
+This document uses the ACTN terminology defined in {{!RFC8453}} and in {{!I-D.ietf-teas-actn-poi-applicability}}.
 
 In addition, this document uses the following terminology.
 
@@ -227,31 +228,33 @@ TCA (Threshold Crossing Alert)
 This document analyses several scenarios for service assurance in
 Packet and Optical Integration (POI) in which ACTN hierarchy is
 deployed to control a single-domain, multi-layer network. As
-mentioned, this case differs from the one depicted by Figure 1 of 
-[I-D.ietf-teas-actn-poi-applicability], where a multi-domain packet
+mentioned, this case differs from the one depicted by Figure 1 of
+{{!I-D.ietf-teas-actn-poi-applicability}}, where a multi-domain packet
 and optical is considered. The reference network in scope of this
 document is shown in Figure 1.
 
-[Editor's mote: Italo please change the figure].
+\[Editor's mote: Italo please change the figure].
 
 ~~~~ aasvg
-{::include figures/reference-architecture.txt}
+   +---+
+   |   |
+   +---+
 ~~~~
 {:#fig-ref-architecture title="Reference Network (copy of Figure 1 of RFC YYYY)"
 artwork-name="reference-architecture.txt"}
 
 Note that the network considered in this document may be based on
-multiple optical subdomains, as shown in Figure 1. In such a case, 
-multiple O-PNCs are present, each coordinating its own subdomain. 
+multiple optical subdomains, as shown in Figure 1. In such a case,
+multiple O-PNCs are present, each coordinating its own subdomain.
 In all cases, a single packet domain is considered. The reason for
 this choice is better explained in section 8. Here it is worth noting
 that for consolidated operational motivations (e.g., dependence on
-deeply technical or proprietary parameters, low use of unified 
+deeply technical or proprietary parameters, low use of unified
 transport APIs), optical domains are often partitioned in subdomains.
 For the discussion on why multi-domain packet networks are out of the
 scope of this document, please refer to section 8.
-	  
-Following the assumptions of section 2.1.2 of [I-D.ietf-teas-actn-poi-applicability], this document analyses
+
+Following the assumptions of section 2.1.2 of {{!I-D.ietf-teas-actn-poi-applicability}}, this document analyses
 scenarios where the MDSC uses the partial summarization approach to
 coordinate multi-layer path computation, with the difference already
 noted that it applies to a single-domain network. Hence, the MDSC has
@@ -263,68 +266,69 @@ topology and then delegates both the P-PNC and the O-PNCs to perform
 local path computation within their respective domains.
 
 For the analysis developed by this document, the following assumptions are taken:
-* The use of grey interfaces on routers' ports, as outlined in [I-D.ietf-teas-actn-poi-applicability],
+
+* The use of grey interfaces on routers' ports, as outlined in {{!I-D.ietf-teas-actn-poi-applicability}},
   is the only case considered in this document. The use of colored optical interfaces on routers'
   ports is out of the scope and may be analyzed in a separate document.
-	 
+
 * The basic configuration of the L2/L3 VPN services is considered, i.e. a VPN service is
-  setup between Provider's Edge (PE) routers in the	IP layer. The VPN is carried over a TE path.
-  As noted, it is the same case described in section 5 of [I-D.ietf-teas-actn-poi-applicability]
+  setup between Provider's Edge (PE) routers in theIP layer. The VPN is carried over a TE path.
+  As noted, it is the same case described in section 5 of {{!I-D.ietf-teas-actn-poi-applicability}}
   with the difference that the target of the present analysis are single-domain networks.
-		
-* The local protection adopted in the packet layer and discussed in	section 5.2.3 of
-  [I-D.ietf-teas-actn-poi-applicability] is complemented by further additional multi-layer mechanisms,
+
+* The local protection adopted in the packet layer and discussed insection 5.2.3 of
+  {{!I-D.ietf-teas-actn-poi-applicability}} is complemented by further additional multi-layer mechanisms,
   as elaborated on in section 7.
 
 * No GMPLS-UNI interaction between IP and Optical equipment is considered. This is also the assumption
   followed in this document: the MDSC performs the function of multi-layer path computation through
-  the same mechanisms described in [I-D.ietf-teas-actn-poi-applicability].
-	       
+  the same mechanisms described in {{!I-D.ietf-teas-actn-poi-applicability}}.
+
 The following list summarizes the main assumptions about how MDSC can handle
-the service assurance cases described in this document. Most of them have 
-already been described in [I-D.ietf-teas-actn-poi-applicability] but here
+the service assurance cases described in this document. Most of them have
+already been described in {{!I-D.ietf-teas-actn-poi-applicability}} but here
 they are applied specifically to a single-domain, multi-layer network.
-     
+
 * The MDSC is responsible for coordinating the whole multi-layer (packet and optical) network. The MDSC interacts
   with the P-PNC and the O-PNC(s) through the MPI interface. The MPI interface presents an abstracted
-  topology to MDSC, hiding the technology-specific aspects of the network and 
+  topology to MDSC, hiding the technology-specific aspects of the network and
   the topology details (depending on the policy chosen regarding the level
-  of abstraction supported) as described in section 2 of [I-D.ietf-teas-actn-poi-applicability].
-		
+  of abstraction supported) as described in section 2 of {{!I-D.ietf-teas-actn-poi-applicability}}.
+
 * The P-PNC is responsible for setting up the TE paths between any two
   PEs in the controlled packet domain, as requested by the MDSC during
   service configuration, and providing topology information to the MDSC.
-		
-* The O-PNC(s) are responsible for providing to the MDSC an abstract TE 
+
+* The O-PNC(s) are responsible for providing to the MDSC an abstract TE
    topology view of their underlying optical network resources. They perform single-domain local
    path computation, when requested by the MDSC. They also perform optical tunnel setup, when requested
    by the MDSC.
-		
+
 * The MDSC is aware of the multi-layer connections between the IP and
   the optical layers as exposed by the P-PNC and the O-PNC(s) (for example,
   between a PE router and a corresponding optical node).
-		
+
 * The MDSC is aware of any topology or service change in near real-time
   through coordination with the PNCs. This applies in the case of a fault
   or a maintenance activity involving either the IP or the DWDM layer.
-		
+
 * The MDSC may coordinate, if configured to do so, with either the P-PNC
   or the O-PNC(s) (or both) to perform fault management actions when a
   network failure in the IP or optical network is detected, as referenced
   in section 7 on Multi-layer Resiliency.
-		
+
 * Before a planned maintenance window in the optical layer, the MDSC can
   request the underlying P-PNC to move a given set of LSPs or SR-TE paths
   to avoid a particular link that will undergo maintenance status. This
   is performed before the start of the maintenance window. Based on
   operator decision, the MDSC could request to the P-PNC to revert the set
   of LSPs or SR-TE paths through the initial link once maintenance activities have been finalised.
-		
+
 * When the O-PNC detects a degradation of optical performance (e.g. a
   Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained over a
   certain period of time), it alerts the MDSC so that the MDSC relates
   the warning to an IP link.
-		
+
 * The MDSC distinguishes between IP and Optical failures. For example,
   in the case of a failure of an IP port of a router, the TE path may be
   switched to a stand-by port, reusing the same Reconfigurable Optical
@@ -341,7 +345,7 @@ they are applied specifically to a single-domain, multi-layer network.
 
 The following network topology will be considered to analyze and discuss the scenarios in {{resiliency}}.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/reference-network.txt}
 ~~~~
 {:#fig-ref-network title="Reference Network"
@@ -398,7 +402,7 @@ Depending on the point where a failure occurs, three use cases are considered:
 
 The following figure illustrates the reference scenario used to discuss the fault management cases.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/multi-layer-failure-reference-network.txt}
 ~~~~
 {:#fig-failure-reference title="Reference scenario for multi-layer fault management"
@@ -446,7 +450,7 @@ The MDSC should also inform the OSS/orchestration layer about the failures on th
 The failures discussed in this section occur on the connection between a router and a ROADM.
 A first case concerns the Tx fiber used by R1 to send traffic to ROADM1 ({{fig-failure-ingress-link}}).
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/multi-layer-failure-ingress-link.txt}
 ~~~~
 {:#fig-failure-ingress-link title="Failure on the optical ingress link"
@@ -459,7 +463,7 @@ It is up to the MDSC to correlate the events and determine what IP services are 
 
 A second case is depicted in figure {{fig-failure-egress-link}}. The failure happens on the Rx fiber used by R2 to receive traffic from ROADM2.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/multi-layer-failure-egress-link.txt}
 ~~~~
 {:#fig-failure-egress-link title="Failure on the optical egress link"
@@ -474,7 +478,7 @@ As noted, MDSC correlates the events to determine the affected services.
 
 A failure may also occur when the two unidirectional fibers connecting a router, e.g. R1, to a ROADM, e.g. ROADM2, are affected, for example for a simultaneous fiber cut, as shown in figure {{fig-failure-bidir-link}}.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/multi-layer-failure-bidir-link.txt}
 ~~~~
 {:#fig-failure-bidir-link title="Failure on the access link"
@@ -624,7 +628,7 @@ As restoration typically sets an alternative path on the fly based on the availa
 the time taken by the process to create an optical backup tends to be longer than the time taken by the IP/MPLS FRR process.
 As a result, the interaction between the two layers follows the mimics shown in the next figure.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/restoration.txt}
 ~~~~
 {:#fig-fault-restoration title="Fault detection with optical restoration"
@@ -679,7 +683,7 @@ with IP/MPLS FRR, as it is pre-computed. As a consequence, when multi-layer coor
 to hold-off FRR on R1 and wait that optical protection is completed.
 The process is shown in the next figure.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/protection.txt}
 ~~~~
 {:#fig-fault-protection title="Fault detection with optical protection"
@@ -722,7 +726,7 @@ At the optical layer, maintenance has no traffic impact because a new path is co
 
 The next figure shows the process adopted to handle the maintenance window.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/maintenance.txt}
 ~~~~
 {:#fig-maintenance title="Maintenance window operation"
@@ -778,7 +782,7 @@ Following the previous examples, this case is characterized by R1 being configur
 In case of failure, for example on port P1, PP is dynamically activated and traffic originally directed to P1 is steered to PP. PP receives the same configuration as P1, while P1 is brought to a down state.
 Unlike ordinary LAG, traffic is not redistributed over the surviving links. Since a backup port (PP) is enabled, traffic continues to flow on N links instead of N-1. Although this introduces additional IP-layer complexity by requiring an extra port on both R1 and ROADM1, the optical-layer configuration shown in figure {{fig-ref-network}} does not change, because only N optical channels (e.g. lambdas) are used, as shown in figure {{fig-N-1-port-prot-architecture}}.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/N-1-port-prot-architecture.txt}
 ~~~~
 {:#fig-N-1-port-prot-architecture title="Use of N:1 protection on R1"
@@ -790,7 +794,7 @@ It has to be noted that the mechanism to deal with the on-the-fly reconfiguratio
 
 The next figure shows the process adopted to handle N:1 port protection.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/N-1-port-prot.txt}
 ~~~~
 {:#fig-N-1-port-prot title="N:1 protection operation"
@@ -841,7 +845,7 @@ As shown in {{fig-ref-network}}, in its normal operations R1 is dual-homed to R2
 The underlying assumption is that it is not possible to R2 to communicate to P-PNC about the event causing the failure, so it is up to R1 to detect it and to communicate instead to P-PNC. The first reaction to the event is to perform a fast-rerouting action and move the traffic from the R1-R2 link to the R1-R3 link. As part of the assumption, the R1-R3 IP link has been previously dimensioned to carry a certain amount of traffic, so it is possible that after fast re-routing takes place some traffic previously carried on the R1-R2 IP link and now shifted to R1-R3 is discarded, for example because congestion occurs.
 MDSC instructs the optical layer to find available optical resources, activate a new optical path between ROADM1 and ROADM3 and finally move the traffic previously associated to R1-R2 to the newly created optical path. When this second optical path is available, MDSC triggers a new switch of the traffic so that R1 can now steers the previous R1-R2 traffic to the new optical path. The final configuration is shown in figure {{fig-node-prot-architecture}}.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/node-prot-architecture.txt}
 ~~~~
 {:#fig-node-prot-architecture title="IP configuration after the creation of a second optical path"
@@ -849,7 +853,7 @@ artwork-name="node-prot-architecture.txt"}
 
 The next figure shows the process adopted to handle the node protection case.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/node-prot.txt}
 ~~~~
 {:#fig-node-prot title="Node protection operation"
@@ -908,7 +912,7 @@ guaranteeing a hitless switching.
 
 The mimics of the steps requested is shown in the next figure.
 
-~~~~ aasvg
+~~~~ ascii-art
 {::include figures/hitless-multi-layer-reversion.txt}
 ~~~~
 {:#fig-hitless-reversion title="hitless multi-layer reversion"
