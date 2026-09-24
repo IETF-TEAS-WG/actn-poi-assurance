@@ -224,10 +224,15 @@ TCA (Threshold Crossing Alert)
 
 # Reference Network Architecture
 
-This document analyses several scenarios for service assurance in Packet and
-Optical Integration (POI) in which ACTN hierarchy is deployed to
-control a multi-layer and multi-domain network with two optical
-domains and two packet domains, as shown in Figure 1 of {{!I-D.ietf-teas-actn-poi-applicability}}, which is copied in {{fig-ref-architecture}} below.
+This document analyses several scenarios for service assurance in
+Packet and Optical Integration (POI) in which ACTN hierarchy is
+deployed to control a single-domain, multi-layer network. As
+mentioned, this case differs from the one depicted by Figure 1 of 
+[I-D.ietf-teas-actn-poi-applicability], where a multi-domain packet
+and optical is considered. The reference network in scope of this
+document is shown in Figure 1.
+
+[Editor's mote: Italo please change the figure].
 
 ~~~~ aasvg
 {::include figures/reference-architecture.txt}
@@ -235,61 +240,100 @@ domains and two packet domains, as shown in Figure 1 of {{!I-D.ietf-teas-actn-po
 {:#fig-ref-architecture title="Reference Network (copy of Figure 1 of RFC YYYY)"
 artwork-name="reference-architecture.txt"}
 
-EDITORS NOTE: Replace RFC YYYY with the RFC number of {{!I-D.ietf-teas-actn-poi-applicability}} once it has been published.
+Note that the network considered in this document may be based on
+multiple optical subdomains, as shown in Figure 1. In such a case, 
+multiple O-PNCs are present, each coordinating its own subdomain. 
+In all cases, a single packet domain is considered. The reason for
+this choice is better explained in section 8. Here it is worth noting
+that for consolidated operational motivations (e.g., dependence on
+deeply technical or proprietary parameters, low use of unified 
+transport APIs), optical domains are often partitioned in subdomains.
+For the discussion on why multi-domain packet networks are out of the
+scope of this document, please refer to section 8.
+	  
+Following the assumptions of section 2.1.2 of [I-D.ietf-teas-actn-poi-applicability], this document analyses
+scenarios where the MDSC uses the partial summarization approach to
+coordinate multi-layer path computation, with the difference already
+noted that it applies to a single-domain network. Hence, the MDSC has
+an abstracted view of the TE topology of both the IP and optical network
+layers. When the MDSC is instructed, for example by an Orchestrator or
+an Operations Support System (OSS), to set up a VPN service, it performs
+path compution across the multi-layer network based on its abstracted
+topology and then delegates both the P-PNC and the O-PNCs to perform
+local path computation within their respective domains.
 
-In general, service assurance involves fault detection and localization; performance monitoring as well as re-routing (protection).
+For the analysis developed by this document, the following assumptions are taken:
+* The use of grey interfaces on routers' ports, as outlined in [I-D.ietf-teas-actn-poi-applicability],
+  is the only case considered in this document. The use of colored optical interfaces on routers'
+  ports is out of the scope and may be analyzed in a separate document.
+	 
+* The basic configuration of the L2/L3 VPN services is considered, i.e. a VPN service is
+  setup between Provider's Edge (PE) routers in the	IP layer. The VPN is carried over a TE path.
+  As noted, it is the same case described in section 5 of [I-D.ietf-teas-actn-poi-applicability]
+  with the difference that the target of the present analysis are single-domain networks.
+		
+* The local protection adopted in the packet layer and discussed in	section 5.2.3 of
+  [I-D.ietf-teas-actn-poi-applicability] is complemented by further additional multi-layer mechanisms,
+  as elaborated on in section 7.
 
-The use of grey interfaces on routers' ports, as outlined in {{!I-D.ietf-teas-actn-poi-applicability}}, is the only case considered in this document. The use of colored optical interfaces on routers' ports is instead out of the scope and may be analyzed in a separate document.
-
-The MDSC is responsible for coordinating the whole multi-domain, multi-layer (packet and optical) network. MDSC interacts with the different Provisioning Network Controllers (O/P-PNCs) through the MPI interface.
-The MPI interface presents an abstracted topology to MDSC, hiding the technology-specific aspects of the network and the topology details (depending on the policy chosen regarding the level of abstraction supported).
-
-Following the assumptions of section 2.1.2 of {{I-D.ietf-teas-actn-poi-applicability}}, this document analyses
-scenarios where the MDSC uses the partial summarization approach to coordinate multi-domain/multi-layer path
-computation. As a consequence, the MDSC has an abstracted view of the TE topology of both the IP and optical
-network domains. When the MDSC is instructed for example by an Orchestrator or Operations Support System (OSS)
-to set up a VPN service, it performs path compution across the multi-layer/multi-domain network based on its
-abstracted topology and then delegates both the P- and O-PNCs to perform local path computation within their
-respective domains.
-
-This document assumes that the basic configuration of the L2/L3 VPN services, and in particular of the multi-domain TE path in the packet layer, is the same as described in section 5 of {{!I-D.ietf-teas-actn-poi-applicability}}. The only exception is that section {{resiliency}} defines additional multi-layer mechanisms besides the local protection in the packet layer described in section 5.2.3 of {{!I-D.ietf-teas-actn-poi-applicability}}.
-
-P-PNCs are responsible for setting up the TE paths between any two PEs or BRs in their respective controlled domains,
-as requested by MDSC, and providing topology information to the MDSC.
-
-O-PNCs are responsible for providing to the MDSC an abstract TE topology view of their underlying optical network resources.
-They perform single-domain local path computation, when requested by the MDSC. They also perform optical tunnel setup, when requested by the MDSC.
-
-No GMPLS-UNI interaction between IP and Optical equipment is considered.
-This is also the assumption followed in this document: the MDSC performs the function of multi-layer/multi-domain path computation
-through the same mechanisms described in {{!I-D.ietf-teas-actn-poi-applicability}}.
-
-> TO DO: Complete the description of the pre-requisites of MDSC in the cases discussed.
-
-The following list summarizes the main assumptions about how MDSC can handle the service assurance cases described in this document. Most of them have already been described in {{!I-D.ietf-teas-actn-poi-applicability}}.
-
-1. The MDSC has acquired the topology of the multi-layer topology as described in section 2 of {{!I-D.ietf-teas-actn-poi-applicability}}.
-
-2. MDSC is aware of the multi-domain interconnection links between different IP domains (Inter-domain Ethernet links). The
-MDSC is also aware of the multi-layer connections between the IP and the optical layers as exposed by the P-PNC and the O-PNC (for example, between a PE router and a corresponding optical node).
-
-3. MDSC is aware of any topology or service change in near real-time through coordination with the O/P-PNCs. This applies in the case of a fault or a maintenance activity involving either the IP or the DWDM layer.
-
-4. MDSC may coordinate, if configured to do so, with the O/P-PNC to perform fault management actions when a network failure in the IP or optical network is detected, as referenced in section 7 on Multi-layer Resiliency.
-
-5. Before a planned maintenance window in the optical layer, MDSC can request the underlying P-PNC to move a given set of LSPs or SR-TE paths to avoid a particular link that will become under maintenance status. This is performed before the start of the maintenance window. Based on operator decision, MDSC could request to P-PNC to revert the set of LSPs or SR-TE paths through the initial link once maintenance activities have finalised.
-
-6. When the O-PNC detects a degradation of optical performance (e.g. a Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained over a certain period of time), it alerts the MDSC so that the MDSC relates the warning to an IP link.
-
-7. MDSC distinguishes between IP and Optical failures. For example,
-in the case of the failure of an IP port of a router, the TE path
-may be switched to a stand-by port, reusing the same Reconfigurable
-Optical Add-Drop Multiplexer (ROADM) optical resources (lambda,
-optical path) and keeping the end-to-end IP connection. If a remote
-IP node fails, then a re-route of optical resources takes place
-together with a switch of the local IP port in order to establish
-a new connection with a different IP node used for protection. In
-both cases, the P-PNC passes the related notifications to the MDSC.
+* No GMPLS-UNI interaction between IP and Optical equipment is considered. This is also the assumption
+  followed in this document: the MDSC performs the function of multi-layer path computation through
+  the same mechanisms described in [I-D.ietf-teas-actn-poi-applicability].
+	       
+The following list summarizes the main assumptions about how MDSC can handle
+the service assurance cases described in this document. Most of them have 
+already been described in [I-D.ietf-teas-actn-poi-applicability] but here
+they are applied specifically to a single-domain, multi-layer network.
+     
+* The MDSC is responsible for coordinating the whole multi-layer (packet and optical) network. The MDSC interacts
+  with the P-PNC and the O-PNC(s) through the MPI interface. The MPI interface presents an abstracted
+  topology to MDSC, hiding the technology-specific aspects of the network and 
+  the topology details (depending on the policy chosen regarding the level
+  of abstraction supported) as described in section 2 of [I-D.ietf-teas-actn-poi-applicability].
+		
+* The P-PNC is responsible for setting up the TE paths between any two
+  PEs in the controlled packet domain, as requested by the MDSC during
+  service configuration, and providing topology information to the MDSC.
+		
+* The O-PNC(s) are responsible for providing to the MDSC an abstract TE 
+   topology view of their underlying optical network resources. They perform single-domain local
+   path computation, when requested by the MDSC. They also perform optical tunnel setup, when requested
+   by the MDSC.
+		
+* The MDSC is aware of the multi-layer connections between the IP and
+  the optical layers as exposed by the P-PNC and the O-PNC(s) (for example,
+  between a PE router and a corresponding optical node).
+		
+* The MDSC is aware of any topology or service change in near real-time
+  through coordination with the PNCs. This applies in the case of a fault
+  or a maintenance activity involving either the IP or the DWDM layer.
+		
+* The MDSC may coordinate, if configured to do so, with either the P-PNC
+  or the O-PNC(s) (or both) to perform fault management actions when a
+  network failure in the IP or optical network is detected, as referenced
+  in section 7 on Multi-layer Resiliency.
+		
+* Before a planned maintenance window in the optical layer, the MDSC can
+  request the underlying P-PNC to move a given set of LSPs or SR-TE paths
+  to avoid a particular link that will undergo maintenance status. This
+  is performed before the start of the maintenance window. Based on
+  operator decision, the MDSC could request to the P-PNC to revert the set
+  of LSPs or SR-TE paths through the initial link once maintenance activities have been finalised.
+		
+* When the O-PNC detects a degradation of optical performance (e.g. a
+  Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained over a
+  certain period of time), it alerts the MDSC so that the MDSC relates
+  the warning to an IP link.
+		
+* The MDSC distinguishes between IP and Optical failures. For example,
+  in the case of a failure of an IP port of a router, the TE path may be
+  switched to a stand-by port, reusing the same Reconfigurable Optical
+  Add-Drop Multiplexer (ROADM) optical resources (lambda, optical path)
+  and keeping the end-to-end IP connection. If a remote IP node fails,
+  then a re-route of optical resources takes place together with a switch
+  of the local IP port in order to establish a new connection with a
+  different IP node used for protection. In both cases, the P-PNC passes
+  the related notifications to the MDSC.
 
 {:#ref-network}
 
