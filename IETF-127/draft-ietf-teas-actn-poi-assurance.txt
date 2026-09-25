@@ -5,14 +5,14 @@
 TEAS Working Group                                               I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 28 March 2027                                          Vodafone
+Expires: 29 March 2027                                          Vodafone
                                                             F. Peruzzini
                                                                 FiberCop
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                       24 September 2026
+                                                       25 September 2026
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -75,7 +75,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 March 2027.
+   This Internet-Draft will expire on 29 March 2027.
 
 Copyright Notice
 
@@ -258,11 +258,33 @@ Table of Contents
 
    [Editor's mote: Italo please change the figure].
 
-      +---+
-      |   |
-      +---+
+                               +----------+
+                               |   MDSC   |
+                               +-----+----+
+                                     |
+                   +-----------+-----+------+-----------+
+                   |           |            |           |
+              +----+----+ +----+----+  +----+----+ +----+----+
+              | P-PNC 1 | | O-PNC 1 |  | O-PNC 2 | | P-PNC 2 |
+              +----+----+ +----+----+  +----+----+ +----+----+
+                   |           |            |           |
+                   |           \            /           |
+         +-------------------+  \          /  +-------------------+
+    CE1 / PE1             BR1 \  |        /  / BR2             PE2 \ CE2
+    o--/---o               o---\-|-------|--/---o               o---\--o
+       \   :               :   / |       |  \   :               :   /
+        \  : PKT domain 1  :  /  |       |   \  : PKT domain 2  :  /
+         +-:---------------:-+   |       |    +-:---------------:--+
+           :               :     |       |      :               :
+           :               :     |       |      :               :
+         +-:---------------:------+     +-------:---------------:--+
+        /  :               :       \   /        :               :   \
+       /   o...............o        \ /         o...............o    \
+       \     optical domain 1       / \       optical domain 2       /
+        \                          /   \                            /
+         +------------------------+     +--------------------------+
 
-         Figure 1: Reference Network (copy of Figure 1 of RFC YYYY)
+       Figure 1: Reference Network (copy of Figure 1 of RFC YYYY)
 
    Note that the network considered in this document may be based on
    multiple optical subdomains, as shown in Figure 1.  In such a case,
