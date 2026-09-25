@@ -236,9 +236,7 @@ document is shown in Figure 1.
 \[Editor's mote: Italo please change the figure].
 
 ~~~~ aasvg
-   +---+
-   |   |
-   +---+
+{::include figures/reference-architecture.txt}
 ~~~~
 {:#fig-ref-architecture title="Reference Network (copy of Figure 1 of RFC YYYY)"
 artwork-name="reference-architecture.txt"}
@@ -345,7 +343,7 @@ they are applied specifically to a single-domain, multi-layer network.
 
 The following network topology will be considered to analyze and discuss the scenarios in {{resiliency}}.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/reference-network.txt}
 ~~~~
 {:#fig-ref-network title="Reference Network"
@@ -402,7 +400,7 @@ Depending on the point where a failure occurs, three use cases are considered:
 
 The following figure illustrates the reference scenario used to discuss the fault management cases.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/multi-layer-failure-reference-network.txt}
 ~~~~
 {:#fig-failure-reference title="Reference scenario for multi-layer fault management"
@@ -450,7 +448,7 @@ The MDSC should also inform the OSS/orchestration layer about the failures on th
 The failures discussed in this section occur on the connection between a router and a ROADM.
 A first case concerns the Tx fiber used by R1 to send traffic to ROADM1 ({{fig-failure-ingress-link}}).
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/multi-layer-failure-ingress-link.txt}
 ~~~~
 {:#fig-failure-ingress-link title="Failure on the optical ingress link"
@@ -463,7 +461,7 @@ It is up to the MDSC to correlate the events and determine what IP services are 
 
 A second case is depicted in figure {{fig-failure-egress-link}}. The failure happens on the Rx fiber used by R2 to receive traffic from ROADM2.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/multi-layer-failure-egress-link.txt}
 ~~~~
 {:#fig-failure-egress-link title="Failure on the optical egress link"
@@ -478,7 +476,7 @@ As noted, MDSC correlates the events to determine the affected services.
 
 A failure may also occur when the two unidirectional fibers connecting a router, e.g. R1, to a ROADM, e.g. ROADM2, are affected, for example for a simultaneous fiber cut, as shown in figure {{fig-failure-bidir-link}}.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/multi-layer-failure-bidir-link.txt}
 ~~~~
 {:#fig-failure-bidir-link title="Failure on the access link"
@@ -628,7 +626,7 @@ As restoration typically sets an alternative path on the fly based on the availa
 the time taken by the process to create an optical backup tends to be longer than the time taken by the IP/MPLS FRR process.
 As a result, the interaction between the two layers follows the mimics shown in the next figure.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/restoration.txt}
 ~~~~
 {:#fig-fault-restoration title="Fault detection with optical restoration"
@@ -683,7 +681,7 @@ with IP/MPLS FRR, as it is pre-computed. As a consequence, when multi-layer coor
 to hold-off FRR on R1 and wait that optical protection is completed.
 The process is shown in the next figure.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/protection.txt}
 ~~~~
 {:#fig-fault-protection title="Fault detection with optical protection"
@@ -726,7 +724,7 @@ At the optical layer, maintenance has no traffic impact because a new path is co
 
 The next figure shows the process adopted to handle the maintenance window.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/maintenance.txt}
 ~~~~
 {:#fig-maintenance title="Maintenance window operation"
@@ -782,7 +780,7 @@ Following the previous examples, this case is characterized by R1 being configur
 In case of failure, for example on port P1, PP is dynamically activated and traffic originally directed to P1 is steered to PP. PP receives the same configuration as P1, while P1 is brought to a down state.
 Unlike ordinary LAG, traffic is not redistributed over the surviving links. Since a backup port (PP) is enabled, traffic continues to flow on N links instead of N-1. Although this introduces additional IP-layer complexity by requiring an extra port on both R1 and ROADM1, the optical-layer configuration shown in figure {{fig-ref-network}} does not change, because only N optical channels (e.g. lambdas) are used, as shown in figure {{fig-N-1-port-prot-architecture}}.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/N-1-port-prot-architecture.txt}
 ~~~~
 {:#fig-N-1-port-prot-architecture title="Use of N:1 protection on R1"
@@ -794,7 +792,7 @@ It has to be noted that the mechanism to deal with the on-the-fly reconfiguratio
 
 The next figure shows the process adopted to handle N:1 port protection.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/N-1-port-prot.txt}
 ~~~~
 {:#fig-N-1-port-prot title="N:1 protection operation"
@@ -845,7 +843,7 @@ As shown in {{fig-ref-network}}, in its normal operations R1 is dual-homed to R2
 The underlying assumption is that it is not possible to R2 to communicate to P-PNC about the event causing the failure, so it is up to R1 to detect it and to communicate instead to P-PNC. The first reaction to the event is to perform a fast-rerouting action and move the traffic from the R1-R2 link to the R1-R3 link. As part of the assumption, the R1-R3 IP link has been previously dimensioned to carry a certain amount of traffic, so it is possible that after fast re-routing takes place some traffic previously carried on the R1-R2 IP link and now shifted to R1-R3 is discarded, for example because congestion occurs.
 MDSC instructs the optical layer to find available optical resources, activate a new optical path between ROADM1 and ROADM3 and finally move the traffic previously associated to R1-R2 to the newly created optical path. When this second optical path is available, MDSC triggers a new switch of the traffic so that R1 can now steers the previous R1-R2 traffic to the new optical path. The final configuration is shown in figure {{fig-node-prot-architecture}}.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/node-prot-architecture.txt}
 ~~~~
 {:#fig-node-prot-architecture title="IP configuration after the creation of a second optical path"
@@ -853,7 +851,7 @@ artwork-name="node-prot-architecture.txt"}
 
 The next figure shows the process adopted to handle the node protection case.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/node-prot.txt}
 ~~~~
 {:#fig-node-prot title="Node protection operation"
@@ -912,7 +910,7 @@ guaranteeing a hitless switching.
 
 The mimics of the steps requested is shown in the next figure.
 
-~~~~ ascii-art
+~~~~ aasvg
 {::include figures/hitless-multi-layer-reversion.txt}
 ~~~~
 {:#fig-hitless-reversion title="hitless multi-layer reversion"
