@@ -233,8 +233,6 @@ mentioned, this case differs from the one depicted by Figure 1 of
 and optical is considered. The reference network in scope of this
 document is shown in Figure 1.
 
-\[Editor's mote: Italo please change the figure].
-
 ~~~~ aasvg
 {::include figures/reference-architecture.txt}
 ~~~~
