@@ -1350,28 +1350,38 @@ top-level controller, and<a href="#section-1-4.1.1" class="pilcrow">¶</a></p>
 the network controller for packet (P-PNC) and optical (O-PNC) network domains.<a href="#section-1-4.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-1-5">This document aligns with current field operational procedures and
+<p id="section-1-5">Differently to <span>[<a href="#I-D.ietf-teas-actn-poi-applicability" class="cite xref">I-D.ietf-teas-actn-poi-applicability</a>]</span>, the main scope of
+this document is limited to single-domain packet networks
+(i.e., a packet network controlled by a single P-PNC).<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-6">Note: the ACTN framework <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> in general, and the ACTN POI
+framework <span>[<a href="#I-D.ietf-teas-actn-poi-applicability" class="cite xref">I-D.ietf-teas-actn-poi-applicability</a>]</span> in particular,
+consider networks which are administered by a single organization
+(e.g., a single network provider) and are composed by different layers
+(packet and optical) and different control domains (PNC domains).
+The different layers and control domains may by managed by different
+operational teams within the same organization.<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-7">This document aligns with current field operational procedures and
 <span>[<a href="#I-D.ietf-teas-actn-poi-applicability" class="cite xref">I-D.ietf-teas-actn-poi-applicability</a>]</span>, which assume both the P-PNC
 and the O-PNC provide the MDSC with enough information for performing
 Root Cause Analysis (RCA). The MDSC correlates the events, alarms or
 notifications related to either a packet or an optical network failure
-with the impacted services at the IP layer.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">In particular for the optical network, the set of information shared
+with the impacted services at the IP layer.<a href="#section-1-7" class="pilcrow">¶</a></p>
+<p id="section-1-8">In particular for the optical network, the set of information shared
 by the O-PNC to the MDSC depends on local configuration adopted at the
 MDSC-PNC Interface (MPI) <span>[<a href="#RFC8453" class="cite xref">RFC8453</a>]</span>. In general, this may include
 information about the optical path, tunnel, or fiber where the failure
 happened, together with its location and operational state (e.g.,
 "down"), while hiding further topology details. This data is sufficient
 for the MDSC to perform multi-layer correlation and discover which IP
-links, Label Switched Paths (LSPs), and VPNs are affected.<a href="#section-1-6" class="pilcrow">¶</a></p>
-<p id="section-1-7">The analysis of the YANG data models applicable to service assurance
+links, Label Switched Paths (LSPs), and VPNs are affected.<a href="#section-1-8" class="pilcrow">¶</a></p>
+<p id="section-1-9">The analysis of the YANG data models applicable to service assurance
 (fault and performance) is in scope of this document.
 The development of new YANG models/modules to support the missing
 functions is instead not in scope of the present document.
 To this extent, this document acts as a framework that provides a gap
 analysis and identifies topics for future work to be addressed in other
-documents.<a href="#section-1-7" class="pilcrow">¶</a></p>
-<p id="section-1-8">A related effort is described in <span>[<a href="#I-D.ietf-ccamp-actn-optical-transport-mgmt" class="cite xref">I-D.ietf-ccamp-actn-optical-transport-mgmt</a>]</span>, which enhances the ACTN
+documents.<a href="#section-1-9" class="pilcrow">¶</a></p>
+<p id="section-1-10">A related effort is described in <span>[<a href="#I-D.ietf-ccamp-actn-optical-transport-mgmt" class="cite xref">I-D.ietf-ccamp-actn-optical-transport-mgmt</a>]</span>, which enhances the ACTN
 architecture for optical networks with Fault, Configuration, Accounting,
 Performance, and Security (FCAPS) management capabilities, including the
 addition of rich-detail network management (RDNM) to the MPI. While that
@@ -1380,8 +1390,8 @@ capabilities into ACTN for optical networks, the present document
 focuses on multi-layer (packet and optical) service assurance in Packet
 Optical Integration (POI) scenarios, specifically analyzing fault
 detection, performance monitoring, and resiliency coordination across
-the packet and optical layers.<a href="#section-1-8" class="pilcrow">¶</a></p>
-<p id="section-1-9">The document has the following organization. Section 2 lists the
+the packet and optical layers.<a href="#section-1-10" class="pilcrow">¶</a></p>
+<p id="section-1-11">The document has the following organization. Section 2 lists the
 conventions and definitions used in the text. Section 3 discusses the
 reference network in scope for the relevant service assurance cases.
 Section 4 identifies the YANG data models applicable to service assurance
@@ -1390,15 +1400,15 @@ and provides a gap analysis for modules that are still missing. Section
 layer, or both. Section 6 deals with performance management aspects of
 service assurance in a packet-optical integrated network. Finally,
 Section 7 discusses the protection mechanisms available for the most
-typical fault scenarios of a multi-layer network.<a href="#section-1-9" class="pilcrow">¶</a></p>
-<p id="section-1-10">For each multi-technology scenario, the document analyzes how to use
-the interfaces and the data models of the ACTN architecture.<a href="#section-1-10" class="pilcrow">¶</a></p>
-<p id="section-1-11">A summary of the gaps identified in this analysis is provided in Section 8.<a href="#section-1-11" class="pilcrow">¶</a></p>
-<p id="section-1-12">Understanding the degree of standardization and the identified gaps will
+typical fault scenarios of a multi-layer network.<a href="#section-1-11" class="pilcrow">¶</a></p>
+<p id="section-1-12">For each multi-technology scenario, the document analyzes how to use
+the interfaces and the data models of the ACTN architecture.<a href="#section-1-12" class="pilcrow">¶</a></p>
+<p id="section-1-13">A summary of the gaps identified in this analysis is provided in Section 8.<a href="#section-1-13" class="pilcrow">¶</a></p>
+<p id="section-1-14">Understanding the degree of standardization and the identified gaps will
 help assess the feasibility of integration between packet and optical
 Dense Wavelength Division Multiplexing (DWDM) domains (and optionally
 the Optical Transport Network (OTN) layer) from an end-to-end,
-multi-vendor service assurance perspective.<a href="#section-1-12" class="pilcrow">¶</a></p>
+multi-vendor service assurance perspective.<a href="#section-1-14" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -4007,6 +4017,10 @@ guaranteeing a hitless switching.<a href="#section-7.5-3.3.1" class="pilcrow">¶
 <dt id="RFC7799">[RFC7799]</dt>
         <dd>
 <span class="refAuthor">Morton, A.</span>, <span class="refTitle">"Active and Passive Metrics and Methods (with Hybrid Types In-Between)"</span>, <span class="seriesInfo">RFC 7799</span>, <span class="seriesInfo">DOI 10.17487/RFC7799</span>, <time datetime="2016-05" class="refDate">May 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7799">https://www.rfc-editor.org/rfc/rfc7799</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8345">[RFC8345]</dt>
+        <dd>
+<span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Medved, J.</span>, <span class="refAuthor">Varga, R.</span>, <span class="refAuthor">Bahadur, N.</span>, <span class="refAuthor">Ananthakrishnan, H.</span>, and <span class="refAuthor">X. Liu</span>, <span class="refTitle">"A YANG Data Model for Network Topologies"</span>, <span class="seriesInfo">RFC 8345</span>, <span class="seriesInfo">DOI 10.17487/RFC8345</span>, <time datetime="2018-03" class="refDate">March 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8345">https://www.rfc-editor.org/rfc/rfc8345</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8799">[RFC8799]</dt>
       <dd>

@@ -158,6 +158,18 @@ Table of Contents
    *  the Provisioning Network Controllers (PNCs), acting as the network
       controller for packet (P-PNC) and optical (O-PNC) network domains.
 
+   Differently to [I-D.ietf-teas-actn-poi-applicability], the main scope
+   of this document is limited to single-domain packet networks (i.e., a
+   packet network controlled by a single P-PNC).
+
+   Note: the ACTN framework [RFC8345] in general, and the ACTN POI
+   framework [I-D.ietf-teas-actn-poi-applicability] in particular,
+   consider networks which are administered by a single organization
+   (e.g., a single network provider) and are composed by different
+   layers (packet and optical) and different control domains (PNC
+   domains).  The different layers and control domains may by managed by
+   different operational teams within the same organization.
+
    This document aligns with current field operational procedures and
    [I-D.ietf-teas-actn-poi-applicability], which assume both the P-PNC
    and the O-PNC provide the MDSC with enough information for performing
@@ -1712,6 +1724,11 @@ Table of Contents
    [RFC7799]  Morton, A., "Active and Passive Metrics and Methods (with
               Hybrid Types In-Between)", RFC 7799, DOI 10.17487/RFC7799,
               May 2016, <https://www.rfc-editor.org/rfc/rfc7799>.
+
+   [RFC8345]  Clemm, A., Medved, J., Varga, R., Bahadur, N.,
+              Ananthakrishnan, H., and X. Liu, "A YANG Data Model for
+              Network Topologies", RFC 8345, DOI 10.17487/RFC8345, March
+              2018, <https://www.rfc-editor.org/rfc/rfc8345>.
 
    [RFC8799]  Carpenter, B. and B. Liu, "Limited Domains and Internet
               Protocols", RFC 8799, DOI 10.17487/RFC8799, July 2020,
