@@ -325,7 +325,7 @@ they are applied specifically to a multi-layer network with a single P-PNC domai
   of LSPs or SR-TE paths through the initial link once maintenance activities have been finalised.
 
 * When the O-PNC detects a degradation of optical performance (e.g. a
-  Threshold Crossing Alert (TCA) on PRE-FEC BER values sustained over a
+  Threshold Crossing Alert (TCA) on pre-FEC BER values sustained over a
   certain period of time), it alerts the MDSC so that the MDSC relates
   the warning to an IP link.
 
