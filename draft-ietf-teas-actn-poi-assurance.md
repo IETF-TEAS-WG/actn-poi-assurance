@@ -287,7 +287,7 @@ For the analysis developed by this document, the following assumptions are taken
 The following list summarizes the main assumptions about how MDSC can handle
 the service assurance cases described in this document. Most of them have
 already been described in {{!I-D.ietf-teas-actn-poi-applicability}} but here
-they are applied specifically to a single-domain, multi-layer network.
+they are applied specifically to a multi-layer network with a single P-PNC domain.
 
 * The MDSC is responsible for coordinating the whole multi-layer (packet and optical) network. The MDSC interacts
   with the P-PNC and the O-PNC(s) through the MPI interface. The MPI interface presents an abstracted
