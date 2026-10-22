@@ -5,14 +5,14 @@
 TEAS Working Group                                               I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 2 April 2027                                           Vodafone
+Expires: 25 April 2027                                          Vodafone
                                                             F. Peruzzini
                                                                 FiberCop
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                       29 September 2026
+                                                         22 October 2026
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -24,7 +24,8 @@ Abstract
    This document extends the analysis of the applicability of
    Abstraction and Control of Traffic Engineered Networks (ACTN)
    architecture to Packet Optical Integration (POI) to cover multi-layer
-   service assurance scenarios in a single-domain network.
+   service assurance scenarios.
+
    Specifically, the ACTN architecture is analyzed to support service
    assurance through the detection and correlation of failures across
    the optical and packet layers, with failure handling performed
@@ -75,7 +76,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 April 2027.
+   This Internet-Draft will expire on 25 April 2027.
 
 Copyright Notice
 
