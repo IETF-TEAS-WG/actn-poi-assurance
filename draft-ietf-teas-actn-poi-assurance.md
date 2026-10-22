@@ -315,7 +315,7 @@ they are applied specifically to a multi-layer network with a single P-PNC domai
 * The MDSC may coordinate, if configured to do so, with either the P-PNC
   or the O-PNC(s) (or both) to perform fault management actions when a
   network failure in the IP or optical network is detected, as referenced
-  in section 7 on Multi-layer Resiliency.
+  in {{resiliency}} on multi-layer resiliency.
 
 * Before a planned maintenance window in the optical layer, the MDSC can
   request the underlying P-PNC to move a given set of LSPs or SR-TE paths
