@@ -278,7 +278,7 @@ For the analysis developed by this document, the following assumptions are taken
 
 * The local protection adopted in the packet layer and discussed insection 5.2.3 of
   {{!I-D.ietf-teas-actn-poi-applicability}} is complemented by further additional multi-layer mechanisms,
-  as elaborated on in section 7.
+  as elaborated on in {{resiliency}}.
 
 * No GMPLS-UNI interaction between IP and Optical equipment is considered. This is also the assumption
   followed in this document: the MDSC performs the function of multi-layer path computation through
