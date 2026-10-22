@@ -336,7 +336,7 @@ Table of Contents
    *  The local protection adopted in the packet layer and discussed
       insection 5.2.3 of [I-D.ietf-teas-actn-poi-applicability] is
       complemented by further additional multi-layer mechanisms, as
-      elaborated on in section 7.
+      elaborated on in Section 7.
 
    *  No GMPLS-UNI interaction between IP and Optical equipment is
       considered.  This is also the assumption followed in this
