@@ -98,16 +98,13 @@ normative:
 service assurance scenarios.
 
 Specifically, the ACTN architecture is
-   analyzed to support service assurance through the detection and
-   correlation of failures across the optical and packet layers, with
-   failure handling performed through the relevant Provisioning Network
-   Controller (PNC) in coopearation with the Multi-Domain Service
-   Coordinator (MDSC). The PNCs may be configured with thresholds so
-   that alerts are reported to the MDSC when relevant service or network
-   conditions exceed defined limits. It is assumed that the underlying
-   transport optical network carries end-to-end IP services such as
-   L2VPN or L3VPN connectivity services, with specific Service Level
-   Agreement (SLA) requirements.
+analyzed to support service assurance for end-to-end IP services such as
+L2VPN or L3VPN connectivity services, with specific Service Level
+Agreement (SLA) requirements, through the detection and
+correlation of failures across the optical and packet layers, done by
+the relevant Provisioning Network
+Controller (PNC) in coopearation with the Multi-Domain Service
+Coordinator (MDSC).
 
    Existing IETF protocols and data models are identified for each
    multi-layer (packet over optical) service assurance scenario with a specific focus on
