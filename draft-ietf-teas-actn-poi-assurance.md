@@ -146,6 +146,18 @@ is performed through collaboration among the ACTN control entities
 * the Provisioning Network Controllers (PNCs), acting as
   the network controller for packet (P-PNC) and optical (O-PNC) network domains.
 
+Differently to {{?I-D.ietf-teas-actn-poi-applicability}}, the main scope of
+this document is limited to single-domain packet networks
+(i.e., a packet network controlled by a single P-PNC).
+
+Note: the ACTN framework {{?RFC8345}} in general, and the ACTN POI
+framework {{?I-D.ietf-teas-actn-poi-applicability}} in particular,
+consider networks which are administered by a single organization
+(e.g., a single network provider) and are composed by different layers
+(packet and optical) and different control domains (PNC domains).
+The different layers and control domains may by managed by different
+operational teams within the same organization.
+
 This document aligns with current field operational procedures and
 {{!I-D.ietf-teas-actn-poi-applicability}}, which assume both the P-PNC
 and the O-PNC provide the MDSC with enough information for performing
