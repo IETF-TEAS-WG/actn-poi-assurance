@@ -133,13 +133,6 @@ analysis of its applicability, discussed in
 integrated networks, adding considerations specific to fault and
 performance management scenarios.
 
-Differently to {{!I-D.ietf-teas-actn-poi-applicability}}, the scope of
-this document limits to single-domain networks. Hence, the networks
-considered by this analysis are administered by a single organization
-(e.g., a single network provider) and are composed by two technically
-distinct layers (as said, packet and optical). The two layers may
-by manageged by different operational teams within the same
-organization.
 
 Service assurance applies to end-to-end L2VPN or L3VPN connectivity
 services configured over IP and underlying transport optical paths
