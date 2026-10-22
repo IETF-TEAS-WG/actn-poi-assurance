@@ -95,7 +95,9 @@ normative:
    This document extends the analysis of the applicability of
    Abstraction and Control of Traffic Engineered Networks (ACTN)
    architecture to Packet Optical Integration (POI) to cover multi-layer
-   service assurance scenarios in a single-domain network. Specifically, the ACTN architecture is
+service assurance scenarios.
+
+Specifically, the ACTN architecture is
    analyzed to support service assurance through the detection and
    correlation of failures across the optical and packet layers, with
    failure handling performed through the relevant Provisioning Network
