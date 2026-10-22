@@ -157,13 +157,14 @@ Table of Contents
    services configured over IP and underlying transport optical paths
    that require multi-layer coordination.  To guarantee the SLAs
    associated with VPN services, service assurance is performed through
-   collaboration among the ACTN control entities [RFC8453]:
+   collaboration among the ACTN control entities [RFC8453] and
+   [I-D.ietf-teas-actn-poi-applicability]:
 
    *  the Multi-Domain Service Coordinator (MDSC), acting as the top-
       level controller, and
 
-   *  the Provisioning Network Controllers (PNCs), deployed in the
-      Packet (P-PNC) and Optical (O-PNC) layers.
+   *  the Provisioning Network Controllers (PNCs), acting as the network
+      controller for packet (P-PNC) and optical (O-PNC) network domains.
 
    This document aligns with current field operational procedures and
    [I-D.ietf-teas-actn-poi-applicability], which assume both the P-PNC
