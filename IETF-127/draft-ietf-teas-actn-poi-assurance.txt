@@ -307,13 +307,7 @@ Table of Contents
    scenarios where the MDSC uses the partial summarization approach to
    coordinate multi-layer path computation, with the difference already
    noted that it applies to a single-domain network.  Hence, the MDSC
-   has an abstracted view of the TE topology of both the IP and optical
-   network layers.  When the MDSC is instructed, for example by an
-   Orchestrator or an Operations Support System (OSS), to set up a VPN
-   service, it performs path compution across the multi-layer network
-   based on its abstracted topology and then delegates both the P-PNC
-   and the O-PNCs to perform local path computation within their
-   respective domains.
+   has
 
    For the analysis developed by this document, the following
    assumptions are taken:
