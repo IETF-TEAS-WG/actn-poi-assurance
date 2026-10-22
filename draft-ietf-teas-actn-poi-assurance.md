@@ -274,7 +274,7 @@ For the analysis developed by this document, the following assumptions are taken
 * The basic configuration of the L2/L3 VPN services is considered, i.e. a VPN service is
   setup between Provider's Edge (PE) routers in theIP layer. The VPN is carried over a TE path.
   As noted, it is the same case described in section 5 of {{!I-D.ietf-teas-actn-poi-applicability}}
-  with the difference that the target of the present analysis are single-domain networks.
+  with the only difference being that the target network has only one P-PNC domain. Therefore, all the PEs belong to the same P-PNC domain and all the TE paths are end-to-end single-domain paths.
 
 * The local protection adopted in the packet layer and discussed insection 5.2.3 of
   {{!I-D.ietf-teas-actn-poi-applicability}} is complemented by further additional multi-layer mechanisms,
