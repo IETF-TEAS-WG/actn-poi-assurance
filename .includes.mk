@@ -1,0 +1,13 @@
+draft-ietf-teas-actn-poi-assurance.xml: figures/reference-network.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-reference-network.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-ingress-link.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-egress-link.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-bidir-link.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/restoration.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/protection.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/maintenance.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/N-1-port-prot-architecture.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/N-1-port-prot.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/node-prot-architecture.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/node-prot.txt
+draft-ietf-teas-actn-poi-assurance.xml: figures/hitless-multi-layer-reversion.txt
