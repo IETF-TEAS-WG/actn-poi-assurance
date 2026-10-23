@@ -5,14 +5,14 @@
 TEAS Working Group                                               I. Busi
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                            J.-F. Bouquier
-Expires: 25 April 2027                                          Vodafone
+Expires: 26 April 2027                                          Vodafone
                                                             F. Peruzzini
                                                                 FiberCop
                                                               P. Volpato
                                                      Huawei Technologies
                                                                 P. Manna
                                                                    Cisco
-                                                         22 October 2026
+                                                         23 October 2026
 
 
 Applicability of Abstraction and Control of Traffic Engineered Networks
@@ -73,7 +73,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 April 2027.
+   This Internet-Draft will expire on 26 April 2027.
 
 Copyright Notice
 
@@ -236,7 +236,8 @@ Table of Contents
 
 2.1.  Terminology
 
-   This document uses the ACTN terminology defined in [RFC8453] and in
+   This document uses the ACTN terminology defined in [RFC8453] and the
+   ACTN POI terminology defined in
    [I-D.ietf-teas-actn-poi-applicability].
 
    In addition, this document uses the following terminology.
@@ -253,11 +254,12 @@ Table of Contents
 
    This document analyses several scenarios for service assurance in
    Packet and Optical Integration (POI) in which ACTN hierarchy is
-   deployed to control a single-domain, multi-layer network.  As
-   mentioned, this case differs from the one depicted by Figure 1 of
-   [I-D.ietf-teas-actn-poi-applicability], where a multi-domain packet
-   and optical is considered.  The reference network in scope of this
-   document is shown in Figure 1.
+   deployed to control a single-domain, multi-layer network with two
+   optical domains and one packet domain, as shown in Figure 1.
+
+   As already mentioned, this case differs from the one depicted by
+   Figure 1 of [I-D.ietf-teas-actn-poi-applicability], where a multiple
+   packet domains are considered.
 
                                +----------+
                                |   MDSC   |
@@ -289,25 +291,25 @@ Table of Contents
         \                         /   \                          /
          +-----------------------+     +------------------------+
 
-       Figure 1: Reference Network (copy of Figure 1 of RFC YYYY)
+       Figure 1: Reference Network for ACTN POI service assurance
 
    Note that the network considered in this document may be based on
-   multiple optical subdomains, as shown in Figure 1.  In such a case,
-   multiple O-PNCs are present, each coordinating its own subdomain.  In
-   all cases, a single packet domain is considered.  The reason for this
-   choice is better explained in section 8.  Here it is worth noting
-   that for consolidated operational motivations (e.g., dependence on
-   deeply technical or proprietary parameters, low use of unified
-   transport APIs), optical domains are often partitioned in subdomains.
-   For the discussion on why multi-domain packet networks are out of the
-   scope of this document, please refer to section 8.
+   multiple optical domains, as shown in Figure 1.  In such a case,
+   multiple O-PNCs are present, each controlling its own optical domain.
+   In all cases, a single packet domain is considered.  The reason for
+   this choice is better explained in Section 8.  Here it is worth
+   noting that for consolidated operational motivations (e.g.,
+   dependence on deeply technical or proprietary parameters, low use of
+   unified transport APIs), optical networks are often partitioned into
+   single-vendor domains.  For the discussion on why multi-domain packet
+   networks are out of the scope of this document, please refer to
+   section 8.
 
    Following the assumptions of section 2.1.2 of
    [I-D.ietf-teas-actn-poi-applicability], this document analyses
    scenarios where the MDSC uses the partial summarization approach to
    coordinate multi-layer path computation, with the difference already
-   noted that it applies to a single-domain network.  Hence, the MDSC
-   has
+   noted that it applies to a single-domain network.
 
    For the analysis developed by this document, the following
    assumptions are taken:
@@ -320,8 +322,8 @@ Table of Contents
 
    *  The basic configuration of the L2/L3 VPN services is considered,
       i.e. a VPN service is setup between Provider's Edge (PE) routers
-      in theIP layer.  The VPN is carried over a TE path.  As noted, it
-      is the same case described in section 5 of
+      in the packet layer.  The VPN is carried over a TE path.  As
+      noted, it is the same case described in section 5 of
       [I-D.ietf-teas-actn-poi-applicability] with the only difference
       being that the target network has only one P-PNC domain.
       Therefore, all the PEs belong to the same P-PNC domain and all the
@@ -1709,9 +1711,9 @@ Table of Contents
               "Integrating YANG Configuration and Management into an
               Abstraction and Control of TE Networks (ACTN) System for
               Optical Networks", Work in Progress, Internet-Draft,
-              draft-ietf-ccamp-actn-optical-transport-mgmt-05, 18 April
-              2026, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              ccamp-actn-optical-transport-mgmt-05>.
+              draft-ietf-ccamp-actn-optical-transport-mgmt-06, 22
+              October 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-ccamp-actn-optical-transport-mgmt-06>.
 
    [RFC5880]  Katz, D. and D. Ward, "Bidirectional Forwarding Detection
               (BFD)", RFC 5880, DOI 10.17487/RFC5880, June 2010,
