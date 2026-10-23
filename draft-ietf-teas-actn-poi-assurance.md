@@ -218,7 +218,8 @@ multi-vendor service assurance perspective.
 # Conventions and Definitions
 
 ## Terminology
-This document uses the ACTN terminology defined in {{!RFC8453}} and in {{!I-D.ietf-teas-actn-poi-applicability}}.
+This document uses the ACTN terminology defined in {{!RFC8453}} and
+the ACTN POI terminology defined in {{!I-D.ietf-teas-actn-poi-applicability}}.
 
 In addition, this document uses the following terminology.
 
@@ -231,33 +232,32 @@ TCA (Threshold Crossing Alert)
 
 This document analyses several scenarios for service assurance in
 Packet and Optical Integration (POI) in which ACTN hierarchy is
-deployed to control a single-domain, multi-layer network. As
-mentioned, this case differs from the one depicted by Figure 1 of
-{{!I-D.ietf-teas-actn-poi-applicability}}, where a multi-domain packet
-and optical is considered. The reference network in scope of this
-document is shown in Figure 1.
+deployed to control a single-domain, multi-layer network with two optical domains and one packet domain, as shown in {{fig-ref-architecture}}.
+
+As already mentioned, this case differs from the one depicted by Figure 1 of
+{{!I-D.ietf-teas-actn-poi-applicability}}, where a multiple packet domains are considered.
 
 ~~~~ aasvg
 {::include figures/reference-architecture.txt}
 ~~~~
-{:#fig-ref-architecture title="Reference Network (copy of Figure 1 of RFC YYYY)"
+{:#fig-ref-architecture title="Reference Network for ACTN POI service assurance"
 artwork-name="reference-architecture.txt"}
 
 Note that the network considered in this document may be based on
-multiple optical subdomains, as shown in Figure 1. In such a case,
-multiple O-PNCs are present, each coordinating its own subdomain.
+multiple optical domains, as shown in {{fig-ref-architecture}}. In such a case,
+multiple O-PNCs are present, each controlling its own optical domain.
 In all cases, a single packet domain is considered. The reason for
-this choice is better explained in section 8. Here it is worth noting
+this choice is better explained in {{conclusions}}. Here it is worth noting
 that for consolidated operational motivations (e.g., dependence on
 deeply technical or proprietary parameters, low use of unified
-transport APIs), optical domains are often partitioned in subdomains.
+transport APIs), optical networks are often partitioned into single-vendor domains.
 For the discussion on why multi-domain packet networks are out of the
 scope of this document, please refer to section 8.
 
 Following the assumptions of section 2.1.2 of {{!I-D.ietf-teas-actn-poi-applicability}}, this document analyses
 scenarios where the MDSC uses the partial summarization approach to
 coordinate multi-layer path computation, with the difference already
-noted that it applies to a single-domain network. Hence, the MDSC has
+noted that it applies to a single-domain network.
 
 For the analysis developed by this document, the following assumptions are taken:
 
@@ -266,7 +266,7 @@ For the analysis developed by this document, the following assumptions are taken
   ports is out of the scope and may be analyzed in a separate document.
 
 * The basic configuration of the L2/L3 VPN services is considered, i.e. a VPN service is
-  setup between Provider's Edge (PE) routers in theIP layer. The VPN is carried over a TE path.
+  setup between Provider's Edge (PE) routers in the packet layer. The VPN is carried over a TE path.
   As noted, it is the same case described in section 5 of {{!I-D.ietf-teas-actn-poi-applicability}}
   with the only difference being that the target network has only one P-PNC domain. Therefore, all the PEs belong to the same P-PNC domain and all the TE paths are end-to-end single-domain paths.
 
