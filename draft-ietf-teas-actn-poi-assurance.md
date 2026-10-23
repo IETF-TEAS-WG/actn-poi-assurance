@@ -837,8 +837,8 @@ The steps illustrated in the previous figure are detailed here:
 
 # Assurance Scenarios in Presence of Multiple IP Domains
 
-As discussed in section {{architecture}} and section 2.1.2 of {{I-D.ietf-teas-actn-poi-applicability}}, the MDSC adopts a partial summarization approach to coordinate multi-domain (and multi-layer) path computation. That is, to configure an end-to-end L2 or L3VPN service, the MDSC would have complete visibility of the IP domains controlled by the respective P-PNCs.
-In real-world, multi-domain IP deployments this capability of the MDSC typically collides with commercial, technical, and operational challenges. 
+As discussed in section {{ref-architecture}} and section 2.1.2 of {{I-D.ietf-teas-actn-poi-applicability}}, the MDSC adopts a partial summarization approach to coordinate multi-domain (and multi-layer) path computation. That is, to configure an end-to-end L2 or L3VPN service, the MDSC would have complete visibility of the IP domains controlled by the respective P-PNCs.
+In real-world, multi-domain IP deployments this capability of the MDSC typically collides with commercial, technical, and operational challenges.
 
 A single-provider, multi-domain IP network, is often structured into segmented organizational siloes: each IP domain (e.g. access, aggregation, core) may be managed by a dedicated operational team with little or no exchange of information to the others (e.g., detailed topology, link status, and network statistics). As a result, the configuration of an end-to-end service by the MDSC may happen but on a too abstracted level, loosing the advantage of an integrated network view. This is particularly impacting assurance and performance monitoring.Even with the adoption of state-of-the-art telemetry mechanisms within individual IP domains, the resulting filtering of status information at the PNC-to-MDSC boundary would constrain the MDSC capacity to execute comprehensive, automated end-to-end service assurance.
 
