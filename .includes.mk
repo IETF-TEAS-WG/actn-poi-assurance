@@ -1,4 +1,3 @@
-draft-ietf-teas-actn-poi-assurance.xml: figures/reference-architecture.txt
 draft-ietf-teas-actn-poi-assurance.xml: figures/reference-network.txt
 draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-reference-network.txt
 draft-ietf-teas-actn-poi-assurance.xml: figures/multi-layer-failure-ingress-link.txt
