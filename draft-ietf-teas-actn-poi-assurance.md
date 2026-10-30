@@ -942,6 +942,21 @@ The steps illustrated in the previous figure are detailed here:
 
 - step 14. P-PNC acknowledges to MDSC.
 
+{:#ref-multi-IP-domain}
+
+# Assurance Scenarios in Presence of Multiple IP Domains
+
+As discussed in section {{ref-architecture}} and section 2.1.2 of {{I-D.ietf-teas-actn-poi-applicability}}, the MDSC adopts a partial summarization approach to coordinate multi-domain (and multi-layer) path computation. That is, to configure an end-to-end L2 or L3VPN service, the MDSC would have complete visibility of the IP domains controlled by the respective P-PNCs.
+In real-world, multi-domain IP deployments this capability of the MDSC typically collides with commercial, technical, and operational challenges.
+
+A single-provider, multi-domain IP network, is often structured into segmented organizational siloes: each IP domain (e.g. access, aggregation, core) may be managed by a dedicated operational team with little or no exchange of information to the others (e.g., detailed topology, link status, and network statistics). As a result, the configuration of an end-to-end service by the MDSC may happen but on a too abstracted level, loosing the advantage of an integrated network view. This is particularly impacting assurance and performance monitoring. Even with the adoption of state-of-the-art telemetry mechanisms within individual IP domains, the resulting filtering of status information at the MPI interface would constrain the MDSC capacity to execute comprehensive, automated end-to-end service assurance.
+
+The case of multi-provider networks presents even higher complexity. The ACTN architecture {{!RFC8453}} has a hierarchical structure, with the Customer Network Controller (CNC) communicating a customer's Virtual Network Services (VNS) requirements to the network operator over the CNC-MDSC Interface (CMI). In turn, the MDSC coordinates the network operator's PNCs. In the case of two or more network operators, each one with their own ACTN stack implemented, the CNC of operator A could not directly interface to the MDSC of operator B. Two fundamental ways are envisioned to overcome this limitation. The first one is that the MDSC of one of the two network operators (say, operator A) assumes the role of the CNC of the MDSC of operator B, keeping a hierarchical relationship as foreseen in {{!RFC8453}}. The other possibility is to establish a paritetical MDSC-to-MDSC interface. In any case, the information exchange at the administrative borders would be rigidly filtered and full service assurance coordination made impossible.
+
+It has to be noted that the complexity associated with enabling end-to-end service assurance and performance monitoring across multiple IP domains is in fact orthogonal to the presence of multiple optical domains in the optical network. This has been already highlighted in section {:#ref-architecture}. The guideline commonly adopted for the design of an optical network is to split it into sub-domains based on technology, vendor-based, or operational policies. Each subdomain is fully handled by a dedicated O-PNC.
+
+These are the reasons why the present document limits to single-provider (e.g., single IP domain), multi-layer networks. While the technical capabilities to perform assurance and performance monitoring in an IP network composed of multiple domains are defined, their application in the field is not made possible by current administrative and operational policies. This is a gap not easily addressable at the current stage. Further work to explore the technical options mentioned before is necessary and is left to a future work.
+
 {:#conclusions}
 
 # Conclusions
